@@ -1,0 +1,44 @@
+@import "../App.scss";
+
+.Applet {
+    .flex {
+        display: flex;
+    }
+    
+    .img {
+        padding: 1em 1em 1em 0.5em;
+        border-radius: 8px; 
+        border-radius: 1.2em;
+    }
+    
+    .button {
+        background-color: transparent;
+        border: none;
+        height: 32px;
+        border-radius: 8px; 
+        color: var(--foreground);
+        padding: 0.4em calc(0.5em + 8px) 0.4em 1em;
+        text-align: center;
+        transition: 200ms linear; 
+    }
+    
+    .button:hover {
+        background-color: $highlight;
+    }
+    
+    .lorem {
+        color: var(--foreground);
+        font-size: 1rem;
+        float: left;
+        padding-right: 1em;
+        padding-bottom: 1em;
+        height: 8em;
+        overflow: hidden;
+    }
+
+    width: 100vw;
+    position: relative;
+    padding-top: 3em;
+    background-color: var(--background);
+    display: flex;
+}

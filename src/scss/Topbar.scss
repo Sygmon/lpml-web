@@ -1,0 +1,78 @@
+@import "../App.scss";
+
+.top-bar {
+    width: 100vw;
+    z-index: 10;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    position: fixed;
+    display: flex;
+    background-color: var(--top-bar);
+
+    .menu-button {
+        border: none;
+        background-color: transparent;
+        color: var(--foreground);
+        font-size: 18px;
+        padding-left: 0.8em;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 300ms linear;
+    }
+
+    .menu-button:hover{
+        color: $highlight;
+    }
+
+}
+
+.links {
+    padding: 0;
+    margin: 0;
+    top: -120vh;
+    position: absolute;
+    background-color: var(--trans);
+    width: 100vw;
+    height: 0;
+    display: block;
+    justify-content: space-around;
+    align-items: center;
+    transition: 800ms ease-in-out;
+}
+
+#top-toggle {
+    position: absolute;
+    top: -50px;
+}
+
+#top-toggle:checked + .links {
+    transform: translateY(125vh);
+    height: 100vh;
+}
+
+#top-toggle:checked + .links a {
+    padding-top: 3em;
+}
+
+.links li {
+    list-style: none;
+}
+
+.links a {
+    text-transform: uppercase;
+    display: block;
+    padding: 0;
+    font-size: 18px;
+    color: var(--foreground);
+    text-decoration: none;
+    transition: 300ms linear;
+}
+
+.links li a {
+    transition: 300ms linear;
+}
+
+.links li a:hover {
+    color: $highlight;
+    text-decoration: none;
+}
