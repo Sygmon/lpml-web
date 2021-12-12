@@ -27,17 +27,21 @@
 }
 
 .links {
+    float: none;
+    position: absolute;
+    bottom: 100vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: var(--trans);
+    z-index: 9;
     padding: 0;
     margin: 0;
-    top: -120vh;
-    position: absolute;
-    background-color: var(--trans);
     width: 100vw;
-    height: 0;
-    display: block;
-    justify-content: space-around;
-    align-items: center;
-    transition: 800ms ease-in-out;
+    height: 100vh;
+    display: flex;
+    top: 3.8em;
+    box-sizing: border-box;
+    transition: all 0.5s ease-in-out;
 }
 
 #top-toggle {
@@ -46,12 +50,7 @@
 }
 
 #top-toggle:checked + .links {
-    transform: translateY(125vh);
-    height: 100vh;
-}
-
-#top-toggle:checked + .links a {
-    padding-top: 3em;
+    transform: translateY(100vh);
 }
 
 .links li {
@@ -75,4 +74,19 @@
 .links li a:hover {
     color: $highlight;
     text-decoration: none;
+}
+
+.label-button {
+    border: none;
+    background-color: transparent;
+    color: var(--foreground);
+    font-size: 18px;
+    padding-left: 0.8em;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 300ms linear;
+}
+
+.label-button:hover{
+    color: $highlight;
 }
