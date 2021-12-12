@@ -48,7 +48,7 @@ function MenuButton() {
                     </a>
                 </li>
             </ul>
-            <label for="top-toggle" className="label-button">
+            <label for="top-toggle" className="menu-button">
                 <FaBars />
             </label>
         </>
