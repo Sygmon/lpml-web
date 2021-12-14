@@ -26,10 +26,6 @@ function App() {
 		"--top-bar",
 		darkTheme ? "#1d2a31" : "#d4be98"
 	);
-	root?.style.setProperty(
-		"--trans",
-		darkTheme ? "rgba(0, 0, 0, 0.5)" : "rgba(255, 255, 255, 0.5)"
-	);
   }, [darkTheme]);
 
   return (
