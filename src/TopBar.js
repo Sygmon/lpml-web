@@ -1,5 +1,4 @@
 import { MenuButton } from "./Top-menu.js";
-import { Link } from "react-router-dom";
 import './App.scss';
 import './scss/Topbar.scss';
 
@@ -13,9 +12,9 @@ function TopBar(props) {
             >
                 {props.text}
         </button>
-        <Link to="/" className="menu-button">
+        <a href="/" className="menu-button">
             Lpml Icon Here
-        </Link>
+        </a>
     </nav>
   );
 }

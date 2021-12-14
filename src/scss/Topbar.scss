@@ -14,7 +14,7 @@
         background-color: transparent;
         color: var(--foreground);
         font-size: 18px;
-        padding-left: 0.8em;
+        padding-left: 1em;
         text-align: center;
         text-transform: uppercase;
         transition: 300ms linear;
@@ -39,7 +39,7 @@
     display: flex;
     top: 3.5em;
     left: -25vw;
-    transition: all 0.6s ease-out;
+    transition: all 400ms ease-out;
 }
 
 #top-toggle {
