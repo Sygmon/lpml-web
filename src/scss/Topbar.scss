@@ -33,11 +33,11 @@
     background-color: var(--menu-bg);
     padding: 0;
     margin: 0;
-    width: 20vw;
+    width: 13em;
     height: 100vh;
     display: flex;
     top: 3.5em;
-    left: -20vw;
+    left: -13em;
     transition: all 200ms ease-out;
     backdrop-filter: blur(5px);
 }
@@ -52,7 +52,7 @@
 }
 
 #top-toggle:checked + .links {
-    transform: translateX(20vw);
+    transform: translateX(13em);
 }
 
 .links li {
