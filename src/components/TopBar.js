@@ -1,7 +1,7 @@
 import { MenuButton } from "./Top-menu.js";
 import { Link } from "react-router-dom";
 import '../scss/App.scss';
-import '../scss/Topbar.scss';
+import '../scss/Sidebar.scss';
 
 function TopBar(props) {
   return (
