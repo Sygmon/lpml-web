@@ -36,9 +36,9 @@
         overflow: hidden;
     }
 
-    width: 100vw;
+    width: calc(100vw - 12em);
     position: relative;
-    padding-top: 3em;
+	left: 12em;
     background-color: var(--background);
     display: flex;
 }

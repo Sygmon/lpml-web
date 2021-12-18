@@ -2,7 +2,7 @@
     $background: #1d2a31;
     $foreground: #d4be98;
     $top-bar: #1d2a31;
-    $menu-bg: rgba(0, 0, 0, 0.6);
+    $menu-bg: #1d2a31;
 }
 $highlight: #097c99;
 
@@ -26,10 +26,4 @@ $highlight: #097c99;
     height: 100vh;
     text-align: center;
     background-color: var(--background);
-}
-
-.MainPage {}
-
-#top-toggle:checked + .MainPage {
-    -webkit-filter: blur(0.1em);
 }

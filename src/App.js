@@ -5,6 +5,7 @@ import {
 import './scss/App.scss';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import TopBar from './components/TopBar.js';
+import Menu from './components/Bar.js';
 import MainPage from './components/MainPage.js';
 import React, { useState, useEffect } from "react";
 
@@ -28,13 +29,13 @@ function App() {
 	);
 	root?.style.setProperty(
 		"--menu-bg",
-		darkTheme ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.6)"
+		darkTheme ? "#1d2a31" : "#d4be98"
 	);
   }, [darkTheme]);
 
   return (
 	<div className="App">
-		<TopBar 
+		<Menu 
 		    themeSwitcher={() => setDarkTheme(!darkTheme)}
 		    text={darkTheme ? <FaSun/> : <FaMoon/>}
 		  />
