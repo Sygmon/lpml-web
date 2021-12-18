@@ -1,7 +1,6 @@
-import { FaQuestionCircle } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import '../scss/App.scss';
-import '../scss/Top-fireship.scss';
+import '../scss/Sidebar.scss';
 
 function Menu(props) {
     return (
@@ -58,7 +57,7 @@ function Menu(props) {
 					</li>
 					<li>
 							<Link to="/" className="bottom">
-									Gimme the god forsaken svg already
+									Gimme the god forsaken svg already (home)
         					</Link>
 					</li>
 				</ul>
