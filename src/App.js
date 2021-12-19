@@ -17,19 +17,15 @@ function App() {
 	const root = document.documentElement;
 	root?.style.setProperty(
 		"--background",
-		darkTheme ? "#1d2a31" : "#d4be98"
+		darkTheme ? "#2e3440" : "#d8dee9"
 	);
 	root?.style.setProperty(
 		"--foreground",
-		darkTheme ? "#deb498" : "#1d2a31"
-	);
-	root?.style.setProperty(
-		"--top-bar",
-		darkTheme ? "#1d2a31" : "#d4be98"
+		darkTheme ? "#d8dee9" : "#2e3440"
 	);
 	root?.style.setProperty(
 		"--menu-bg",
-		darkTheme ? "#1d2a31" : "#d4be98"
+		darkTheme ? "#4c566a" : "#eceff4"
 	);
   }, [darkTheme]);
 

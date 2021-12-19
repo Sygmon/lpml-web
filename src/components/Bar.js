@@ -8,42 +8,42 @@ function Menu(props) {
 			<nav className="top-bar">
 				<ul className="links">
             	    <li>
-							<Link to="/about">
+							<Link className="menu-text" to="/about">
 									About
 							</Link>
             	    </li>
             	    <li>
-							<Link to="/community">
+							<Link className="menu-text" to="/community">
 									Community
             	        	</Link>
             	    </li>
             	    <li>
-		    	             <Link to="/education">
+		    	             <Link className="menu-text" to="/education">
 									Education quality
    		    	             </Link>
             	    </li>
             	    <li>
-		    	             <Link to="/for-students">
+		    	             <Link className="menu-text" to="/for-students">
 									For students
    		    	             </Link>
             	    </li>
             	    <li>
-		    	             <Link to="/for-entrants">
+		    	             <Link className="menu-text" to="/for-entrants">
 									For entrants
    		    	             </Link>
             	    </li>
             	    <li>
-		    	             <Link to="/for-parents">
+		    	             <Link className="menu-text" to="/for-parents">
 									For parents
    		    	             </Link>
             	    </li>
             	    <li>
-		    	             <Link to="/public-info">
+		    	             <Link className="menu-text" to="/public-info">
 									Public info
    		    	             </Link>
             	    </li>
             	    <li>
-		    	             <Link to="/for-grads">
+		    	             <Link className="menu-text" to="/for-grads">
 									For graduates
    		    	             </Link>
             	    </li>
@@ -56,7 +56,7 @@ function Menu(props) {
         					</button>
 					</li>
 					<li>
-							<Link to="/" className="bottom">
+							<Link className="menu-text" to="/" className="bottom">
 									Gimme the god forsaken svg already (home)
         					</Link>
 					</li>
