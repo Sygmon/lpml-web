@@ -24,28 +24,38 @@ $highlight: #a3be8c;
 
     width: 100vw;
     position: relative;
-    height: 100vh;
+    height: calc(100vh + 3.5em);
     text-align: center;
     background-color: var(--background);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
 		body {
 				font-size: 10px;
 
 		}
 
-		.Applet {
-				left: 2em;
-				width: calc(100vw - 2em);
-		}
-
 		.top-bar {
-				width: 12em;
+				width: 6em;
+
+				.text {
+						display: none;
+				}
+
+				.icon {
+						display: block;
+				}
 		}
 
 		.links {
-				width: 12em;
+				width: 6em;
 				left: 0;
+		}
+
+		.Applet {
+				.lorem {
+						left: 2em;
+						width: calc(100vw - 2em);
+				}
 		}
 }

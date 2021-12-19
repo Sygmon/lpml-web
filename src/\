@@ -21,9 +21,6 @@
         color: var(--foreground);
         font-size: 1rem;
         overflow: hidden;
-		width: calc(100vw - 16em);
-		left: 14em;
-		position: relative;
     }
 
 	h2 {
@@ -32,6 +29,7 @@
 
     width: 100vw;
     position: relative;
+	left: 6em;
     background-color: var(--background);
     display: flex;
 }
