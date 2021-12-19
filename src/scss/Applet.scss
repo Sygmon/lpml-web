@@ -5,40 +5,30 @@
         display: flex;
     }
     
-    .img {
-        padding: 1em 1em 1em 0.5em;
-        border-radius: 8px; 
-        border-radius: 1.2em;
-    }
-    
     .button {
-        background-color: transparent;
         border: none;
-        height: 32px;
-        border-radius: 8px; 
         color: var(--foreground);
-        padding: 0.4em calc(0.5em + 8px) 0.4em 1em;
         text-align: center;
         transition: 200ms linear; 
     }
     
     .button:hover {
-        background-color: $highlight;
+			color: $highlight;
     }
     
     .lorem {
         color: var(--foreground);
         font-size: 1rem;
-        float: left;
-        padding-right: 1em;
-        padding-bottom: 1em;
-        height: 8em;
         overflow: hidden;
     }
 
-    width: calc(100vw - 12em);
+	h2 {
+		margin-top: 2em;
+	}
+
+    width: calc(100vw - 14em);
     position: relative;
-	left: 12em;
+	left: 13em;
     background-color: var(--background);
     display: flex;
 }

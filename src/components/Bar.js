@@ -47,18 +47,18 @@ function Menu(props) {
 									For graduates
    		    	             </Link>
             	    </li>
-					<li>
+					<li className="bottom">
+						<div>
 							<button 
         					    className="menu-button bottom"
         					    onClick={props.themeSwitcher}
         					    >
         					        {props.text}
         					</button>
-					</li>
-					<li>
 							<Link className="menu-text" to="/" className="bottom">
 									Gimme the god forsaken svg already (home)
         					</Link>
+						</div>
 					</li>
 				</ul>
 			</nav>

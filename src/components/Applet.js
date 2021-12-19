@@ -7,13 +7,6 @@ function Applet(props) {
     <div className="Applet">
       <div className="flex">
         <div>
-          <img
-            src="https://picsum.photos/200/300?random=1"
-            alt="tmp"
-            className="img"
-            />
-        </div>
-        <div>
           <h2>Lorem Ipsum</h2>
           <Lorem className="lorem"/>
           <Link className="button" to={props.link}>
