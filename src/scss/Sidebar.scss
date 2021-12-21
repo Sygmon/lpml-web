@@ -5,7 +5,7 @@
     transition: all 200ms ease-out;
 
     width: $bar-width;
-    height: calc(100vh + 3.5em);
+    height: 100vh;
     z-index: 10;
     box-shadow: 0.1em var(--foreground);
     margin: 0;
@@ -72,13 +72,14 @@
                 width: 50%;
                 aspect-ratio: 1/1;
                 margin: 0;
-                padding: 25%;
+                padding: 1rem;
             }
         }
     }
 
     @include small-screen {
         width: 6em;
+		padding-top: 0;
     }
 
     .menu-button {
@@ -119,8 +120,8 @@
                 margin: 1rem;
                 @include small-screen {
                     display: block;
-                    height: 3em;
-                    width: 3em;
+                    height: 3rem;
+                    width: 3rem;
                     margin: 0;
                 }
             }
