@@ -1,34 +1,30 @@
 @import "./App.scss";
 
 .Applet {
-    .flex {
-        display: flex;
-    }
-    
     .button {
-		font-size: 1rem;
+        font-size: 1rem;
         border: none;
         color: var(--foreground);
         text-align: center;
-        transition: 200ms linear; 
+        transition: 200ms linear;
     }
-    
+
     .button:hover {
-			color: $highlight;
+        color: var(--highlight);
     }
-    
+
     .lorem {
         color: var(--foreground);
         font-size: 1rem;
         overflow: hidden;
-		width: calc(100vw - 16em);
-		left: 14em;
-		position: relative;
+        width: calc(100vw - 20rem);
+        left: 18em;
+        position: relative;
     }
 
-	h2 {
-		margin-top: 2em;
-	}
+    h2 {
+        margin-top: 2em;
+    }
 
     width: 100vw;
     position: relative;

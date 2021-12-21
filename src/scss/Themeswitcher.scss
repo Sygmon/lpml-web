@@ -1,0 +1,54 @@
+@import "./App.scss";
+
+.theme-switcher {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    .current {
+        position: absolute;
+        display: block;
+        margin: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+    }
+    .dropdown {
+        transition: 200ms;
+
+        .options {
+            transition: 200ms;
+            display: flex;
+            flex-direction: row;
+            .themeOption {
+                display: block;
+
+                // Transparent
+                filter: opacity(0%);
+
+                // Slides out
+                margin: 0.5rem;
+                margin-right: 0;
+                margin-left: 0;
+                width: 0;
+                transition: 200ms;
+
+                &:hover {
+                    color: var(--highlight);
+                }
+            }
+        }
+    }
+    &:hover {
+        .dropdown {
+            .options {
+                margin-left: 1rem;
+                .themeOption {
+                    // Visible + slides out
+                    filter: opacity(100%);
+                    width: 1rem;
+                    margin: 0.5rem;
+                }
+            }
+        }
+    }
+}

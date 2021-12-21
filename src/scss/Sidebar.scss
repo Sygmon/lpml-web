@@ -1,88 +1,138 @@
 @import "./App.scss";
 
-.top-bar {
-	width: 12em;
-	height: calc(100vh + 3.5em);
-	z-index: 10;
-	box-shadow: 0.1em var(--foreground);
-	margin:0;
-	padding: 0;
-	position: fixed;
-	display: flex;
-	flex-direction: column;
-	background-color: var(--menu-bg);
+.navbar {
+    $bar-width: 16em;
+    transition: all 200ms ease-out;
 
-	.menu-button {
-		border: none;
-		margin-right: 0.8em;
-		background-color: transparent;
-		color: var(--foreground);
-		font-size: 1.1rem;
-		padding-top: 1em;
-		text-align: center;
-		text-transform: uppercase;
-		transition: 200ms linear;
-	}
+    width: $bar-width;
+    height: calc(100vh + 3.5em);
+    z-index: 10;
+    box-shadow: 0.1em var(--foreground);
+    margin: 0;
+    padding: 0;
+    padding-top: 6rem;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--menu-bg);
 
-	.menu-button:hover{
-		color: $highlight;
-	}
+    .search {
+        margin: 0.5rem;
+        height: 3rem;
+        border: solid var(--background) 0.25rem;
+        display: flex;
+        flex-direction: row;
+        color: var(--background);
 
-	.text {
-		display: block;
-	}
+        input {
+            all: unset;
+            display: block;
+            height: 100%;
+            width: 100%;
+            border: none;
+            background-color: var(--foreground);
+        }
+        .icon {
+            display: flex;
+            width: 2.5rem;
+            height: 2.5rem;
+            padding: 0.25rem;
 
-	.icon {
-		display: none;
-	}
+            align-items: center;
+            justify-content: center;
 
-	.li-container {
-		display: flex;
-		margin: 0;
-	}
+            background-color: var(--foreground);
+        }
+    }
 
-	.bottom {
-			margin-top: auto;
-			margin-bottom: auto;
-	}
+    .links {
+        float: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--menu-bg);
+        padding: 0;
+        margin: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        transition: all 200ms ease-out;
+        .menu-link {
+            text-transform: uppercase;
+            padding: 0;
+            font-size: 1rem;
+            color: var(--foreground);
+            text-decoration: none;
+            transition: 200ms linear;
+            padding-top: 1em;
 
-}
+            @include small-screen {
+                display: block;
+                width: 50%;
+                aspect-ratio: 1/1;
+                margin: 0;
+                padding: 25%;
+            }
+        }
+    }
 
-.links {
-	float: none;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background-color: var(--menu-bg);
-	padding: 0;
-	margin: 0;
-	left: 0;
-	width: 12em;
-	height: 100vh;
-	transition: all 200ms ease-out;
-}
+    @include small-screen {
+        width: 6em;
+    }
 
-.links li {
-	list-style: none;
-	float: left;
-}
+    .menu-button {
+        border: none;
+        background-color: transparent;
+        color: var(--foreground);
+        font-size: 1.1rem;
+        padding-top: 1em;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 200ms linear;
+    }
 
-.links a {
-	text-transform: uppercase;
-	padding: 0;
-	font-size: 1rem;
-	color: var(--foreground);
-	text-decoration: none;
-	transition: 200ms linear;
-	padding-top: 1em;
-}
+    .text {
+        display: block;
 
-.links li a {
-	transition: 200ms linear;
-}
+        @include small-screen {
+            display: none;
+        }
+    }
 
-.links li a:hover {
-	color: $highlight;
-	text-decoration: none;
+    .menu-item {
+        width: 100%;
+        .li-container {
+            display: flex;
+            margin: 0;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+
+            &:hover {
+                color: var(--highlight);
+            }
+
+            .icon {
+                display: block;
+                margin: 1rem;
+                @include small-screen {
+                    display: block;
+                    height: 3em;
+                    width: 3em;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .bottom {
+        margin-top: auto;
+        margin-bottom: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }

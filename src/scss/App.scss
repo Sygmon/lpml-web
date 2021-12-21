@@ -1,9 +1,9 @@
-#root {
-    $background: #2e3440;
-    $foreground: #d8dee9;
-    $menu-bg: #4c566a;
+:root {
+    --background: #2e3440;
+    --foreground: #d8dee9;
+    --menu-bg: #4c566a;
+    --highlight: #a3be8c;
 }
-$highlight: #a3be8c;
 // Old website green:
 // $highlight: #59b331;
 
@@ -11,12 +11,12 @@ $highlight: #a3be8c;
     h2 {
         color: var(--foreground);
     }
-    
+
     a {
         text-decoration: none;
         color: var(--foreground);
     }
-    
+
     img {
         background-size: cover;
         background-repeat: no-repeat;
@@ -30,32 +30,20 @@ $highlight: #a3be8c;
 }
 
 @media only screen and (max-width: 800px) {
-		body {
-				font-size: 10px;
+    body {
+        font-size: 10px;
+    }
 
-		}
+    .Applet {
+        .lorem {
+            left: 2em;
+            width: calc(100vw - 2em);
+        }
+    }
+}
 
-		.top-bar {
-				width: 6em;
-
-				.text {
-						display: none;
-				}
-
-				.icon {
-						display: block;
-				}
-		}
-
-		.links {
-				width: 6em;
-				left: 0;
-		}
-
-		.Applet {
-				.lorem {
-						left: 2em;
-						width: calc(100vw - 2em);
-				}
-		}
+@mixin small-screen {
+    @media only screen and (max-width: 800px) {
+        @content;
+    }
 }
