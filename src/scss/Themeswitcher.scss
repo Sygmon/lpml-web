@@ -51,4 +51,18 @@
             }
         }
     }
+	@include small-screen {
+        &:hover {
+            .dropdown {
+                .options {
+                    .themeOption {
+                        // Visible + slides out
+                        filter: opacity(100%);
+                        width: 1rem;
+                        margin: 0.5rem;
+                    }
+                }
+            }
+		}
+	}
 }

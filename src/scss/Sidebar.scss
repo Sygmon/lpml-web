@@ -43,6 +43,9 @@
 
             background-color: var(--foreground);
         }
+		@include small-screen {
+				display: none;
+		}
     }
 
     .links {
@@ -70,7 +73,6 @@
             @include small-screen {
                 display: block;
                 width: 50%;
-                aspect-ratio: 1/1;
                 margin: 0;
                 padding: 1rem;
             }
@@ -78,7 +80,7 @@
     }
 
     @include small-screen {
-        width: 6em;
+		width: 6em;
 		padding-top: 0;
     }
 
@@ -86,9 +88,9 @@
         border: none;
         background-color: transparent;
         color: var(--foreground);
-        font-size: 1.1rem;
+        font-size: 1.5rem;
         padding-top: 1em;
-        text-align: center;
+        text-align: left;
         text-transform: uppercase;
         transition: 200ms linear;
     }
@@ -120,8 +122,8 @@
                 margin: 1rem;
                 @include small-screen {
                     display: block;
-                    height: 3rem;
-                    width: 3rem;
+                    height: 1.5rem;
+                    width: 1.5rem;
                     margin: 0;
                 }
             }
@@ -135,5 +137,45 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+		@include small-screen {
+		    margin-bottom: 3rem;
+		}
+    }
+
+	.drawer-label {
+		display: none;
+		font-size: 1.1em;
+		margin-left: 1.5em;
+		transition: 200ms linear;
+	}
+
+	#drawer {
+		position: absolute;
+		top: -20em;
+	}
+
+
+	#drawer:checked +.text {
+		display: block;
+	}
+
+    #drawer:checked + .drawer-label {
+	    transform: rotate(180deg);
+    }
+
+	#drawer:checked {}
+
+	@include small-screen {
+		.drawer-label {
+		    display: block;
+		}
+
+		#drawer:checked + .links{
+			width: 100vw;
+    	}
+
+		#drawer:checked + .search {
+			display: flex;
+		}
     }
 }
