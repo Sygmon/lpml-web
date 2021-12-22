@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import {
+    FaArrowRight,
     FaPlus,
     FaComments,
     FaBook,
@@ -38,11 +39,26 @@ function MenuItem(props) {
     );
 }
 
+function DrawerButton() {
+    return (
+	    <li className="menu-item">
+			<div className="li-container">
+	            <label for="drawer" className="drawer-label">
+	                <FaArrowRight className="icon menu-button"/>
+	            </label>
+			</div>
+	    </li>
+
+	)
+}
+
 function Menu(props) {
     return (
         <>
             <nav className="navbar">
+		        <input id="drawer" type="checkbox"/>
                 <ul className="links">
+				    <DrawerButton/>
                     <SearchBar />
                     <MenuItem to="/about" icon={<FaPlus className="icon" />}>
                         About
@@ -90,10 +106,12 @@ function Menu(props) {
                         For graduates
                     </MenuItem>
                     <li className="bottom">
-                        <button className="menu-button">
+                        <button className="menu-button text">
                             <Switcher />
                         </button>
-                        <Link to="/" className="bottom">
+						{/*TODO: somebody please make this link a menu item
+						 with the LPML icon. I don't wanna */}
+                        <Link to="/">
                             Gimme the god forsaken svg already (home)
                         </Link>
                     </li>
