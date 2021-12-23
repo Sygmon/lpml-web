@@ -32,7 +32,7 @@ function MenuItem(props) {
             <Link className="menu-link" to={props.to}>
                 <div className="li-container">
                     {props.icon}
-                    <span className="text">{props.children}</span>
+                    <div className="text">{props.children}</div>
                 </div>
             </Link>
         </li>
@@ -56,7 +56,7 @@ function Menu(props) {
     return (
         <>
             <nav className="navbar">
-		        <input id="drawer" type="checkbox"/>
+				<input id="drawer" type="checkbox"/>
                 <ul className="links">
 				    <DrawerButton/>
                     <SearchBar />

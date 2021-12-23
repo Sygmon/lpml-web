@@ -16,6 +16,17 @@
     flex-direction: column;
     background-color: var(--menu-bg);
 
+	.drawer-label {
+		display: none;
+		font-size: 1.1em;
+		margin-left: 1.5em;
+		transition: 200ms linear;
+	}
+
+	#drawer {
+			display: none;
+	}
+
     .search {
         margin: 0.5rem;
         height: 3rem;
@@ -43,9 +54,33 @@
 
             background-color: var(--foreground);
         }
-		@include small-screen {
-				display: none;
-		}
+    }
+
+    .menu-item {
+        width: 100%;
+        .li-container {
+            display: flex;
+            margin: 0;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+
+            &:hover {
+                color: var(--highlight);
+            }
+
+            .icon {
+                display: block;
+                margin: 1rem;
+                @include small-screen {
+                    display: block;
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    margin: 0;
+                }
+            }
+        }
     }
 
     .links {
@@ -79,7 +114,33 @@
         }
     }
 
+	#drawer:checked + .links{
+		width: 100vw;
+    }
+
+	#drawer:checked + * .text {
+		display: block;
+	}
+
+	#drawer:checked + * .search {
+		display: flex;
+	}
+
+
     @include small-screen {
+		.drawer-label {
+		    display: block;
+		}
+
+		.text {
+		    display: none;
+			margin-left: 1em;
+		}
+
+		.search {
+		    display: none;
+		}
+
 		width: 6em;
 		padding-top: 0;
     }
@@ -95,40 +156,6 @@
         transition: 200ms linear;
     }
 
-    .text {
-        display: block;
-
-        @include small-screen {
-            display: none;
-        }
-    }
-
-    .menu-item {
-        width: 100%;
-        .li-container {
-            display: flex;
-            margin: 0;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-start;
-            width: 100%;
-
-            &:hover {
-                color: var(--highlight);
-            }
-
-            .icon {
-                display: block;
-                margin: 1rem;
-                @include small-screen {
-                    display: block;
-                    height: 1.5rem;
-                    width: 1.5rem;
-                    margin: 0;
-                }
-            }
-        }
-    }
 
     .bottom {
         margin-top: auto;
@@ -139,43 +166,6 @@
         justify-content: center;
 		@include small-screen {
 		    margin-bottom: 3rem;
-		}
-    }
-
-	.drawer-label {
-		display: none;
-		font-size: 1.1em;
-		margin-left: 1.5em;
-		transition: 200ms linear;
-	}
-
-	#drawer {
-		position: absolute;
-		top: -20em;
-	}
-
-
-	#drawer:checked +.text {
-		display: block;
-	}
-
-    #drawer:checked + .drawer-label {
-	    transform: rotate(180deg);
-    }
-
-	#drawer:checked {}
-
-	@include small-screen {
-		.drawer-label {
-		    display: block;
-		}
-
-		#drawer:checked + .links{
-			width: 100vw;
-    	}
-
-		#drawer:checked + .search {
-			display: flex;
 		}
     }
 }
