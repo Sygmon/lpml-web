@@ -20,7 +20,7 @@
 		display: none;
 		font-size: 1.1em;
 		margin-left: 1.5em;
-		transition: 200ms linear;
+		transition: 200ms ease-out;
 	}
 
 	#drawer {
@@ -102,7 +102,7 @@
             font-size: 1rem;
             color: var(--foreground);
             text-decoration: none;
-            transition: 200ms linear;
+            transition: 200ms ease-out;
             padding-top: 1em;
 
             @include small-screen {
@@ -117,13 +117,22 @@
 	#drawer:checked + .links{
 		width: 100vw;
     }
-
-	#drawer:checked + * .text {
+	
+	#drawer:checked + .links * .text {
 		display: block;
 	}
 
 	#drawer:checked + * .search {
 		display: flex;
+	}
+
+	#drawer:checked + .links * .drawer-label {
+		transform: translateX(88vw);
+	}
+
+	#drawer:checked + * .menu-link {
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 
@@ -153,7 +162,7 @@
         padding-top: 1em;
         text-align: left;
         text-transform: uppercase;
-        transition: 200ms linear;
+        transition: 200ms ease-out;
     }
 
 

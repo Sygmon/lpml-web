@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import {
-    FaArrowRight,
+    FaBars,
     FaPlus,
     FaComments,
     FaBook,
@@ -44,7 +44,7 @@ function DrawerButton() {
 	    <li className="menu-item">
 			<div className="li-container">
 	            <label for="drawer" className="drawer-label">
-	                <FaArrowRight className="icon menu-button"/>
+	                <FaBars className="icon menu-button"/>
 	            </label>
 			</div>
 	    </li>
