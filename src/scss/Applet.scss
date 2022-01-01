@@ -1,6 +1,6 @@
 @import "./App.scss";
 
-.Applet {
+.NewsBlock {
     .button {
         font-size: 1rem;
         border: none;
@@ -26,8 +26,12 @@
         margin-top: 2em;
     }
 
-    width: 100vw;
+    width: auto;
     position: relative;
     background-color: var(--background);
-    display: flex;
+    display: grid;
+    margin-left: 16em;
+    @include small-screen {
+        margin-left: 6em;
+    }
 }

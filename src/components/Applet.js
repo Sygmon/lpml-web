@@ -1,27 +1,15 @@
 import "../scss/App.scss";
 import { Link } from "react-router-dom";
 
-function Applet(props) {
+// TODO: make a netflix-like news element
+// (rise on top of others on hover)
+// TODO: make s news grid
+function NewsBlock(props) {
     return (
-        <div className="Applet">
-            <div className="lorem">
-                <h2>Lorem Ipsum</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
-                </p>
-                <Link className="button" to={props.link}>
-                    Read more
-                </Link>
-            </div>
+        <div className="NewsBlock">
+
         </div>
     );
 }
 
-export default Applet;
+export default NewsBlock;
