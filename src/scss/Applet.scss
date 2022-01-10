@@ -4,23 +4,24 @@
     background-color: var(--background);
 
     position: relative;
-    width: calc(100vw - 17em);
+    width: calc(100vw - 16.5em);
+    height: 100vh;
     width: auto;
     display: grid;
     flex-wrap: wrap;
 
-    grid-auto-rows: 1em;
+    grid-auto-rows: auto;
     grid-auto-columns: auto;
-    grid-gap: 0.1em;;
+    grid-column-gap: 0.5em;
+    grid-row-gap: 0.5em;
 
-    margin-left: 17em;
+    margin-left: 16.5em;
     @include small-screen {
-        width: calc(100vw - 7em);
-        margin-left: 7em;
+        width: calc(100vw - 6.5em);
+        margin-left: 6.5em;
     }
 
     .link-container {
-        margin-top: 1em;
         transition: 200ms linear;
         position: relative;
         display: block;
