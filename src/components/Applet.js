@@ -12,9 +12,14 @@ function ArticleLink(props) {
             style={{
                 gridColumn: `${props.column}`,
                 gridRow: `${props.row}`,
-                backgroundImage: `url(${props.img})`
             }}
         >
+           <div
+               className="background"
+            style={{
+                backgroundImage: `url(${props.img})`
+            }}
+           />
            <div className="link">
                 Hello!
            </div>
