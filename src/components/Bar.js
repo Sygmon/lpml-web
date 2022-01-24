@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import {
     FaBars,
+    FaHome,
     FaPlus,
     FaComments,
     FaBook,
@@ -60,6 +61,9 @@ function Menu(props) {
                 <ul className="links">
 				    <DrawerButton/>
                     <SearchBar />
+                    <MenuItem to="/" icon={<FaHome className="icon" />}>
+                        Home
+                    </MenuItem>
                     <MenuItem to="/about" icon={<FaPlus className="icon" />}>
                         About
                     </MenuItem>
