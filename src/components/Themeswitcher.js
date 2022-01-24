@@ -4,7 +4,7 @@ import { FaBrush } from "react-icons/fa";
 import "../scss/Themeswitcher.scss";
 
 export function Switcher(props) {
-    const [theme, setTheme] = useState(0);
+    const [gtheme, setTheme] = useState(0);
 
     const selectTheme = (theme) => {
         setTheme(theme);
@@ -39,7 +39,7 @@ export function Switcher(props) {
                 <ul className="options">
                     {themes.map((theme, index) => (
                         <li
-                            className="themeOption"
+                            className={gtheme === index ? "themeOption selected" : "themeOption"}
                             onClick={() => selectTheme(index)}
                         >
                             {theme.icon}

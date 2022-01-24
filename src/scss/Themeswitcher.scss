@@ -32,7 +32,7 @@
                 width: 0;
                 transition: 200ms;
 
-                &:hover {
+                &:hover, &.selected {
                     color: var(--highlight);
                 }
             }
