@@ -6,6 +6,9 @@
 }
 // Old website green:
 // $highlight: #59b331;
+html, body {
+    background-color: var(--background);
+}
 
 .App {
     h2 {
