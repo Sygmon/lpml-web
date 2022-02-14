@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { themes } from "./themes.js";
+import themes from "./themes.js";
 import { FaBrush } from "react-icons/fa";
 import "../scss/Themeswitcher.scss";
 
-export function Switcher(props) {
+export default function Switcher(props) {
     const [gtheme, setTheme] = useState(0);
 
     const selectTheme = (theme) => {

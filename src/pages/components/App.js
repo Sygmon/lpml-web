@@ -1,10 +1,10 @@
+import * as React from "react";
 import { Routes, Route } from "react-router-dom";
-import "./scss/App.scss";
-import Menu from "./components/Bar.js";
-import MainPage from "./components/MainPage.js";
-import React from "react";
+import "../scss/App.scss";
+import Menu from "./Bar.js";
+import MainPage from "./MainPage.js";
 
-function App() {
+export default function App(){
     return (
         <div className="App">
             <Menu />
@@ -12,7 +12,6 @@ function App() {
                 <Route exact path="/" element={<MainPage />} />
             </Routes>
         </div>
-    );
+    )
 }
 
-export default App;

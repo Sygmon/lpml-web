@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Link } from "react-router-dom";
 import {
     FaBars,
@@ -14,7 +15,7 @@ import {
 import "../scss/App.scss";
 import "../scss/Sidebar.scss";
 
-import { Switcher } from "./Themeswitcher.js";
+import Switcher from "./Themeswitcher.js";
 
 function SearchBar(props) {
     // Gonna separate the input into another file
@@ -53,7 +54,9 @@ function DrawerButton() {
 	)
 }
 
-function Menu(props) {
+export { SearchBar, MenuItem, DrawerButton };
+
+export default function Menu(props) {
     return (
         <>
             <nav className="navbar">
@@ -124,7 +127,3 @@ function Menu(props) {
         </>
     );
 }
-/*
- */
-
-export default Menu;

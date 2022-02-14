@@ -1,3 +1,4 @@
+import * as React from "react";
 import "../scss/App.scss";
 import { Link } from "react-router-dom";
 
@@ -27,7 +28,7 @@ function ArticleLink(props) {
     )
 }
 
-function Applet(props) {
+export default function Applet(props) {
     // This will be an API call eventually
     let articles = [];
     for(var i = 0;i<11;i++) {
@@ -105,5 +106,3 @@ function Applet(props) {
         </div>
     );
 }
-
-export default Applet;

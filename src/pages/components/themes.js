@@ -1,6 +1,7 @@
+import * as React from "react";
 import { FaSun, FaMoon, FaBook } from "react-icons/fa";
 
-export const themes = [
+const themes = [
     {
         name: "default",
         icon: <FaBook />,
@@ -32,3 +33,5 @@ export const themes = [
         },
     },
 ];
+
+export default themes;
