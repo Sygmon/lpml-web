@@ -6,13 +6,12 @@ import "../scss/App.scss";
 
 function ArticleLink(props) {
     return (
-        <a
+        <div
             className="link-container"
             href={`/articles/${props.href}`}
             style={{
                 gridColumn: `${props.column}`,
                 gridRow: `${props.row}`,
-                backgroundImage: `url(${props.img})`
             }}
         >
            <div
@@ -24,7 +23,7 @@ function ArticleLink(props) {
            <div className="link">
                 Hello!
            </div>
-        </a>
+        </div>
     )
 }
 
@@ -35,7 +34,7 @@ export default function Applet(props) {
         articles.push(
             {
                 href: `news/${i}`,
-                cover: i < 8 ? "https://picsum.phohrefs/300" : "https://picsum.phohrefs/800"
+                cover: i < 8 ? "https://picsum.photos/300" : "https://picsum.photos/800"
             }
         );
     };
