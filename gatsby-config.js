@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-      title: `Test`,
-    siteUrl: `https://www.yourdomain.tld`
+      title: `lpml-web`,
+    siteUrl: `https://lpml-web.netlify.app`
   },
   plugins: ["gatsby-plugin-netlify-cms", "gatsby-plugin-sass"]
 };
