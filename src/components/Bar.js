@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import {
     FaBars,
     FaHome,
@@ -31,12 +30,12 @@ function SearchBar(props) {
 function MenuItem(props) {
     return (
         <li className="menu-item">
-            <Link className="menu-link" to={props.to}>
+            <a className="menu-link" href={props.href}>
                 <div className="li-container">
                     {props.icon}
                     <div className="text">{props.children}</div>
                 </div>
-            </Link>
+            </a>
         </li>
     );
 }
@@ -64,50 +63,50 @@ export default function Menu(props) {
                 <ul className="links">
 				    <DrawerButton/>
                     <SearchBar />
-                    <MenuItem to="/" icon={<FaHome className="icon" />}>
+                    <MenuItem href="/" icon={<FaHome className="icon" />}>
                         Home
                     </MenuItem>
-                    <MenuItem to="/about" icon={<FaPlus className="icon" />}>
+                    <MenuItem href="/about" icon={<FaPlus className="icon" />}>
                         About
                     </MenuItem>
                     <MenuItem
-                        to="/community"
+                        href="/community"
                         icon={<FaComments className="icon" />}
                     >
                         Community
                     </MenuItem>
                     <MenuItem
-                        to="/education"
+                        href="/education"
                         icon={<FaBook className="icon" />}
                     >
                         Education quality
                     </MenuItem>
                     <MenuItem
-                        to="/for-students"
+                        href="/for-students"
                         icon={<FaPlus className="icon" />}
                     >
                         For students
                     </MenuItem>
                     <MenuItem
-                        to="/for-entrants"
+                        href="/for-entrants"
                         icon={<FaLeanpub className="icon" />}
                     >
                         For entrants
                     </MenuItem>
                     <MenuItem
-                        to="/for-parents"
+                        href="/for-parents"
                         icon={<FaInfo className="icon" />}
                     >
                         For parents
                     </MenuItem>
                     <MenuItem
-                        to="/public-info"
+                        href="/public-info"
                         icon={<FaInfoCircle className="icon" />}
                     >
                         Public info
                     </MenuItem>
                     <MenuItem
-                        to="/for-grads"
+                        href="/for-grads"
                         icon={<FaGraduationCap className="icon" />}
                     >
                         For graduates
@@ -118,9 +117,9 @@ export default function Menu(props) {
                         </button>
 						{/*TODO: somebody please make this link a menu item
 						 with the LPML icon. I don't wanna */}
-                        <Link to="/">
+                        <a href="/">
                             Gimme the god forsaken svg already (home)
-                        </Link>
+                        </a>
                     </li>
                 </ul>
             </nav>

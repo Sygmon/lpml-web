@@ -1,18 +1,18 @@
 import * as React from "react";
 import "../scss/App.scss";
-import { Link } from "react-router-dom";
 
 // TODO: Add text from article instead of hello,
 // add image rendering from articles instead of picsum
 
 function ArticleLink(props) {
     return (
-        <Link
+        <a
             className="link-container"
-            to={`/articles/${props.to}`}
+            href={`/articles/${props.href}`}
             style={{
                 gridColumn: `${props.column}`,
                 gridRow: `${props.row}`,
+                backgroundImage: `url(${props.img})`
             }}
         >
            <div
@@ -24,7 +24,7 @@ function ArticleLink(props) {
            <div className="link">
                 Hello!
            </div>
-        </Link>
+        </a>
     )
 }
 
@@ -34,13 +34,13 @@ export default function Applet(props) {
     for(var i = 0;i<11;i++) {
         articles.push(
             {
-                to: `news/${i}`,
-                cover: i < 8 ? "https://picsum.photos/300" : "https://picsum.photos/800"
+                href: `news/${i}`,
+                cover: i < 8 ? "https://picsum.phohrefs/300" : "https://picsum.phohrefs/800"
             }
         );
     };
 
-    // These are roughly sorted from the most to the least eye-catching tile
+    // These are roughly sorted from the most href the least eye-catching tile
     // Only the first few tiles will be visible on mobile
 
     // I've given up on generating this procedurally for a given screen size
@@ -97,7 +97,7 @@ export default function Applet(props) {
         <div className="Applet">
             {articles.map((article, index) => (
                 <ArticleLink
-                    to={article.to}
+                    href={article.href}
                     row={positions[index].row}
                     column={positions[index].column}
                     img={article.cover}
