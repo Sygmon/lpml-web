@@ -6,7 +6,7 @@ import "../scss/App.scss";
 
 function ArticleLink(props) {
     return (
-        <div
+        <a
             className="link-container"
             href={`/articles/${props.href}`}
             style={{
@@ -23,7 +23,7 @@ function ArticleLink(props) {
            <div className="link">
                 Hello!
            </div>
-        </div>
+        </a>
     )
 }
 
