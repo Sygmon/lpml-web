@@ -8,7 +8,7 @@ public_folder: static/images
 collections:
   - name: 'blog'
     label: 'Blog'
-    folder: 'content/blog'
+    folder: 'static/content/blog'
     create: true
     slug: 'index'
     media_folder: ''
@@ -23,7 +23,7 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'info'
     label: 'Info'
-    folder: 'content/info'
+    folder: 'static/content/info'
     create: true
     slug: 'index'
     media_folder: ''
@@ -31,7 +31,7 @@ collections:
     path: '{{title}}'
     editor:
       preview: true
-    fileds:
+    fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string'}
       - { label: 'Body', name: 'body', widget: 'markdown' }
