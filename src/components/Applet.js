@@ -1,5 +1,6 @@
 import * as React from "react";
 import "../scss/App.scss";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // TODO: Add text from article instead of hello,
 // add image rendering from articles instead of picsum

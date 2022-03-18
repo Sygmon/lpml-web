@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import "../scss/App.scss";
 import Menu from "./Bar.js";
 import MainPage from "./MainPage.js";
