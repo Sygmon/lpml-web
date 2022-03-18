@@ -9,7 +9,6 @@ _SpecRunner.html
 __benchmarks__
 build/
 remote-repo/
-public
 coverage/
 .cache/
 .module-cache
