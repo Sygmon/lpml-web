@@ -1,5 +1,7 @@
 {
-  "name": "tmp-test",
+  "name": "lpml-web",
+  "description": "lpml-web",
+  "author": "Sygmon",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
