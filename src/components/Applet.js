@@ -1,6 +1,5 @@
 import * as React from "react";
 import "../scss/App.scss";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // TODO: Add text from article instead of hello,
 // add image rendering from articles instead of picsum
@@ -97,6 +96,7 @@ export default function Applet(props) {
         <div className="Applet">
             {articles.map((article, index) => (
                 <ArticleLink
+                    key={`${article}${index}`}
                     href={article.href}
                     row={positions[index].row}
                     column={positions[index].column}

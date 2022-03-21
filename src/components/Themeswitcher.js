@@ -38,7 +38,7 @@ export default function Switcher(props) {
             <div className="dropdown">
                 <ul className="options">
                     {themes.map((theme, index) => (
-                        <li
+                        <li key={`${theme}${index}`}
                             className={gtheme === index ? "themeOption selected" : "themeOption"}
                             onClick={() => selectTheme(index)}
                         >
