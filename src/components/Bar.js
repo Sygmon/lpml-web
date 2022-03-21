@@ -31,7 +31,7 @@ function SearchBar(props) {
 function MenuItem(props) {
     return (
         <li key={props.href} className="menu-item">
-            <Link className="menu-link" to={props.href}>
+            <Link className="menu-link" to=`/links${props.href}`>
                 <div className="li-container">
                     {props.icon}
                     <div className="text">{props.children}</div>
