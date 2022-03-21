@@ -13,6 +13,7 @@ import {
 } from "react-icons/fa";
 import "../scss/App.scss";
 import "../scss/Sidebar.scss";
+import { Link } from "react-router-dom";
 
 import Switcher from "./Themeswitcher.js";
 
@@ -29,22 +30,22 @@ function SearchBar(props) {
 
 function MenuItem(props) {
     return (
-        <li className="menu-item">
-            <a className="menu-link" href={props.href}>
+        <li key={props.href} className="menu-item">
+            <Link className="menu-link" to={props.href}>
                 <div className="li-container">
                     {props.icon}
                     <div className="text">{props.children}</div>
                 </div>
-            </a>
+            </Link>
         </li>
     );
 }
 
 function DrawerButton() {
     return (
-	    <li className="menu-item">
+	    <li key="drawer-icon" className="menu-item">
 			<div className="li-container">
-	            <label for="drawer" className="drawer-label">
+	            <label htmlFor="drawer" className="drawer-label">
 	                <FaBars className="icon menu-button"/>
 	            </label>
 			</div>
@@ -111,15 +112,15 @@ export default function Menu(props) {
                     >
                         For graduates
                     </MenuItem>
-                    <li className="bottom">
+                    <li key="home-icon" className="bottom">
                         <button className="menu-button text">
                             <Switcher />
                         </button>
 						{/*TODO: somebody please make this link a menu item
 						 with the LPML icon. I don't wanna */}
-                        <a href="/">
+                        <Link to="/">
                             Gimme the god forsaken svg already (home)
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </nav>

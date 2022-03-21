@@ -96,6 +96,7 @@ export default function Applet(props) {
         <div className="Applet">
             {articles.map((article, index) => (
                 <ArticleLink
+                    key={`${article}${index}`}
                     href={article.href}
                     row={positions[index].row}
                     column={positions[index].column}
