@@ -5,7 +5,7 @@ Pmozil is tired of gatsby not listening to him, so here's a no gatsby branch
 ## Debugging
 To run the app just
 
-> npm run
+> npm start
 
 Also, don't forget to 
 
