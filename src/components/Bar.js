@@ -31,7 +31,7 @@ function SearchBar(props) {
 function MenuItem(props) {
     return (
         <li key={props.href} className="menu-item">
-            <Link className="menu-link" to={`/info${props.href}`}>
+            <Link className="menu-link" to={`${props.href}`}>
                 <div className="li-container">
                     {props.icon}
                     <div className="text">{props.children}</div>
@@ -67,47 +67,47 @@ export default function Menu(props) {
                     <MenuItem href="/" icon={<FaHome className="icon" />}>
                         Home
                     </MenuItem>
-                    <MenuItem href="/about" icon={<FaPlus className="icon" />}>
+                    <MenuItem href="/info/about" icon={<FaPlus className="icon" />}>
                         About
                     </MenuItem>
                     <MenuItem
-                        href="/community"
+                        href="/info/community"
                         icon={<FaComments className="icon" />}
                     >
                         Community
                     </MenuItem>
                     <MenuItem
-                        href="/education"
+                        href="/info/education"
                         icon={<FaBook className="icon" />}
                     >
                         Education quality
                     </MenuItem>
                     <MenuItem
-                        href="/for-students"
+                        href="/info/for-students"
                         icon={<FaPlus className="icon" />}
                     >
                         For students
                     </MenuItem>
                     <MenuItem
-                        href="/for-entrants"
+                        href="/info/for-entrants"
                         icon={<FaLeanpub className="icon" />}
                     >
                         For entrants
                     </MenuItem>
                     <MenuItem
-                        href="/for-parents"
+                        href="/info/for-parents"
                         icon={<FaInfo className="icon" />}
                     >
                         For parents
                     </MenuItem>
                     <MenuItem
-                        href="/public-info"
+                        href="/info/public-info"
                         icon={<FaInfoCircle className="icon" />}
                     >
                         Public info
                     </MenuItem>
                     <MenuItem
-                        href="/for-grads"
+                        href="/info/for-grads"
                         icon={<FaGraduationCap className="icon" />}
                     >
                         For graduates
