@@ -18,12 +18,18 @@ export default function Article(props) {
 
     xhr.onload = function() {
         const data = this.response
-        setArticle(data);
+        if ( ! data.includes("404: Not Found")){
+            let tmp = data.split('\n')
+            tmp.splice(0,4)
+            setArticle(tmp.join('\n'));
+        } else {
+            setArticle("This should be the 404 markdown or something");
+        }
     }
 
     xhr.send();
 
-    /* TODO: good fucking god make a proper 404 page. Markdown looks nice, but when xhr gives a 404, we are fucked*/
+    /* TODO: Good fucking grace do we need a proper 404 page. Markdown looks nice, but when xhr gives a 404, we are fucked*/
 
     return (
         <div className="markdown">
