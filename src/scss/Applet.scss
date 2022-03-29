@@ -71,3 +71,13 @@
         }
     }
 }
+
+.markdown {
+    margin-left: 16.4em !important;
+    width: auto;
+    position: relative;
+    color: var(--foreground) !important;
+    @include small-screen {
+        margin-left: 7.2em !important;
+    }
+}

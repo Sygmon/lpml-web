@@ -11,7 +11,7 @@ html, body {
 }
 
 .App {
-    h2 {
+    h2, span {
         color: var(--foreground);
     }
 
@@ -26,7 +26,7 @@ html, body {
     }
 
     width: 100vw;
-    position: relative;
+    position: absolute;
     height: calc(100vh + 3.5em);
     text-align: center;
     background-color: var(--background);
