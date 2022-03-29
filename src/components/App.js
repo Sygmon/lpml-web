@@ -16,8 +16,6 @@ export default function App(){
                     <Route path="/info/:id" element={<Article group="info"/>}/>
                     <Route path="/articles/news/:id" element={<Article group="news"/>}/>
                     <Route path="/articles/:id" element={<Article group="articles"/>}/>
-                     { /* TODO: MAke a proper 404 page*/ }
-                    <Route path="/*" element={<MainPage/>}/>
                 </Routes>
             </Router>
         </div>
