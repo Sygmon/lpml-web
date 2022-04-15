@@ -26,7 +26,8 @@ export default function Article(props) {
             let match;
             while((match = imgRegex.exec(parsedData))) {
                 let img = match[0];
-                parsedData = parsedData.replace(img, img.slice(0,3) + fullURL + img.slice(3) ))
+                parsedData = parsedData.replace(img, img.slice(0,3) + `${articleURLBase}/${props.group}/` + img.slice(3))
+                console.log(parsedData);
             }
             setArticle(parsedData);
         } else {
