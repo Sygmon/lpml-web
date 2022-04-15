@@ -21,7 +21,14 @@ export default function Article(props) {
         if ( ! data.includes("404: Not Found")){
             let tmp = data.split('\n')
             tmp.splice(0,4)
-            setArticle(tmp.join('\n'));
+            let parsedData = tmp.join('\n');
+            let imgRegex = /\[\]\((?<!http).*\.(png|jpg|jpeg)\)/g
+            let match;
+            while((match = imgRegex.exec(parsedData))) {
+                let img = match[0];
+                parsedData = parsedData.replace(img, img.slice(0,3) + fullURL + img.slice(3) ))
+            }
+            setArticle(parsedData);
         } else {
             setArticle("This should be the 404 markdown or something");
         }
