@@ -1,4 +1,4 @@
-@import "./App.scss";
+@import "./common.scss";
 
 .navbar {
     $bar-width: 16em;
@@ -16,14 +16,14 @@
     flex-direction: column;
     background-color: var(--menu-bg);
 
-	.drawer-label {
+	.drawerlabel {
 		display: none;
 		font-size: 1.1em;
 		margin-left: 1.5em;
 		transition: 200ms ease-out;
 	}
 
-	#drawer {
+	.drawer {
 			display: none;
 	}
 
@@ -56,10 +56,10 @@
         }
     }
 
-    .menu-item {
+    .menuitem {
         width: 100%;
         list-style: none;
-        .li-container {
+        .licontainer {
             display: flex;
             margin: 0;
             flex-direction: row;
@@ -97,7 +97,7 @@
         width: 100%;
         height: 100vh;
         transition: all 200ms ease-out;
-        .menu-link {
+        .menulink {
             text-transform: uppercase;
             padding: 0;
             font-size: 1rem;
@@ -115,30 +115,30 @@
         }
     }
 
-	#drawer:checked + .links{
+	.drawer:checked + .links{
 		width: 100vw;
     }
 	
-	#drawer:checked + .links * .text {
+	.drawer:checked + .links * .text {
 		display: block;
 	}
 
-	#drawer:checked + * .search {
+	.drawer:checked + * .search {
 		display: flex;
 	}
 
-	#drawer:checked + .links * .drawer-label {
+	.drawer:checked + .links * .drawerlabel {
 		transform: translateX(88vw);
 	}
 
-	#drawer:checked + * .menu-link {
+	.drawer:checked + * .menulink {
 		margin-left: auto;
 		margin-right: auto;
 	}
 
 
     @include small-screen {
-		.drawer-label {
+		.drawerlabel {
 		    display: block;
 		}
 
@@ -155,7 +155,7 @@
 		padding-top: 0;
     }
 
-    .menu-button {
+    .menubutton {
         border: none;
         background-color: transparent;
         color: var(--foreground);

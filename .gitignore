@@ -40,3 +40,6 @@ packages/react-devtools-timeline/dist
 
 # Local Netlify folder
 .netlify
+
+# Next
+.next

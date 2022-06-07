@@ -2,13 +2,13 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: static/content/images
+media_folder: public/images
 public_folder: public
 
 collections:
   - name: 'blog'
     label: 'Blog'
-    folder: 'static/content/blog'
+    folder: 'content/blog'
     create: true
     slug: 'index'
     media_folder: ''
@@ -21,9 +21,10 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Cover', name: 'cover', widget: 'image' }
   - name: 'info'
     label: 'Info'
-    folder: 'static/content/info'
+    folder: 'content/info'
     create: true
     slug: 'index'
     media_folder: ''
