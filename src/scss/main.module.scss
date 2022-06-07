@@ -74,4 +74,15 @@
             }
         }
     }
+
+    .logo {
+        position: absolute;
+        bottom: 4rem;
+        right: 1rem;
+        width: 18rem;
+
+        img {
+            width: 100%;
+        }
+    }
 }

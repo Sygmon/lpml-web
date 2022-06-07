@@ -81,7 +81,7 @@ export default function Applet({ articles }) {
     ];
 
     return (
-        <div className={styles.Applet}>
+        <div className={styles.Applet} id="articles_grid_applet">
             {articles.map((article, index) => (
                 <ArticleLink
                     key={`${article}${index}`}
