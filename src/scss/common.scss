@@ -1,0 +1,5 @@
+@mixin small-screen {
+    @media only screen and (max-width: 800px) {
+        @content;
+    }
+}

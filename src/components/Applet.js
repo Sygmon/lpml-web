@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../scss/App.scss";
+import styles from "../scss/Applet.module.scss";
 
 // TODO: Add text from article instead of hello,
 // add image rendering from articles instead of picsum
@@ -7,7 +7,7 @@ import "../scss/App.scss";
 function ArticleLink(props) {
     return (
         <a
-            className="link-container"
+            className={styles.link_container}
             href={`/articles/${props.href}`}
             style={{
                 gridColumn: `${props.column}`,
@@ -15,12 +15,12 @@ function ArticleLink(props) {
             }}
         >
            <div
-               className="background"
+               className={styles.background}
             style={{
                 backgroundImage: `url(${props.img})`
             }}
            />
-           <div className="link">
+           <div className={styles.link}>
                 Hello!
            </div>
         </a>
@@ -93,7 +93,7 @@ export default function Applet(props) {
     ];
 
     return (
-        <div className="Applet">
+        <div className={styles.Applet}>
             {articles.map((article, index) => (
                 <ArticleLink
                     key={`${article}${index}`}

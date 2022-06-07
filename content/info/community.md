@@ -2,7 +2,7 @@
 title: community
 description: Please tell me this worked
 ---
-![](bruh.png)
+![](/images/bruh.png)
 
 My man, this would be ***perfect***
 

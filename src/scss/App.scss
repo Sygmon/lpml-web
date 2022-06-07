@@ -8,6 +8,7 @@
 // $highlight: #59b331;
 html, body {
     background-color: var(--background);
+    margin: 0;
 }
 
 .App {
@@ -42,11 +43,5 @@ html, body {
             left: 2em;
             width: calc(100vw - 2em);
         }
-    }
-}
-
-@mixin small-screen {
-    @media only screen and (max-width: 800px) {
-        @content;
     }
 }
