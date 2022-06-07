@@ -7,7 +7,7 @@ import styles from "../scss/Applet.module.scss";
 function ArticleLink(props) {
     return (
         <a
-            className={styles.link_container}
+            className={styles["link-container"]}
             href={`/articles/${props.href}`}
             style={{
                 gridColumn: `${props.column}`,
