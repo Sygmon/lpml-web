@@ -1,6 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from "next";
-import { getArticles } from "../../../lib/articles";
-import Article from "../../../components/Article";
+import { getArticles } from "../../lib/articles";
+import Article from "../../components/Article";
 
 export default function ArticlePage({ id, content }) {
     return (
@@ -9,7 +9,7 @@ export default function ArticlePage({ id, content }) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getArticles("blog").map(article => `/articles/news/${article.id}`);
+  const paths = getArticles("blog").map(article => `/news/${article.id}`);
   
   return {
     paths,

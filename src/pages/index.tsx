@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         articles.push(
             {
                 title: articlesRaw[i] ? articlesRaw[i].title : null,
-                href: `/articles/news/${articlesRaw[i] && articlesRaw[i].id}`,
+                href: `/news/${articlesRaw[i] && articlesRaw[i].id}`,
                 cover: articlesRaw[i] ? articlesRaw[i].cover : null
             }
         );
