@@ -5,7 +5,8 @@
     transition: all 200ms ease-out;
 
     width: $bar-width;
-    height: 100vh;
+    top: 0;
+    bottom: 0;
     z-index: 10;
     box-shadow: 0.1em var(--foreground);
     margin: 0;
