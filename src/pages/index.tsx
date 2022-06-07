@@ -1,16 +1,18 @@
 import React from "react";
 import { getArticles } from "../lib/articles";
 import MainPage from "../components/MainPage";
+import NewsPage from "../components/NewsPage";
 import { GetStaticProps } from "next";
 import Head from 'next/head'
 
 export default function App({ articles }){
     return (
         <>
-            <MainPage articles={articles} />
             <Head>
                 <title>Lviv Physics and Maths Liceum</title>
             </Head>
+            <MainPage />
+            <NewsPage articles={articles} />
         </>
     )
 }
