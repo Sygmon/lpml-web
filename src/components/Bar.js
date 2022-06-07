@@ -61,7 +61,7 @@ export default function Menu(props) {
     return (
         <>
             <nav className={styles.navbar}>
-				<input className={styles.drawer} type="checkbox"/>
+				<input className={styles.drawer} id="drawer" type="checkbox"/>
                 <ul className={styles.links}>
 				    <DrawerButton/>
                     <SearchBar />
