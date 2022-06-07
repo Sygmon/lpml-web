@@ -20,11 +20,14 @@ export function getArticles(category) {
           title: string;
           description: string;
           category: string;
+          date: string;
+          cover: string;
           content: string;
           id: string,
         };
         article.id = file.replace(/\.md$/, "");
         article.content = parsed.content;
+        article.category = category;
   
         return article;
       });

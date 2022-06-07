@@ -1,44 +1,32 @@
 import * as React from "react";
 import styles from "../scss/Applet.module.scss";
-
-// TODO: Add text from article instead of hello,
-// add image rendering from articles instead of picsum
+import Link from "next/link";
 
 function ArticleLink(props) {
     return (
-        <a
-            className={styles["link-container"]}
-            href={`/articles/${props.href}`}
-            style={{
-                gridColumn: `${props.column}`,
-                gridRow: `${props.row}`,
-            }}
-        >
-           <div
-               className={styles.background}
-            style={{
-                backgroundImage: `url(${props.img})`
-            }}
-           />
-           <div className={styles.link}>
-                Hello!
-           </div>
-        </a>
+        <Link href={props.href}>
+            <span
+                className={styles["link-container"]}
+                style={{
+                    gridColumn: `${props.column}`,
+                    gridRow: `${props.row}`,
+                }}
+            >
+                <div
+                    className={styles.background}
+                    style={{
+                        backgroundImage: `url(${props.img})`
+                    }}
+                />
+                <div className={styles.link}>
+                        {props.title}
+                </div>
+            </span>
+        </Link>
     )
 }
 
-export default function Applet(props) {
-    // This will be an API call eventually
-    let articles = [];
-    for(var i = 0;i<11;i++) {
-        articles.push(
-            {
-                href: `news/${i}`,
-                cover: i < 8 ? "https://picsum.photos/300" : "https://picsum.photos/800"
-            }
-        );
-    };
-
+export default function Applet({ articles }) {
     // These are roughly sorted from the most href the least eye-catching tile
     // Only the first few tiles will be visible on mobile
 
@@ -100,6 +88,7 @@ export default function Applet(props) {
                     href={article.href}
                     row={positions[index].row}
                     column={positions[index].column}
+                    title={article.title}
                     img={article.cover}
                 />
             ))}
