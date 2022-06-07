@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from "../scss/main.module.scss";
 import Link from "next/link";
 
-export default function MainPage({ newsPageRef }) {
+export default function MainPage({}) {
     return (
         <>
             <div className={styles.main}>
