@@ -2,10 +2,16 @@ import React from "react";
 import { getArticles } from "../lib/articles";
 import MainPage from "../components/MainPage";
 import { GetStaticProps } from "next";
+import Head from 'next/head'
 
 export default function App({ articles }){
     return (
-        <MainPage articles={articles} />
+        <>
+            <MainPage articles={articles} />
+            <Head>
+                <title>Lviv Physics and Maths Liceum</title>
+            </Head>
+        </>
     )
 }
 
