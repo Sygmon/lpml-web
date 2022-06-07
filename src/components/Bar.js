@@ -120,7 +120,7 @@ export default function Menu(props) {
 						{/*TODO: somebody please make this link a menu item
 						 with the LPML icon. I don't wanna */}
                         <Link href="/">
-                            <img src="/logo.svg" alt="LPML logo" />
+                            <img className={styles.logo} src="/logo.svg" alt="LPML logo" />
                         </Link>
                     </li>
                 </ul>
