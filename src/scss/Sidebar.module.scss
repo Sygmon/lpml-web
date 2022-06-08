@@ -132,10 +132,18 @@
 		transform: translateX(88vw);
 	}
 
+    .drawer:checked + * .logo {
+        height: 6em;
+    }
+
 	.drawer:checked + * .menulink {
 		margin-left: auto;
 		margin-right: auto;
 	}
+
+	.drawer:checked + * .bottom {
+        margin-bottom: 2em;
+    }
 
 
     @include small-screen {
