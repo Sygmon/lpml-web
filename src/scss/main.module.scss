@@ -61,6 +61,7 @@
             background-color: var(--foreground);
             width: min(16em, calc(100vw - 7rem));
             height: fit-content;
+            transition: 300ms all;
 
             .nav_button_text {
                 display: block;
@@ -72,6 +73,10 @@
                 font-weight: 800;
                 font-size: 1rem;
             }
+        }
+
+        .nav_button:hover {
+            transform: scale(1.2);
         }
     }
 
