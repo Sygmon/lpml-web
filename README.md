@@ -1,7 +1,5 @@
 This is LPMLs web app code
 
-Pmozil is tired of gatsby not listening to him, so here's a no gatsby branch
-
 ## Debugging
 To run the app just
 
