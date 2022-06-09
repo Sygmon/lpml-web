@@ -13,6 +13,12 @@
     }
 
     padding: 0 16rem;
+    @media only screen and (max-width: 1600px) {
+        padding: 0 6rem;
+    }
+    @media only screen and (max-width: 1200px) {
+        padding: 0 2rem;
+    }
     @include small-screen {
         padding: 0 1rem;
     }
