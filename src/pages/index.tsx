@@ -19,7 +19,7 @@ export default function App({ articles }){
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     let articles = [];
-    const articlesRaw = getArticles("blog").sort((a, b) => a.date < b.date ? 1 : -1);
+    const articlesRaw = getArticles("blog").sort((a, b) => a.date < b.date ? -1 : 1);
     for(var i = 0;i<11;i++) {
         articles.push(
             {

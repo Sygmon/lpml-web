@@ -68,6 +68,8 @@
             justify-content: flex-start;
             width: 100%;
 
+            transition: 200ms;
+
             &:hover {
                 color: var(--highlight);
             }

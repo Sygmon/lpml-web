@@ -9,7 +9,7 @@ const themes = [
             background: "#E5E5E5",
             foreground: "#415243",
             menu: "#93A38A",
-            highlight: "#A3BE8C",
+            highlight: "#813405",
         },
     },
     {

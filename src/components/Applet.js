@@ -75,13 +75,13 @@ export default function Applet({ articles }) {
             column: "3 / 5"
         },
         {
-            row: "24 / 48",
+            row: "24 / 45",
             column: "5 / 7"
         }
     ];
 
     return (
-        <div className={styles.Applet} id="articles_grid_applet">
+        <div className={styles.Applet}>
             {articles.map((article, index) => (
                 <ArticleLink
                     key={`${article}${index}`}
@@ -92,6 +92,13 @@ export default function Applet({ articles }) {
                     img={article.cover}
                 />
             ))}
+            <Link href="/news">
+                <span className={styles["link-more"]}>
+                    <span className={styles["more-text"]}>
+                        More news
+                    </span>
+                </span>
+            </Link>
         </div>
     );
 }

@@ -58,6 +58,10 @@
             border-radius: 0.25em;
             margin: 1em;
 
+            @include small-screen {
+                margin: 0;
+            }
+
             background-color: var(--foreground);
             width: min(16em, calc(100vw - 7rem));
             height: fit-content;
@@ -77,6 +81,10 @@
 
         .nav_button:hover {
             transform: scale(1.2);
+
+            @include small-screen {
+                transform: none;
+            }
         }
     }
 

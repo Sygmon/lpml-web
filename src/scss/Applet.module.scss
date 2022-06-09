@@ -5,28 +5,59 @@
     background-color: var(--background);
 
     position: relative;
-    width: calc(100vw - 16.5em);
-    height: 100vh;
+    height: 100%;
     width: auto;
     display: grid;
     flex-wrap: wrap;
 
     grid-auto-rows: auto;
-    grid-auto-columns: auto;
+    grid-auto-columns: minmax(0, 1fr);
     grid-column-gap: 0.5em;
     grid-row-gap: 0.5em;
+    grid-auto-flow: column;
 
-    margin-left: 16.5em;
     @include small-screen {
-        width: calc(100vw - 6.5em);
-        margin-left: 6.5em;
         display: flex;
         flex-direction: column;
         height: fit-content;
 
-        .link-container {
+        .link-container, .link-more {
             height: 100vw;
             max-height: 16em;
+        }
+    }
+
+    .link-more {
+        grid-column: 5 / 7;
+        grid-row: 45 / 48;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        border: 5px solid var(--foreground);
+        padding: 0;
+
+        @include small-screen {
+            height: fit-content;
+            padding: 1rem;
+        }
+
+        .more-text {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 2em;
+            line-height: 37px;
+            color: var(--foreground);
+            transition: 200ms;
+        }
+
+        &:hover {
+            .more-text {
+                font-size: 2.25em;
+            }
         }
     }
 
@@ -40,9 +71,16 @@
             position: absolute;
             left: 0;
             bottom: 0;
-            color: var(--foreground);
-            background-color: var(--background);
-            font-size: 2.4rem;
+            padding: 0.5rem;
+
+            color: var(--background);
+            background-color: var(--foreground);
+
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 2rem;
+            line-height: 37px;
         }
         .background {
             transition: 200ms;
