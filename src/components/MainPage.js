@@ -1,8 +1,9 @@
 import * as React from "react";
 import styles from "../scss/main.module.scss";
 import Link from "next/link";
+import { RiArrowDownSLine } from "react-icons/ri";
 
-export default function MainPage({}) {
+export default function MainPage({scrollRef}) {
     return (
         <>
             <div className={styles.main}>
@@ -34,6 +35,11 @@ export default function MainPage({}) {
                 </div>
                 <div className={styles.logo}>
                     <img src="/logo.svg" alt="LPML logo" />
+                </div>
+                <div className={styles.scrolldown}>
+                    <span className={styles.scrolldown_text} onClick={() => scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
+                        <RiArrowDownSLine />
+                    </span>
                 </div>
             </div>
         </>

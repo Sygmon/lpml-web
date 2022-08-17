@@ -1,14 +1,14 @@
 @import "./common.scss";
 
 .navbar {
-    $bar-width: 16em;
+    $bar-width: 16rem;
     transition: all 200ms ease-out;
 
     width: $bar-width;
     top: 0;
     bottom: 0;
-    z-index: 10;
-    box-shadow: 0.1em var(--foreground);
+    z-index: 3;
+    box-shadow: 0.1rem var(--foreground);
     margin: 0;
     padding: 0;
     padding-top: 3rem;
@@ -16,16 +16,16 @@
     display: flex;
     flex-direction: column;
     background-color: var(--menu-bg);
+    align-items: flex-start;
 
 	.drawerlabel {
 		display: none;
-		font-size: 1.1em;
-		margin-left: 1.5em;
+		font-size: 1.1rem;
 		transition: 200ms ease-out;
 	}
 
 	.drawer {
-			display: none;
+		display: none;
 	}
 
     .search {
@@ -58,15 +58,24 @@
     }
 
     .menuitem {
-        width: 100%;
         list-style: none;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        align-items: flex-start;
+
+        @include small-screen {
+            width: fit-content;
+            align-items: center;
+        }
+
         .licontainer {
             display: flex;
             margin: 0;
             flex-direction: row;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             width: 100%;
 
             transition: 200ms;
@@ -88,12 +97,12 @@
         }
     }
 
-    .links {
+    .navbar_content {
         float: none;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-start;
         background-color: var(--menu-bg);
         padding: 0;
         margin: 0;
@@ -104,6 +113,16 @@
         overflow-x: visible;
         overflow-y: scroll;
 
+        .links {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
         .menulink {
             text-transform: uppercase;
             padding: 0;
@@ -111,7 +130,7 @@
             color: var(--foreground);
             text-decoration: none;
             transition: 200ms ease-out;
-            padding-top: 1em;
+            padding-top: 1rem;
 
             @include small-screen {
                 display: block;
@@ -122,28 +141,49 @@
         }
     }
 
-	.drawer:checked + .links{
+	.drawer:checked + .navbar_content{
 		width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+	.drawer:checked + .navbar_content .links {
+		margin: 0 auto;
+        width: fit-content;
+        align-items: flex-start;
+    }
+
+	.drawer:checked + .navbar_content .links .menuitem:nth-child(1) {
+		width: 100%;
+    }
+
+	.drawer:checked + .navbar_content .menulink{
+		margin: 0;
+        width: fit-content;
+
+        .licontainer {
+            width: fit-content;
+        }
     }
 	
-	.drawer:checked + .links * .text {
+	.drawer:checked + .navbar_content * .text {
 		display: block;
+        white-space: nowrap;
+        overflow: hidden;
 	}
 
 	.drawer:checked + * .search {
 		display: flex;
 	}
 
-	.drawer:checked + .links * .drawerlabel {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        justify-content: flex-end;
-        padding-right: 2rem;
-	}
-
+    .logo {
+        display: none;
+    }
     .drawer:checked + * .logo {
-        height: 6em;
+        display: block;
+        height: 6rem;
     }
 
 	.drawer:checked + * .menulink {
@@ -152,25 +192,29 @@
 	}
 
 	.drawer:checked + * .bottom {
-        margin-bottom: 2em;
+        margin-bottom: 2rem;
     }
 
 
     @include small-screen {
 		.drawerlabel {
-		    display: block;
+            width: 4rem;
+		    display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
 		}
 
 		.text {
 		    display: none;
-			margin-left: 1em;
+			margin-left: 1rem;
 		}
 
 		.search {
 		    display: none;
 		}
 
-		width: 6em;
+		width: 4rem;
 		padding-top: 0;
     }
 
@@ -179,7 +223,7 @@
         background-color: transparent;
         color: var(--foreground);
         font-size: 1.5rem;
-        padding-top: 1em;
+        padding-top: 1rem;
         text-align: left;
         text-transform: uppercase;
         transition: 200ms ease-out;

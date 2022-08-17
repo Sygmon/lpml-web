@@ -98,4 +98,20 @@
             width: 100%;
         }
     }
+
+    .scrolldown {
+        position: absolute;
+        bottom: 1rem;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+        .scrolldown_text {
+            font-size: 16rem;
+            color: var(--menu-bg);
+        }
+    }
 }

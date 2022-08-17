@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { getArticles } from "../lib/articles";
 import MainPage from "../components/MainPage";
 import NewsPage from "../components/NewsPage";
@@ -6,13 +6,15 @@ import { GetStaticProps } from "next";
 import Head from 'next/head'
 
 export default function App({ articles }){
+    const scroll = useRef(null);
+
     return (
         <>
             <Head>
                 <title>Lviv Physics and Maths Lyceum</title>
             </Head>
-            <MainPage />
-            <NewsPage articles={articles} />
+            <MainPage scrollRef={scroll} />
+            <NewsPage articles={articles} scrollRef={scroll} />
         </>
     )
 }
