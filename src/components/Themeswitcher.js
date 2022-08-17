@@ -17,6 +17,7 @@ export default function Switcher(props) {
             foreground: "foreground",
             menu: "menu-bg",
             highlight: "highlight",
+            secondary: "secondary",
         };
 
         for (let [name, value] of Object.entries(current.style)) {

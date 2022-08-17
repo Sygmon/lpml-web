@@ -24,7 +24,7 @@
         line-height: 54px;
         letter-spacing: 0em;
 
-        color: var(--background);
+        color: var(--secondary);
         background: var(--menu-bg);
 
         margin-left: max(16.5rem, calc(1% + 1rem));
@@ -71,7 +71,7 @@
                 display: block;
                 padding: 1em;
                 border-radius: 0.25em;
-                color: var(--background);
+                color: var(--secondary);
                 background-color: var(--menu-bg);
                 font-family: Montserrat;
                 font-weight: 800;

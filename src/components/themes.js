@@ -10,6 +10,7 @@ const themes = [
             foreground: "#415243",
             menu: "#93A38A",
             highlight: "#813405",
+            secondary: "#e5e9f0",
         },
     },
     {
@@ -20,6 +21,7 @@ const themes = [
             foreground: "#d8dee9",
             menu: "#4c566a",
             highlight: "#A3BE8C",
+            secondary: "#e5e9f0",
         },
     },
     {
@@ -30,6 +32,7 @@ const themes = [
             foreground: "#2e3440",
             menu: "#eceff4",
             highlight: "#A3BE8C",
+            secondary: "#3b4252",
         },
     },
 ];
