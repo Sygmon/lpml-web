@@ -81,6 +81,7 @@
             transition: 200ms;
 
             &:hover {
+                cursor: pointer;
                 color: var(--highlight);
             }
 
