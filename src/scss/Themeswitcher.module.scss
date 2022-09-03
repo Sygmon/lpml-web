@@ -43,6 +43,7 @@
             .options {
                 .themeOption {
                     // Visible + slides out
+                    cursor: pointer;
                     filter: opacity(100%);
                     width: 1rem;
                     margin: 0.5rem;

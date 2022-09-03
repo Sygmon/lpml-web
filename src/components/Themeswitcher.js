@@ -29,7 +29,7 @@ export default function Switcher(props) {
     useEffect(() => {
         const previous = localStorage.getItem("theme");
         selectTheme(previous ? JSON.parse(previous) : 0);
-    });
+    }, []);
 
     return (
         <div className={styles.themeswitcher}>
