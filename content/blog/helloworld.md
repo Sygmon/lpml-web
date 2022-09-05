@@ -8,4 +8,4 @@ Hello, world!
 
 Here'a test to see if non-picture links work*:*
 
-!\[Cormen](public/images/cormen.pdf)
+![Cormen](/images/cormen.pdf)
