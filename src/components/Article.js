@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import styles from "../scss/Applet.module.scss"
+import rehypeRaw from "rehype-raw"
 
 function Image(props) {
     const [open, setOpen] = useState(false);
@@ -27,7 +28,7 @@ export default function Article(props) {
             <div className={styles.markdown}>
                 <ReactMarkdown remarkPlugins={[remarkGfm]} components={{
                     img: Image,
-                }} children={props.content}/>
+                }} rehypePlugins={[rehypeRaw]} children={props.content}/>
             </div>
         </div>
     )
