@@ -15,7 +15,8 @@ export default function ArticlePage({ id, content, title }) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getArticles("info").map(article => `/info/${article.id}`);
+  const excluded = ["education", "for-grads", "public-info"];
+  const paths = getArticles("info").filter(article => !excluded.includes(article.id)).map(article => `/info/${article.id}`);
   
   return {
     paths,
