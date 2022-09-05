@@ -67,3 +67,30 @@ collections:
         media_library:
           config:
             multiple: true
+  - name: 'education quality'
+    label: 'Education quality'
+    folder: 'content/info/education'
+    create: true
+    slug: 'index'
+    media_folder: ''
+    public_folder: ''
+    path: '{{title}}'
+    editor:
+      preview: true
+    fields:
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+      - label: 'Description'
+        name: 'description'
+        widget: 'string'
+      - label: 'Body'
+        name: 'body'
+        widget: 'markdown'
+      - label: "Manual File"
+        name: "File"
+        widget: "file"
+        default: "/public/files"
+        media_library:
+          config:
+            multiple: true
