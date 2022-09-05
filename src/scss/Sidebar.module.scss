@@ -146,10 +146,6 @@
         overflow: hidden;
 	}
 
-	.drawer:checked + * .search {
-		display: flex;
-	}
-
     .logo {
         display: none;
     }
@@ -180,10 +176,6 @@
 		.text {
 		    display: none;
 			margin-left: 1rem;
-		}
-
-		.search {
-		    display: none;
 		}
 
 		width: 4rem;
@@ -217,4 +209,75 @@
     .logo {
         width: 100%;
     }
+
+    @import "./common.scss";
+
+    .search {
+        margin: 0.5rem;
+        @include small-screen {
+            display: none;
+        }
+
+        .searchbar {
+            height: 3rem;
+            border: solid var(--background) 0.25rem;
+            display: flex;
+            flex-direction: row;
+            color: var(--background);
+
+            input {
+                all: unset;
+                display: block;
+                height: 100%;
+                width: 100%;
+                border: none;
+                background-color: var(--foreground);
+            }
+            .icon {
+                display: flex;
+                width: 2.5rem;
+                height: 2.5rem;
+                padding: 0.25rem;
+                align-items: center;
+                justify-content: center;
+
+                background-color: var(--foreground);
+            }
+            .icon:hover {
+                cursor: pointer;
+            };
+        }
+
+        .results {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        
+            .result {
+                display: block;
+                transition: 200ms;
+                background: var(--background);
+                padding: 0.5rem;
+                border-bottom: var(--foreground) solid 1px;
+
+                &:hover {
+                    background: var(--menu-bg);
+                }
+
+                .title {
+                    text-align: start;
+                    color: var(--foreground);
+                    font-weight: bold;
+                }
+
+                .content {
+                    text-align: start;
+                    font-size: .75rem;
+                }
+            }
+        }
+    }
+	.drawer:checked + * .search {
+		display: block;
+	}
 }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, useSearchBox, useHits, Snippet } from 'react-instantsearch-hooks-web';
-import styles from "../scss/Search.module.scss";
+import styles from "../scss/Sidebar.module.scss";
 import {
     FaSearch,
 } from "react-icons/fa";
