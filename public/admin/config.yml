@@ -90,7 +90,61 @@ collections:
       - label: "Manual File"
         name: "File"
         widget: "file"
-        default: "/public/files"
+        default: "/public/files/quality"
+        media_library:
+          config:
+            multiple: true
+  - name: 'for graduates'
+    label: 'For graduates'
+    folder: 'content/info/for-grads'
+    create: true
+    slug: 'index'
+    media_folder: ''
+    public_folder: ''
+    path: '{{title}}'
+    editor:
+      preview: true
+    fields:
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+      - label: 'Description'
+        name: 'description'
+        widget: 'string'
+      - label: 'Body'
+        name: 'body'
+        widget: 'markdown'
+      - label: "Manual File"
+        name: "File"
+        widget: "file"
+        default: "/public/files/for_grads"
+        media_library:
+          config:
+            multiple: true
+  - name: 'public info'
+    label: 'Public information'
+    folder: 'content/info/public-info'
+    create: true
+    slug: 'index'
+    media_folder: ''
+    public_folder: ''
+    path: '{{title}}'
+    editor:
+      preview: true
+    fields:
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+      - label: 'Description'
+        name: 'description'
+        widget: 'string'
+      - label: 'Body'
+        name: 'body'
+        widget: 'markdown'
+      - label: "Manual File"
+        name: "File"
+        widget: "file"
+        default: "/public/files/public_information"
         media_library:
           config:
             multiple: true
