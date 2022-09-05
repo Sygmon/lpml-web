@@ -5,7 +5,3 @@ description: the first blog article
 cover: https://picsum.photos/400
 ---
 Hello, world!
-
-Here'a test to see if non-picture links work*:*
-
-![Cormen](/images/cormen.pdf)
