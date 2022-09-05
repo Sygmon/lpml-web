@@ -16,7 +16,7 @@ function getAllPages() {
     return pages;
 }
 
-export const getServerSideProps = ({ res }) => {
+export const getStaticProps = ({ res }) => {
   const baseUrl = {
     development: "http://localhost:3000",
     production: "https://lpml-web.netlify.app",
