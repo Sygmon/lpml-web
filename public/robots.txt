@@ -1,3 +1,9 @@
-# https://www.robotstxt.org/robotstxt.html
+# *
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://lpml-web.netlify.app
+
+# Sitemaps
+Sitemap: https://lpml-web.netlify.app/sitemap.xml

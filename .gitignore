@@ -44,3 +44,6 @@ packages/react-devtools-timeline/dist
 # Next
 .next
 dist
+
+# Automatically generated sitemaps
+public/sitemap*
