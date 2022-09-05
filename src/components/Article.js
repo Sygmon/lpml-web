@@ -23,6 +23,7 @@ function Image(props) {
 export default function Article(props) {
     return (
         <div className={styles.container}>
+            {props.children}
             <div className={styles.markdown}>
                 <ReactMarkdown remarkPlugins={[remarkGfm]} components={{
                     img: Image,
