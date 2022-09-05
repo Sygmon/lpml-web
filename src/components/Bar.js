@@ -9,23 +9,12 @@ import {
     FaInfo,
     FaInfoCircle,
     FaGraduationCap,
-    FaSearch,
 } from "react-icons/fa";
 import styles from "../scss/Sidebar.module.scss";
 import Link from "next/link";
+import SearchBar from "./Search";
 
 import Switcher from "./Themeswitcher.js";
-
-function SearchBar(props) {
-    // Gonna separate the input into another file
-    // TODO: move this to a proper component library
-    return (
-        <div className={styles.search}>
-            <input type="search" />
-            <FaSearch className={styles.icon} />
-        </div>
-    );
-}
 
 function MenuItem(props) {
     return (
