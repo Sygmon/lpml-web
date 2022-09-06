@@ -26,20 +26,18 @@ export default function MainPage({scrollRef}) {
                         </Link>
                     </span>
                     <span className={styles.nav_button}>
-                        <Link href="#articles_grid_applet" scroll={true}>
-                            <a href="#articles_grid_applet" className={styles.nav_button_text}>
-                                News
-                            </a>
-                        </Link>
+                        <a href="#articles_grid_applet" className={styles.nav_button_text} onClick={evt => {scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' }); evt.preventDefault();}}>
+                            News
+                        </a>
                     </span>
                 </div>
                 <div className={styles.logo}>
                     <img src="/logo.svg" alt="LPML logo" />
                 </div>
                 <div className={styles.scrolldown}>
-                    <span className={styles.scrolldown_text} onClick={() => scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
+                    <a className={styles.scrolldown_text} onClick={evt => {scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' }); evt.preventDefault();}} href="#articles_grid_applet">
                         <RiArrowDownSLine />
-                    </span>
+                    </a>
                 </div>
             </div>
         </>
