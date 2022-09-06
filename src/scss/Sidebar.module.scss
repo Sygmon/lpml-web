@@ -277,12 +277,17 @@
 
                 &:hover {
                     background: var(--menu-bg);
+
+                    .title {
+                        color: var(--highlight);
+                    }
                 }
 
                 .title {
                     text-align: start;
                     color: var(--foreground);
                     font-weight: bold;
+                    transition: 200ms;
                 }
 
                 .content {
