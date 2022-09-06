@@ -84,8 +84,8 @@ e-mail: lpml@lpml.com.ua
 | 2013 р. | [у 8 і 9 клас](/files/for_entrants/Співбесіда-2013-р_матем.doc), [додатковий набір](/files/for_entrants/Добір-_матем_серпень.doc) | - |
 | 2016 р. | [у 8 і 9 клас](/files/for_entrants/математика-співбесіда-2016.doc) | - |
 
-Задачник задач з фізики за 7 клас можна завантажити [тут](files/for_entrants/фізика7_вступ.pdf "Фізика7 Вступ").
+Задачник задач з фізики за 7 клас можна завантажити [тут](/files/for_entrants/фізика7_вступ.pdf "Фізика7 Вступ").
 
-Збірник задач для вступників до ЛФМЛ: [І частина](files/for_entrants/збірник-2-част-з-фізики-для-вступників-до-лфмл.pdf "Збірник 2 част з фізики для вступників до ЛФМЛ.pdf")
+Збірник задач для вступників до ЛФМЛ: [І частина](/files/for_entrants/збірник-2-част-з-фізики-для-вступників-до-лфмл.pdf "Збірник 2 част з фізики для вступників до ЛФМЛ.pdf")
 
-Задачник з фізики для підготовки до вступу учнів у 9 клас можна завантажити [тут](files/for_entrants/gendenshteyn_l_e_gelfgat_i_m_kirik_l_a_zadachi_z_fiziki_8_kl.djvu "gendenshteyn_l_e_gelfgat_i_m_kirik_l_a_zadachi_z_fiziki_8_kl.djvu").
+Задачник з фізики для підготовки до вступу учнів у 9 клас можна завантажити [тут](/files/for_entrants/gendenshteyn_l_e_gelfgat_i_m_kirik_l_a_zadachi_z_fiziki_8_kl.djvu "gendenshteyn_l_e_gelfgat_i_m_kirik_l_a_zadachi_z_fiziki_8_kl.djvu").
