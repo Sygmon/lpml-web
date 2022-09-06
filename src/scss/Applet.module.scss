@@ -129,13 +129,13 @@
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
 
     .markdown {
         max-width: 75vw;
         @include small-screen {
-            max-width: 100vw;
+            max-width: 100%;
         }
 
         margin-bottom: 3rem;
@@ -198,6 +198,11 @@
         h1 {
             width: 100%;
             text-align: center;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow: scroll;
         }
 
         table {

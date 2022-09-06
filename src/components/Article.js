@@ -21,6 +21,16 @@ function Image(props) {
     );
 }
 
+function Table(props) {
+    return (
+        <div className={styles["table-container"]}>
+            <table {...props}>
+                {props.children}
+            </table>
+        </div>
+    )
+}
+
 export default function Article(props) {
     return (
         <div className={styles.container}>
@@ -28,6 +38,7 @@ export default function Article(props) {
             <div className={styles.markdown}>
                 <ReactMarkdown remarkPlugins={[remarkGfm]} components={{
                     img: Image,
+                    table: Table
                 }} rehypePlugins={[rehypeRaw]} children={props.content}/>
             </div>
         </div>
