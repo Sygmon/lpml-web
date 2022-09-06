@@ -13,23 +13,23 @@ export default function MainPage({scrollRef}) {
                 <div className={styles.corner_nav}>
                     <span className={styles.nav_button}>
                         <Link href="/info/about">
-                            <span className={styles.nav_button_text}>
+                            <a href="/info/about" className={styles.nav_button_text}>
                                 About
-                            </span>
+                            </a>
                         </Link>
                     </span>
                     <span className={styles.nav_button}>
                         <Link href="/info/for-entrants">
-                            <span className={styles.nav_button_text}>
+                            <a href="/info/for-entrants" className={styles.nav_button_text}>
                                 For entrants
-                            </span>
+                            </a>
                         </Link>
                     </span>
                     <span className={styles.nav_button}>
                         <Link href="#articles_grid_applet" scroll={true}>
-                            <span className={styles.nav_button_text}>
+                            <a href="#articles_grid_applet" className={styles.nav_button_text}>
                                 News
-                            </span>
+                            </a>
                         </Link>
                     </span>
                 </div>

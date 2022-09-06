@@ -13,11 +13,11 @@ export default function NewsPage({ articles }) {
             <div className={styles.grid}>
                 {articles.map(article => (
                     <Link href={article.url}>
-                        <div className={styles.article}>
+                        <a className={styles.article} href={article.url}>
                             <h1 className={styles.title}>{article.title}</h1>
                             {article.cover && <img className={styles.cover} src={article.cover} />}
                             <span className={styles.description}>{article.description}</span>
-                        </div>
+                        </a>
                     </Link>
                 ))}
             </div>

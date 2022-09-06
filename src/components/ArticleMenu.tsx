@@ -9,13 +9,14 @@ export default function ArticleMenu({ articles, active, path }: {articles: {id: 
                 <Link
                     href={path ? `${path}/${article.id}` : article.id}
                 >
-                    <span
+                    <a
+                        href={path ? `${path}/${article.id}` : article.id}
                         className={article.id === active ? `${styles.articleMenuLink} ${styles.active}` : `${styles.articleMenuLink} ${styles.disabled}`}
                         key={article.id}
                     >
                         {article.title}
-                    </span>
-                    </Link>
+                    </a>
+                </Link>
             ))}
         </div>
     );

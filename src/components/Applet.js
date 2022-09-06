@@ -5,7 +5,8 @@ import Link from "next/link";
 function ArticleLink(props) {
     return (
         <Link href={props.href}>
-            <span
+            <a
+                href={props.href}
                 className={styles["link-container"]}
                 style={{
                     gridColumn: `${props.column}`,
@@ -21,7 +22,7 @@ function ArticleLink(props) {
                 <div className={styles.link}>
                         {props.title}
                 </div>
-            </span>
+            </a>
         </Link>
     )
 }
@@ -93,11 +94,11 @@ export default function Applet({ articles }) {
                 />
             ))}
             <Link href="/news">
-                <span className={styles["link-more"]}>
+                <a href="/news" className={styles["link-more"]}>
                     <span className={styles["more-text"]}>
                         More news
                     </span>
-                </span>
+                </a>
             </Link>
         </div>
     );

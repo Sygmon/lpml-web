@@ -21,12 +21,12 @@ function MenuItem(props) {
     return (
         <li key={props.href} className={styles.menuitem} onClick={() => {props.hider.current.checked = false}}>
             <Link href={props.href}>
-                <span  className={styles.menulink}>
+                <a href={props.href} className={styles.menulink}>
                     <div className={styles.licontainer}>
                         {props.icon}
                         <div className={styles.text}>{props.children}</div>
                     </div>
-                </span>
+                </a>
             </Link>
         </li>
     );
