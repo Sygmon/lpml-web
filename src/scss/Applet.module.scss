@@ -144,25 +144,30 @@
             text-decoration: underline;
         }
 
-        .image {
-            &.closed {
-                width: fit-content;
-                display: inline;
-                &:only-child {
-                    display: block;
-                    margin: 0 auto;
-                }
+        .image-container {
+            width: 100%;
+            overflow: scroll;
 
-                img {
-                    max-width: 100%;
-                    box-shadow: 0 0 0.5em 0.5em var(--background);
-                    border-radius: 0.5rem;
-                    margin: 0.5rem;
-        
-                    transition: 200ms;
-        
-                    &:hover {
-                        transform: scale(1.02);
+            .image {
+                &.closed {
+                    width: fit-content;
+                    display: inline;
+                    &:only-child {
+                        display: block;
+                        margin: 0 auto;
+                    }
+
+                    img {
+                        max-width: 100%;
+                        box-shadow: 0 0 0.5em 0.5em var(--background);
+                        border-radius: 0.5rem;
+                        margin: 0.5rem;
+            
+                        transition: 200ms;
+            
+                        &:hover {
+                            transform: scale(1.02);
+                        }
                     }
                 }
             }

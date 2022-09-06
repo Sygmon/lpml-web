@@ -8,7 +8,7 @@ function Image(props) {
     const [open, setOpen] = useState(false);
 
     return (
-        <>
+        <div className={styles["image-container"]}>
             <div className={`${styles.image} ${styles.closed}`} onClick={() => setOpen(!open)}>
                 <img src={props.src} alt={props.alt} />
                 {open && (
@@ -17,7 +17,7 @@ function Image(props) {
                     </div>
                 )}
             </div>
-        </>
+        </div>
     );
 }
 
