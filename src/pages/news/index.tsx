@@ -14,9 +14,9 @@ export default function NewsPage({ articles }) {
                 {articles.map(article => (
                     <Link href={article.url}>
                         <a className={styles.article} href={article.url}>
-                            <h1 className={styles.title}>{article.title}</h1>
                             {article.cover && <img className={styles.cover} src={article.cover} />}
-                            <span className={styles.description}>{article.description}</span>
+                            <h1 className={styles.title}>{article.title}</h1>
+                            <span className={styles.description}>{article.description && (article.description.length > 200 ? article.description.substring(0, 197) + "..." : article.description)}</span>
                         </a>
                     </Link>
                 ))}
