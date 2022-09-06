@@ -5,52 +5,55 @@ import styles from "../scss/Sidebar.module.scss";
 import {
     FaSearch,
 } from "react-icons/fa";
+import Link from "next/link";
 
 const searchClient = algoliasearch('YDAI2FBH5X', 'fc7cebb96b7664d69d8e2c3f1b3e3574');
 
-function SearchBox ({ setActive }) {
-    const { query, refine, clear, isSearchStalled } = useSearchBox();
-
-    useEffect(() => {
-        setActive(query);
-    }, [query]);
-
+function SearchBox ({ query, refine }) {
     return (
         <input type="search" value={query} onChange={evt => refine(evt.target.value)} />
     );
 }
 
-function Results ({ active }) {
+function Results ({ active, hider, reset }) {
     const { hits, results, sendEvent } = useHits();
 
     return active ? (
         <div className={styles.results}>
             {hits.map((result, index) => (
-                <a className={styles.result} href={result.url}>
-                    <div className={styles.title}>
-                        {result.title}
+                <Link href={result.url}>
+                    <div className={styles.result} onClick={() => {hider.current.checked = false; reset && reset();}}>
+                        <div className={styles.title}>
+                            {result.title}
+                        </div>
+                        <div className={styles.content}>
+                            <Snippet attribute="content" hit={result} />
+                        </div>
                     </div>
-                    <div className={styles.content}>
-                        <Snippet attribute="content" hit={result} />
-                    </div>
-                </a>
+                </Link>
             ))}
         </div>
     ) : null;
 }
 
-export default function SearchBar(props) {
-    const [active, setActive] = useState(false);
+function SearchBar({ hider }) {
+    const { query, refine, clear, isSearchStalled } = useSearchBox();
 
     return (
-        <InstantSearch searchClient={searchClient} indexName="netlify_f81c862b-0802-4633-bdf8-5fec7e7aaf73_main_all">
-            <div className={styles.search}>
-                <div className={styles.searchbar}>
-                    <SearchBox setActive={setActive} />
-                    <FaSearch className={styles.icon} />
-                </div>
-                <Results active={active} />
+        <div className={styles.search}>
+            <div className={styles.searchbar}>
+                <SearchBox query={query} refine={refine} />
+                <FaSearch className={styles.icon} />
             </div>
+            <Results active={query} hider={hider} reset={clear} />
+        </div>
+    );
+}
+
+export default function Search({ hider }) {
+    return (
+        <InstantSearch searchClient={searchClient} indexName="netlify_f81c862b-0802-4633-bdf8-5fec7e7aaf73_main_all">
+            <SearchBar hider={hider} />
         </InstantSearch>
     );
 }

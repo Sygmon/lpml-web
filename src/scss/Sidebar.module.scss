@@ -145,6 +145,10 @@
         white-space: nowrap;
         overflow: hidden;
 	}
+	
+	.drawer:checked + .navbar_content * .bottom .text {
+        overflow: visible;
+	}
 
     .logo {
         display: none;
