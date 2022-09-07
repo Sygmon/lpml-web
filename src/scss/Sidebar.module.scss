@@ -54,6 +54,9 @@
             &:hover {
                 cursor: pointer;
                 color: var(--highlight);
+                .logo {
+                    filter: brightness(0) saturate(100%) invert(23%) sepia(63%) saturate(1224%) hue-rotate(352deg) brightness(92%) contrast(102%);
+                }
             }
 
             .icon {
@@ -68,6 +71,7 @@
             }
         }
     }
+
 
     .navbar_content {
         float: none;
