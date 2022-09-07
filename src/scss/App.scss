@@ -1,3 +1,5 @@
+@import "./common.scss";
+
 :root {
     --background: #2e3440;
     --foreground: #d8dee9;
@@ -31,9 +33,31 @@ html, body {
     width: 100vw;
     position: absolute;
     top: 0;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
     background-color: var(--background);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .main {
+        min-height: 100vh;
+        width: auto;
+        max-width: 1440px;
+        display: flex;
+        flex-direction: column;
+        color: var(--foreground) !important;
+
+        @include small-screen {
+            margin-left: 4.5rem !important;
+        }
+
+        font-size: 1.2em;
+        @include small-screen {
+            font-size: 1.5em;
+        }
+    }
 }
 
 @media only screen and (max-width: 800px) {

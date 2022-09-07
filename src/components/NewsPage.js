@@ -5,7 +5,7 @@ export default function NewsPage({ articles, scrollRef }) {
     return (
         <div className={styles.news} id="articles_grid_applet" ref={scrollRef}>
             <h1 className={styles.title}>
-                News and events
+                Стрічка новин
             </h1>
             <Applet link="tmp" articles={articles} />
             <div className={styles.padder} />

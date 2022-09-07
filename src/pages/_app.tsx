@@ -5,8 +5,10 @@ import Menu from "../components/Bar.js";
 export default function MyApp({ Component, pageProps }) {
     return (
         <div className="App">
-            <Menu />
-            <Component {...pageProps} />
+            <div className="main">
+                <Menu />
+                <Component {...pageProps} />
+            </div>
         </div>
     )
 }

@@ -2,44 +2,37 @@ import * as React from "react";
 import styles from "../scss/main.module.scss";
 import Link from "next/link";
 import { RiArrowDownSLine } from "react-icons/ri";
+import {
+    FaPlay
+} from "react-icons/fa";
+import Logo from "./logo.svg";
 
 export default function MainPage({scrollRef}) {
     return (
-        <>
-            <div className={styles.main}>
-                <span className={styles.heading}>
-                    Lviv Physics and Maths Liceum
-                </span>
-                <div className={styles.corner_nav}>
-                    <span className={styles.nav_button}>
-                        <Link href="/info/about">
-                            <a href="/info/about" className={styles.nav_button_text}>
-                                About
-                            </a>
-                        </Link>
-                    </span>
-                    <span className={styles.nav_button}>
-                        <Link href="/info/for-entrants">
-                            <a href="/info/for-entrants" className={styles.nav_button_text}>
-                                For entrants
-                            </a>
-                        </Link>
-                    </span>
-                    <span className={styles.nav_button}>
-                        <a href="#articles_grid_applet" className={styles.nav_button_text} onClick={evt => {scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' }); evt.preventDefault();}}>
-                            News
-                        </a>
-                    </span>
-                </div>
+        <div className={styles.content}>
+            <div className={styles.info}>
                 <div className={styles.logo}>
-                    <img src="/logo.svg" alt="LPML logo" />
+                    <Logo />
                 </div>
-                <div className={styles.scrolldown}>
-                    <a className={styles.scrolldown_text} onClick={evt => {scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' }); evt.preventDefault();}} href="#articles_grid_applet">
-                        <RiArrowDownSLine />
-                    </a>
+                <div className={styles.text}>
+                    Загальноосвітній навчальний заклад із поглибленим вивченням природничих дисциплін, який дає змогу здобути освіту понад державний освітній мінімум, здійснює науково-практичну підготовку здібної, талановитої учнівської молоді.
+                </div>
+                <span className={styles.separator} />
+                <div className={styles.text}>
+                    Навчання в ліцеї відбувається українською мовою.
                 </div>
             </div>
-        </>
+            <div className={styles.intro}>
+                <span className={styles.title}>
+                    Львівський<br />фізико-математичний ліцей
+                </span>
+                <div className={styles.image}>
+                    <span className={styles.overlay} />
+                    <span className={styles.button}>
+                        <FaPlay />
+                    </span>
+                </div>
+            </div>
+        </div>
     );
 }

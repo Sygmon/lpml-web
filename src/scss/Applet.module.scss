@@ -3,100 +3,52 @@
 
 .Applet {
     background-color: var(--background);
-
-    position: relative;
-    height: 100%;
-    width: auto;
-    display: grid;
-    flex-wrap: wrap;
-
-    grid-auto-rows: auto;
-    grid-auto-columns: minmax(0, 1fr);
-    grid-column-gap: 0.5em;
-    grid-row-gap: 0.5em;
-    grid-auto-flow: column;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    gap: 4rem;
+    width: 100%;
 
     @include small-screen {
-        display: flex;
-        flex-direction: column;
-        height: fit-content;
-
         .link-container, .link-more {
-            height: 100vw;
-            max-height: 16em;
         }
     }
 
     .link-more {
-        grid-column: 5 / 7;
-        grid-row: 45 / 48;
-
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-
-        border: 5px solid var(--foreground);
-        padding: 0;
-
         @include small-screen {
-            height: fit-content;
-            padding: 1rem;
         }
 
         .more-text {
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 900;
-            font-size: 2em;
-            line-height: 37px;
-            color: var(--foreground);
-            transition: 200ms;
         }
 
         &:hover {
             .more-text {
-                font-size: 2.25em;
             }
         }
     }
 
     .link-container {
-        position: relative;
-        display: block;
-        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
 
-        .link {
-            display: inline-block;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            padding: 0.5rem;
-
-            color: var(--background);
-            background-color: var(--foreground);
-
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 900;
-            font-size: 1rem;
-            line-height: 1rem;
-        }
-        .background {
-            transition: 200ms;
-            width: 100%;
-            height: 100%;
+        .cover {
+            width: 24rem;
+            height: 24rem;
             background-size: cover;
-            // TODO: properly select which part of the image to use
-            // IIRC coudinary "responsive images" are a possible way
-            // not sure though, and even if so it might not be the best
-            filter: saturate(0.5)
-                    brightness(0.8);
-            &:hover {
-                transform: scale(110%);
-                filter: saturate(1)
-                        brightness(1);
-            }
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+        .link {
+            font-family: Kharkiv Tone;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0.04em;
+            text-align: left;
         }
     }
 
@@ -112,15 +64,11 @@
 }
 
 .container {
-    margin-left: 17rem !important;
-    margin-right: 1rem;
     width: auto;
     position: relative;
     color: var(--foreground) !important;
     text-align: start;
-    @include small-screen {
-        margin-left: 4.5rem !important;
-    }
+    margin: 1rem;
 
     font-size: 1.2em;
     @include small-screen {
@@ -133,10 +81,6 @@
     justify-content: flex-start;
 
     .markdown {
-        max-width: 75vw;
-        @include small-screen {
-            max-width: 100%;
-        }
 
         margin-bottom: 3rem;
 

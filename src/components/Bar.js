@@ -14,6 +14,9 @@ import {
 import styles from "../scss/Sidebar.module.scss";
 import Link from "next/link";
 import SearchBar from "./Search";
+import {
+    RiSearch2Line,
+} from "react-icons/ri";
 
 import Switcher from "./Themeswitcher.js";
 import { imageConfigDefault } from "next/dist/shared/lib/image-config";
@@ -44,7 +47,7 @@ function DrawerButton() {
 
 export { SearchBar, MenuItem, DrawerButton };
 
-export default function Menu(props) {
+function Menu(props) {
     const checkbox = useRef(null);
     return (
         <>
@@ -132,4 +135,39 @@ export default function Menu(props) {
             </nav>
         </>
     );
+}
+
+export default function Topbar() {
+    return (
+        <div className={styles.titlebar}>
+            <Link href="/">
+                <a href="/" className={styles.name}>
+                    ЛФМЛ
+                </a>
+            </Link>
+            <span className={styles.search}>
+                <RiSearch2Line />
+            </span>
+            <Link href="/info/about">
+                <a href="/info/about" className={styles.navlink}>
+                    ліцей
+                </a>
+            </Link>
+            <Link href="/info/for-entrants">
+                <a href="/info/for-entrants" className={styles.navlink}>
+                    вступ
+                </a>
+            </Link>
+            <Link href="/info/for-students">
+                <a href="/info/for-students" className={styles.navlink}>
+                    для ліцеїстів
+                </a>
+            </Link>
+            <Link href="/info/public-info">
+                <a href="/info/public-info" className={styles.navlink}>
+                    публічно
+                </a>
+            </Link>
+        </div>
+    )
 }
