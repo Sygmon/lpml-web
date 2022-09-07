@@ -151,8 +151,18 @@
 	}
 
     .logo {
-        display: none;
+        display: flex;
+        display:block;
+        width: 2rem;
+        height: 2rem;
+        padding: 0.5rem;
+        align-items: center;
+        justify-content: center;
+        filter: brightness(0) saturate(100%) invert(28%) sepia(26%) saturate(328%) hue-rotate(76deg) brightness(93%) contrast(89%);
     }
+    .logo:hover {
+                cursor: pointer;
+            };
     .drawer:checked + * .logo {
         display: block;
         height: 6rem;
@@ -162,7 +172,6 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
-
 	.drawer:checked + * .bottom {
         margin-bottom: 2rem;
     }
@@ -208,10 +217,6 @@
 		@include small-screen {
 		    margin-bottom: 6rem;
 		}
-    }
-
-    .logo {
-        width: 100%;
     }
 
     @import "./common.scss";
@@ -260,7 +265,7 @@
                 padding: 0.25rem;
                 align-items: center;
                 justify-content: center;
-                background-color: var(--foreground);
+                background-color: var(--foreground); 
             }
             .icon:hover {
                 cursor: pointer;

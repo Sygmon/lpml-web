@@ -16,6 +16,7 @@ import Link from "next/link";
 import SearchBar from "./Search";
 
 import Switcher from "./Themeswitcher.js";
+import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 
 function MenuItem(props) {
     return (
@@ -108,15 +109,23 @@ export default function Menu(props) {
                         >
                             For graduates
                         </MenuItem>
+                        <MenuItem
+                        href="/"
+                        icon={<img className={styles.logo} src="/logo.svg" alt="LPML logo"/>}
+                        hider={checkbox}
+                        >
+                        Home
+                        </MenuItem>
                         <li key="home-icon" className={styles.bottom}>
                             <button className={`${styles.menubutton} ${styles.text}`}>
                                 <Switcher />
                             </button>
                             {/*TODO: somebody please make this link a menu item
                             with the LPML icon. I don't wanna */}
-                            <Link href="/">
+                            {/* <Link href="/">
                                 <img className={styles.logo} src="/logo.svg" alt="LPML logo" />
-                            </Link>
+                            </Link> */}
+                        
                         </li>
                     </ul>
                 </div>
