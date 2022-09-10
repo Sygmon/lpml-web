@@ -3,6 +3,7 @@
 .content {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 4rem;
@@ -13,7 +14,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        width: 50%;
+        max-width: 32rem;
 
         .logo {
             margin-bottom: 2rem;
@@ -40,6 +41,7 @@
     .intro {
         display: flex;
         flex-direction: column;
+        max-width: 48rem;
         gap: 1rem;
 
         .title {

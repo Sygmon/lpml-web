@@ -1,327 +1,37 @@
 @import "./common.scss";
 
-.navbar {
-    $bar-width: 16rem;
-    transition: all 200ms ease-out;
 
-    width: $bar-width;
-    top: 0;
-    bottom: 0;
-    z-index: 3;
-    box-shadow: 0.1rem var(--foreground);
-    margin: 0;
-    padding: 0;
-    padding-top: 3rem;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--menu-bg);
-    align-items: flex-start;
-
-	.drawerlabel {
-		display: none;
-		font-size: 1.1rem;
-		transition: 200ms ease-out;
-	}
-
-	.drawer {
-		display: none;
-	}
-
-    .menuitem {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 100%;
-        align-items: flex-start;
-
-        @include small-screen {
-            width: fit-content;
-            align-items: center;
-        }
-
-        .licontainer {
-            display: flex;
-            margin: 0;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-
-            transition: 200ms;
-
-            &:hover {
-                cursor: pointer;
-                color: var(--highlight);
-                .logo {
-                    filter: brightness(0) saturate(100%) invert(23%) sepia(63%) saturate(1224%) hue-rotate(352deg) brightness(92%) contrast(102%);
-                }
-            }
-
-            .icon {
-                display: block;
-                margin: 1rem;
-                @include small-screen {
-                    display: block;
-                    height: 1.5rem;
-                    width: 1.5rem;
-                    margin: 0;
-                }
-            }
-        }
-    }
-
-
-    .navbar_content {
-        float: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        background-color: var(--menu-bg);
-        padding: 0;
-        margin: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        transition: all 200ms ease-out;
-        overflow-x: visible;
-        overflow-y: scroll;
-
-        .links {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-        }
-
-        .menulink {
-            text-transform: uppercase;
-            padding: 0;
-            font-size: 1rem;
-            color: var(--foreground);
-            text-decoration: none;
-            transition: 200ms ease-out;
-            padding-top: 1rem;
-
-            @include small-screen {
-                display: block;
-                width: 50%;
-                margin: 0;
-                padding: 1rem;
-            }
-        }
-    }
-
-	.drawer:checked + .navbar_content{
-		width: 100vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-
-	.drawer:checked + .navbar_content .links {
-		margin: 0 auto;
-        width: fit-content;
-        align-items: flex-start;
-    }
-
-	.drawer:checked + .navbar_content .links .menuitem:nth-child(1) {
-		width: 100%;
-    }
-
-	.drawer:checked + .navbar_content .menulink{
-		margin: 0;
-        width: fit-content;
-
-        .licontainer {
-            width: fit-content;
-        }
-    }
-	
-	.drawer:checked + .navbar_content * .text {
-		display: block;
-        white-space: nowrap;
-        overflow: hidden;
-	}
-	
-	.drawer:checked + .navbar_content * .bottom .text {
-        overflow: visible;
-	}
-
-    .logo {
-        display: flex;
-        display:block;
-        width: 2rem;
-        height: 2rem;
-        padding: 0.5rem;
-        align-items: center;
-        justify-content: center;
-        filter: brightness(0) saturate(100%) invert(28%) sepia(26%) saturate(328%) hue-rotate(76deg) brightness(93%) contrast(89%);
-    }
-    .logo:hover {
-                cursor: pointer;
-            };
-    .drawer:checked + * .logo {
-        display: block;
-        height: 6rem;
-    }
-
-	.drawer:checked + * .menulink {
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.drawer:checked + * .bottom {
-        margin-bottom: 2rem;
-    }
-
-
-    @include small-screen {
-		.drawerlabel {
-            width: 4rem;
-		    display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-		}
-
-		.text {
-		    display: none;
-			margin-left: 1rem;
-		}
-
-		width: 4rem;
-		padding-top: 0;
-    }
-
-    .menubutton {
-        border: none;
-        background-color: transparent;
-        color: var(--foreground);
-        font-size: 1.5rem;
-        padding-top: 1rem;
-        text-align: left;
-        text-transform: uppercase;
-        transition: 200ms ease-out;
-    }
-
-
-    .bottom {
-        margin-top: auto;
-        margin-bottom: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-		@include small-screen {
-		    margin-bottom: 6rem;
-		}
-    }
-
-    @import "./common.scss";
-
-    .search {
-        margin: 0.5rem;
-        @include small-screen {
-            display: none;
-        }
-
-        .searchbar {
-            text-align: left;
-            padding-left: 1rem;
-            height: 3rem;
-            border: solid var(--background) 0.25rem;
-            display: flex;
-            flex-direction: row;
-            background-color: var(--foreground);
-            color: var(--background);
-
-            input {
-                box-sizing: border-box;
-                all: unset;
-                display: block;
-                height: 100%;
-                width: 100%;
-                border: none;
-            }
-            input::-webkit-search-cancel-button {
-                -webkit-appearance: none;
-                height: 1.25em;
-                width: 1.25em;
-                border-radius: 50em;
-                background-color:white;
-                background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg) no-repeat 50% 50%;
-                background-size: contain;
-                opacity: 100;
-            }
-            input::-webkit-search-cancel-button:hover{
-                cursor: pointer;
-            }
-            .icon {
-                display: flex;
-                width: 2.5rem;
-                height: 2.5rem;
-                padding: 0.25rem;
-                align-items: center;
-                justify-content: center;
-                background-color: var(--foreground); 
-            }
-            .icon:hover {
-                cursor: pointer;
-            };
-        }
-
-        .results {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        
-            .result {
-                display: block;
-                transition: 200ms;
-                background: var(--background);
-                padding: 0.5rem;
-                border-bottom: var(--foreground) solid 1px;
-
-                &:hover {
-                    background: var(--menu-bg);
-
-                    .title {
-                        color: var(--highlight);
-                    }
-                }
-
-                .title {
-                    text-align: start;
-                    color: var(--foreground);
-                    font-weight: bold;
-                    transition: 200ms;
-                }
-
-                .content {
-                    text-align: start;
-                    font-size: .75rem;
-                }
-            }
-        }
-    }
-	.drawer:checked + * .search {
-		display: block;
-	}
+.drawer {
+    display: none;
 }
-
+.drawerlabel {
+    display: none;
+    font-size: 2rem;
+}
+@include small-screen {
+    .drawerlabel {
+        display: block;
+    }
+    .navlink, .name, .search {
+        height: 0;
+        transition: 200ms;
+        overflow: hidden;
+    }
+}
+.drawer:checked + * .navlink, .drawer:checked + * .search {
+    display: block;
+    height: 2rem;
+}
 
 .titlebar {
     display: flex;
     flex-direction: row;
+    @include small-screen {flex-direction: column;}
     align-items: center;
+    @include small-screen {align-items: flex-start;}
     justify-content: flex-start;
-    padding: 2.5rem 0;
+    padding: 2.5rem 1rem;
+    height: 6rem;
 
     .name {
         font-family: Kharkiv Tone;
@@ -334,8 +44,74 @@
 
     .search {
         font-size: 2rem;
-        margin: 0 2rem;
+        margin: 1.5rem 2rem;
         margin-left: auto;
+        @include small-screen {margin-left: 0;}
+        align-self: flex-start;
+        height: 3rem;
+
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+
+        .open {
+            width: 100%;
+            transition: 200ms;
+        }
+        .closed {
+            width: 0;
+            transition: 200ms;
+            @include small-screen {width: 100%;}
+            overflow: hidden ;
+        }
+
+        .searchcontainer {
+            width: 100%;
+            .searchbar {
+                width: 100%;
+                input {
+                    background: transparent;
+                    outline: none;
+                    border: none;
+                    border-bottom: solid var(--menu-bg) 0.25rem;
+                    color: var(--foreground);
+                    width: 100%;
+
+                    &:focus {
+                        border: none;
+                        border-bottom: solid var(--highlight) 0.25rem;
+                    }
+                }
+            }
+
+            .results {
+                overflow: scroll;
+                max-height: 75vh;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                justify-content: flex-start;
+
+                .result {
+                    background: var(--background);
+                    border: solid var(--menu-bg) 1px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    text-align: left;
+                    z-index: 1;
+
+                    .title {
+                        color: var(--secondary);
+                        font-size: 1.5rem;
+                    }
+
+                    .content {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
     }
 
     .navlink {

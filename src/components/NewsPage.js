@@ -8,7 +8,6 @@ export default function NewsPage({ articles, scrollRef }) {
                 Стрічка новин
             </h1>
             <Applet link="tmp" articles={articles} />
-            <div className={styles.padder} />
         </div>
     );
 }

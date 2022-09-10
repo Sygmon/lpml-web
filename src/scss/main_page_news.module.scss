@@ -2,11 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800;900&display=swap");
 
 .news {
-    width: 100%;
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    margin: 0 1rem;
+    padding-bottom: 4rem;
 
     .title {
         font-family: Kharkiv Tone;
@@ -15,14 +17,7 @@
         line-height: 55px;
         letter-spacing: 0.04em;
         text-align: left;
-        
 
         color: var(--foreground);
-    }
-
-    .padder {
-        // TODO: figure out how to make padding work
-        // this isn't really supposed to be a permanent solution
-        height: 4rem;
     }
 }

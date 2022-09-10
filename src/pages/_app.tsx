@@ -1,6 +1,7 @@
 import "../scss/App.scss";
 import "../index.scss";
 import Menu from "../components/Bar.js";
+import Footer from "../components/Footer.js";
 
 export default function MyApp({ Component, pageProps }) {
     return (
@@ -8,6 +9,7 @@ export default function MyApp({ Component, pageProps }) {
             <div className="main">
                 <Menu />
                 <Component {...pageProps} />
+                <Footer />
             </div>
         </div>
     )
