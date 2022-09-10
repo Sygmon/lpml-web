@@ -7,20 +7,27 @@
 .drawerlabel {
     display: none;
     font-size: 2rem;
+    margin: 2rem;
 }
 @include small-screen {
     .drawerlabel {
         display: block;
     }
     .navlink, .name, .search {
-        height: 0;
+        height: 0 !important;
         transition: 200ms;
         overflow: hidden;
     }
 }
-.drawer:checked + * .navlink, .drawer:checked + * .search {
-    display: block;
-    height: 2rem;
+.drawer:checked + * .navlink {
+    height: 2rem !important;
+}
+.drawer:checked + * .search {
+    height: 3rem !important;
+    overflow: visible;
+}
+.drawer:checked + * {
+    height: unset;
 }
 
 .titlebar {
@@ -32,6 +39,7 @@
     justify-content: flex-start;
     padding: 2.5rem 1rem;
     height: 6rem;
+    @include small-screen {height: 3rem;}
 
     .name {
         font-family: Kharkiv Tone;
