@@ -11,24 +11,6 @@
     gap: 4rem;
     width: 100%;
 
-    @include small-screen {
-        .link-container, .link-more {
-        }
-    }
-
-    .link-more {
-        @include small-screen {
-        }
-
-        .more-text {
-        }
-
-        &:hover {
-            .more-text {
-            }
-        }
-    }
-
     .link-container {
         display: flex;
         flex-direction: column;
@@ -89,17 +71,20 @@
         }
 
         .image-container {
-            width: 100%;
             overflow: scroll;
+            display: inline-block;
+            &:only-child {
+                display: block;
+                width: 100%;
+                .image {
+                    margin: 0 auto;
+                }
+            }
 
             .image {
                 &.closed {
                     width: fit-content;
-                    display: inline;
-                    &:only-child {
-                        display: block;
-                        margin: 0 auto;
-                    }
+                    display: block;
 
                     img {
                         max-width: 100%;
