@@ -11,6 +11,10 @@
     gap: 4rem;
     width: 100%;
 
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
     .link-container {
         display: flex;
         flex-direction: column;
@@ -71,6 +75,9 @@
         }
 
         .image-container {
+            &::-webkit-scrollbar {
+                display: none;
+            }
             overflow: scroll;
             display: inline-block;
             &:only-child {
@@ -98,6 +105,7 @@
                             transform: scale(1.02);
                         }
                     }
+                    
                 }
 
                 &.open {
