@@ -7,7 +7,7 @@
 .drawerlabel {
     display: none;
     font-size: 2rem;
-    margin: 2rem;
+    margin: 1rem;
 }
 @include small-screen {
     .drawerlabel {
@@ -38,6 +38,7 @@
     @include small-screen {align-items: flex-start;}
     justify-content: flex-start;
     padding: 2.5rem 1rem;
+    @include small-screen {padding: 0;}
     height: 6rem;
     @include small-screen {height: 3rem;}
 
