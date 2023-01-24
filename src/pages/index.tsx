@@ -27,14 +27,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
             {
                 title: articlesRaw[i] ? articlesRaw[i].title : null,
                 href: `/news/${articlesRaw[i] && articlesRaw[i].id}`,
-                cover: articlesRaw[i] ? articlesRaw[i].cover : null
+                cover: (articlesRaw[i] && articlesRaw[i].cover != undefined) ? articlesRaw[i].cover : null
             }
         );
     };
 
+  console.log(articles);
   return {
     props: {
-        articles: articles
+        articles: articles,
     },
   };
 };
