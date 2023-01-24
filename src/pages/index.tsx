@@ -22,19 +22,20 @@ export default function App({ articles }){
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     let articles = [];
     const articlesRaw = getArticles("blog").sort((a, b) => a.date < b.date ? -1 : 1);
-    for(var i = 0;i<articlesRaw.length;i++) {
+    for(var i = 0;i<11;i++) {
         articles.push(
             {
                 title: articlesRaw[i] ? articlesRaw[i].title : null,
                 href: `/news/${articlesRaw[i] && articlesRaw[i].id}`,
-                cover: articlesRaw[i] ? articlesRaw[i].cover : null
+                cover: (articlesRaw[i] && articlesRaw[i].cover != undefined) ? articlesRaw[i].cover : null
             }
         );
     };
 
+  console.log(articles);
   return {
     props: {
-        articles: articles
+        articles: articles,
     },
   };
 };
