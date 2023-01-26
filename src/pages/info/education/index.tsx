@@ -17,16 +17,17 @@ export default function ArticlePage({ id, content, title, articles }) {
     );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const articles = getArticles("info");
-  const article = articles.filter(article => article.id === "education")[0];
-  const eq_articles = getArticles("info/education");
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const id = params.article as string;
+  const articles = getArticles("info/education");
+  const article = articles.filter(article => article.id === id)[0];
   return {
     props: {
-        id: article.id,
-        content: article.content,
-        title: article.title,
-        articles: eq_articles.map(article => ({id: article.id, title: article.title}))
+        id: article.id != undefined ? article.id : "",
+        content: article.content != undefined ? article.content : "",
+        title: article.title != undefined ? article.title : "",
+        articles: articles.map(article => ({id: article.id != undefined ? article.id : "", title: article.title != undefined ? article.title : ""}))
     },
   };
 };

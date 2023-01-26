@@ -37,5 +37,5 @@ export function getArticles(category) {
   
         return article;
       });
-    return articles;
+    return articles.filter(article => article != undefined);
 }

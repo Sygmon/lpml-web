@@ -31,9 +31,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const article = articles.filter(article => article.id === id)[0];
   return {
     props: {
-        id: article.id,
-        content: article.content,
-        title: article.title,
+        id: article.id != undefined ? article.id : null,
+        content: article.content != undefined ?  article.content : null,
+        title: article.title != undefined ? article.title : null,
     },
   };
 };
