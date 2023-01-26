@@ -32,7 +32,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         );
     };
 
-  console.log(articles);
   return {
     props: {
         articles: articles,

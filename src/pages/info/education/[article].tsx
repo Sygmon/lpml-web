@@ -18,7 +18,7 @@ export default function ArticlePage({ id, content, title, articles }) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getArticles("info/education").map(article => article == undefined ? "/info/education.md" : `/info/education/${article.id}`);
+  const paths = getArticles("info/education").map(article => `/info/education/${article.id}`);
   
   return {
     paths,
@@ -33,10 +33,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const article = articles.filter(article => article.id === id)[0];
   return {
     props: {
-        id: article.id != undefined ? article.id : null,
-        content: article.content != undefined ? article.content : null,
-        title: article.title != undefined ? article.title : null,
-        articles: articles.map(article => ({id: article.id != undefined ? article.id : null, title: article.title != undefined ? article.title : null}))
+        id: article.id,
+        content: article.content,
+        title: article.title,
+        articles: articles.map(article => ({id: article.id, title: article.title}))
     },
   };
 };
