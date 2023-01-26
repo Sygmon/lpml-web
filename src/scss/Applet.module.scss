@@ -8,6 +8,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     overflow-x: scroll;
+    overflow-y: hidden !important;
     gap: 4rem;
     width: 100%;
 
@@ -55,6 +56,7 @@
     color: var(--foreground) !important;
     text-align: start;
     margin: 1rem;
+    overflow-y: hidden !important;
 
     font-size: 1.2em;
     @include small-screen {
@@ -78,7 +80,7 @@
             &::-webkit-scrollbar {
                 display: none;
             }
-            overflow: scroll;
+            overflow-x: scroll;
             display: inline-block;
             &:only-child {
                 display: block;
@@ -144,7 +146,7 @@
 
         .table-container {
             width: 100%;
-            overflow: scroll;
+            overflow-x: scroll;
         }
 
         table {
