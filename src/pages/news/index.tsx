@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
-import { getArticles } from "../lib/articles";
-import MainPage from "../components/MainPage";
-import NewsPage from "../components/NewsPage";
+import { getArticles } from "../../lib/articles";
+import NewsGrid from "../../components/NewsGrid";
 import { GetStaticProps } from "next";
 import Head from 'next/head'
 
@@ -13,8 +12,7 @@ export default function App({ articles }){
             <Head>
                 <title>Lviv Physics and Maths Lyceum</title>
             </Head>
-            <MainPage scrollRef={scroll} />
-            <NewsPage articles={articles} scrollRef={scroll} />
+            <NewsGrid articles={articles} scrollRef={scroll} />
         </>
     )
 }
@@ -22,12 +20,12 @@ export default function App({ articles }){
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     let articles = [];
     const articlesRaw = getArticles("blog").sort((a, b) => a.date < b.date ? -1 : 1);
-    for(var i = 0;i<11;i++) {
+    for(var i = 0;i<articlesRaw.length;i++) {
         articles.push(
             {
                 title: articlesRaw[i] ? articlesRaw[i].title : null,
                 href: `/news/${articlesRaw[i] && articlesRaw[i].id}`,
-                cover: (articlesRaw[i] && articlesRaw[i].cover != undefined) ? articlesRaw[i].cover : `https://picsum.photos/${400 + Math.floor(Math.random() * 30) + 1 }`
+                cover: (articlesRaw[i] && articlesRaw[i].cover != undefined) ? articlesRaw[i].cover : `https://picsum.photos/${400 + Math.floor(Math.random() * 100) + 1 }`
             }
         );
     };

@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from "../scss/Applet.module.scss";
 import Link from "next/link";
 
-function ArticleLink(props) {
+export function ArticleLink(props) {
     return (
         <Link href={props.href}>
             <a

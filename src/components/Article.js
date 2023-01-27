@@ -13,7 +13,7 @@ function Image(props) {
     return (
         <div className={styles["image-container"]}>
             <div className={`${styles.image} ${styles.closed}`} onClick={() => setOpen(!open)}>
-                <img src={imgSource} alt={props.alt} />
+                <img src={imgSource} alt={props.alt} loading="lazy"/>
                 {open && (
                     <div className={`${styles.image} ${styles.open}`} onClick={() => setOpen(!open)}>
                         <img src={props.src} alt={props.alt} />
