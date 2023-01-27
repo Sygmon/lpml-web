@@ -3,7 +3,7 @@
 
 .footer {
     display: flex;
-    min-height: 21.125rem;
+    min-height: 21.25rem;
     align-items: center;
     justify-content: space-around;
     background-color: var(--menu-bg);
@@ -12,6 +12,7 @@
     border-top-left-radius: 2rem;
     flex-wrap: wrap;
     gap: 2rem;
+    padding-bottom: 1em;
 
     .column {
         display: flex;

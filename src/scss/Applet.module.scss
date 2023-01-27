@@ -3,6 +3,7 @@
 
 .Applet {
     background-color: var(--background);
+    min-height: 40vh;
     display: flex;
     flex-direction: row;
     align-items: flex-start;

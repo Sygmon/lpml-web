@@ -32,10 +32,10 @@ html, body {
 
     width: 100vw;
     position: absolute;
-    top: 0;
     min-height: 100vh;
     text-align: center;
     background-color: var(--background);
+    margin-bottom: -1em;
 
     display: flex;
     flex-direction: column;

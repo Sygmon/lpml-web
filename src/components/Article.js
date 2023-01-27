@@ -6,11 +6,14 @@ import rehypeRaw from "rehype-raw"
 
 function Image(props) {
     const [open, setOpen] = useState(false);
+    const imgSource = props.src.startsWith("http") ? 
+        props.src : 
+        `https://raw.githubusercontent.com/Sygmon/lpml-web/redesign/public${props.src}`;
 
     return (
         <div className={styles["image-container"]}>
             <div className={`${styles.image} ${styles.closed}`} onClick={() => setOpen(!open)}>
-                <img src={`https://raw.githubusercontent.com/Sygmon/lpml-web/tree/redesign/public${props.src}`} alt={props.alt} />
+                <img src={imgSource} alt={props.alt} />
                 {open && (
                     <div className={`${styles.image} ${styles.open}`} onClick={() => setOpen(!open)}>
                         <img src={props.src} alt={props.alt} />
