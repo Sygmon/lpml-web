@@ -10,7 +10,7 @@ function Image(props) {
     return (
         <div className={styles["image-container"]}>
             <div className={`${styles.image} ${styles.closed}`} onClick={() => setOpen(!open)}>
-                <img src={`https://github.com/Sygmon/lpml-web/tree/redesign/public${props.src}`} alt={props.alt} />
+                <img src={`https://raw.githubusercontent.com/Sygmon/lpml-web/tree/redesign/public${props.src}`} alt={props.alt} />
                 {open && (
                     <div className={`${styles.image} ${styles.open}`} onClick={() => setOpen(!open)}>
                         <img src={props.src} alt={props.alt} />
