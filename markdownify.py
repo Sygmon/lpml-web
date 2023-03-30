@@ -199,13 +199,13 @@ class Markdownified:
         """
         formatted_link = requests.utils.unquote(link)
         print(f"Downloading {formatted_link} to {directory}/{name}")
-        link = requests.get(link, allow_redirects=True)
         name = self.shorten_name(name)
 
         if os.path.exists(f"{directory}/{name}"):
             print(f"File {name} already exists")
             return
         with open(f"{directory}/{name}", "wb") as file:
+            link = requests.get(link, allow_redirects=True)
             file.write(link.content)
 
     def download_file(self, link: str, file_name: str) -> str:
@@ -243,7 +243,7 @@ class Markdownified:
         else:
             directory = self.files_dir
 
-        local_dir = f"lpml-web/public{directory}"
+        local_dir = f"public{directory}"
         self.create_directory(local_dir)
 
         self.download(link, local_dir, file_name)
