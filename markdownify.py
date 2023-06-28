@@ -371,6 +371,8 @@ class Markdownified:
 
             link = "https://lpml.com.ua" + self.content[link_start:link_end]
             file_name = os.path.basename(link)
+            if "#" in file_name:
+                file_name = file_name[: file_name.find("#")]
 
             # Replace the link with a local one
             self.replace(
@@ -504,11 +506,11 @@ class Markdownified:
             # Change all percent sign symbols(like %20) to normal symbols
             split_link = link[19:].split("/")
             file_name = requests.utils.unquote(split_link[-1])  # type: ignore
+            if "#" in file_name:
+                file_name = file_name[: file_name.find("#")]
             if "." in file_name and not file_name.endswith(".html"):
                 self.download_file(link, file_name)
                 continue
-            if "#" in file_name:
-                file_name = file_name[: file_name.find("#")]
             if len(split_link) >= 3:
                 directory = "html_files/" + requests.utils.unquote(  # type: ignore
                     split_link[-2]
