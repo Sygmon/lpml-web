@@ -281,18 +281,14 @@ class Markdownified:
         if not directory.endswith("/"):
             directory += "/"
 
-        if any(directory.startswith(f"/images/{i}/") for i in INFO_DIRECTORIES):
-            directory = f"/images/info{directory[7:]}"
-        elif any(directory.startswith(f"/files/{i}/") for i in INFO_DIRECTORIES):
-            directory = f"/files/info{directory[6:]}"
-        elif directory.startswith("/images/.html"):
-            directory = "/images/info/info/"
-        elif directory.startswith("/files/.html"):
-            directory = "/files/info/info/"
-        else:
-            directory = directory.replace("/images/", "/images/blog/").replace(
-                "/files/", "/files/blog/"
-            )
+        if directory.startswith("/images/info/.html"):
+            directory = "/images/info/"
+        elif directory.startswith("/files/info/.html"):
+            directory = "/files/info/"
+        elif directory.startswith("/images/info/"):
+            directory = f"/images/info{directory[12:]}"
+        elif directory.startswith("/files/info/"):
+            directory = f"/files/info{directory[11:]}"
 
         local_dir = f"public{directory}"
         self.create_directory(local_dir)
@@ -342,8 +338,15 @@ class Markdownified:
             tuple: The directories for media
         """
         # Get the directory of the file
-        images_dir = "/images/" + os.path.basename(os.path.splitext(path)[0])
-        files_dir = "/files/" + os.path.basename(os.path.splitext(path)[0])
+        print("PATH", path)
+        path = path[path.find("/") : path.rfind("/") + 1] + os.path.basename(
+            os.path.splitext(path)[0]
+        )
+        print("PATH", path)
+        images_dir = "/images" + path
+        files_dir = "/files" + path
+        print("IMAGES DIR", images_dir)
+        print("FILES DIR", files_dir)
         return images_dir, files_dir
 
     def change_links_to_local(self) -> None:
