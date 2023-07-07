@@ -7,4 +7,3 @@
 Posted by [Програма з комп'ютерних наук УКУ](https://www.facebook.com/csatucu) on [28 квітня 2015 р.](https://www.facebook.com/csatucu/posts/1439663252994108)</blockquote>
 
 [Читати усі новини](/news)
-

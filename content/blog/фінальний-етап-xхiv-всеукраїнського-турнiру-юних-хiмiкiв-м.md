@@ -11,4 +11,3 @@
 Сайт турніру  - [http://chemturnir.org.ua/index_u.htm](http://chemturnir.org.ua/index_u.htm)
 
 [Читати усі новини](/news)
-

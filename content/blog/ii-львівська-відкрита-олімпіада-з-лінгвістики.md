@@ -9,9 +9,9 @@ II Львівська відкрита олімпіада з лінгвісти�
 Для участі про симо зареєструватися: [https://ling.org.ua/<wbr />contests/lviv-2016/<wbr />registration/](https://www.facebook.com/l.php?u=https%3A%2F%2Fling.org.ua%2Fcontests%2Flviv-2016%2Fregistration%2F&amp;h=UAQGew0Ow&amp;enc=AZO5ZHCacE-3LT7V6QEeMzQYJHlzity1F8lAA0nPhnts41u7zOLegasSrlM6stixfYU&amp;s=1)
 
 Через добу після реєстрації, будь ласка, переконайтеся, що ви є у списку зареєстрованих учасників ([https://ling.org.ua/<wbr />contests/lviv-2016/<wbr />participants/](https://www.facebook.com/l.php?u=https%3A%2F%2Fling.org.ua%2Fcontests%2Flviv-2016%2Fparticipants%2F&amp;h=2AQGuRd1z&amp;enc=AZNMr1jw4aR1vPusTyfK6qtxV4yuViTWJuCnBQ8Ei0nWGd_7Aq_Czosr8xQ9FBB_-Gs&amp;s=1)).
+
 В іншому разі, зателефонуйте адміністраторам та повідомте свої дані в телефонному режимі.
 
 Більше тут - [https://www.facebook.com/events/221004164999244/](https://www.facebook.com/events/221004164999244/)
 
 [Читати усі новини](/news)
-

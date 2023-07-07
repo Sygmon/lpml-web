@@ -5,4 +5,3 @@
 Джерело http://matholymp.com.ua/2016/03/24/iv-etap-vseukrainskoi-olimpiadi-z-mate-7/
 
 [Читати усі новини](/news)
-

@@ -28,21 +28,12 @@ TED — платформа для ідей, які варті поширення
 
 Світлана Матис, вчитель англійської мови ЛФМЛ, методист НМЦО м. Львова
 
-
 ![](/images/blog/lvivteentalks/img_4250.jpg)
-
-
 
 ![](/images/blog/lvivteentalks/img_4353.jpg)
 
-
-
 ![](/images/blog/lvivteentalks/img_4355.jpg)
-
-
 
 ![](/images/blog/lvivteentalks/img_4260.jpg)![](/images/blog/lvivteentalks/img_4260.jpg)
 
-
 [Читати усі новини](/news)
-
