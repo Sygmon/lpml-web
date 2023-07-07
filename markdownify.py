@@ -171,7 +171,7 @@ class Markdownified:
             "em": "*",
             "div": "",
             "p": "\n\n",
-            "br": "\n",
+            "br": "\n\n",
             "ul": "",
             "span": "",
             "small": "",
@@ -812,7 +812,8 @@ class Markdownified:
         # strip the lines
         for line in self.content.splitlines():
             self.content = self.content.replace(line, line.strip(), 1)
-        self.content = self.content.replace("\n\n\n", "\n\n")
+        while "\n\n\n" in self.content:
+            self.content = self.content.replace("\n\n\n", "\n\n")
         if self.content.startswith("\n"):
             self.content = self.content[1:]
 
