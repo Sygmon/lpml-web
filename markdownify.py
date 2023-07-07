@@ -274,6 +274,7 @@ class Markdownified:
             "webp",
         ]:
             directory = self.images_dir
+            file_name = self.remove_size_of_img_in_name(file_name)
         else:
             directory = self.files_dir
 
@@ -817,11 +818,7 @@ class Markdownified:
     def replace_img_in_a(self) -> None:
         """When there is an image inside a link to this image, leave just the image."""
         # Replace something like ..._500x250.jpg with ....jpg
-        self.content = re.sub(
-            r"([^\"']*)_\d+x\d+\.(jpg|png|gif|jpeg|bmp|svg|webp)",
-            r"\1.\2",
-            self.content,
-        )
+        self.content = self.remove_size_of_img_in_name(self.content)
 
         # With alt=...
         self.content = re.sub(
@@ -834,6 +831,21 @@ class Markdownified:
             r"<a .*?href *= *([\"'])(.*?)\1.*?> *<img .*?src *= *([\"'])\2\3.*?>.*?<\/a>",
             r'<img src="\2">',
             self.content,
+        )
+
+    def remove_size_of_img_in_name(self, text: str) -> str:
+        """Replace something like ..._500x250.jpg with ....jpg.
+
+        Args:
+            text (str): The text to replace in.
+
+        Returns:
+            str: The replaced text.
+        """
+        return re.sub(
+            r"([^\"']*)_\d+x\d+\.(jpg|png|gif|jpeg|bmp|svg|webp)",
+            r"\1.\2",
+            text,
         )
 
 
