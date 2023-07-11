@@ -50,7 +50,7 @@ export default function Topbar() {
                     </a>
                 </Link>
                 <span className={`${styles.search} ${searchOpen ? styles.open :  styles.closed}`}>
-                    <RiSearch2Line onClick={() => setSearchOpen(true)} />
+                    <RiSearch2Line onClick={() => setSearchOpen(true)} className={styles.searchbutton}/>
                     <div className={searchOpen ? styles.open :  styles.closed}>
                         <SearchBar hide={hide} />
                     </div>

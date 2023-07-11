@@ -51,6 +51,14 @@
         margin-right: 2rem;
     }
 
+    .searchbutton {
+        height: 1.5rem;
+        width: 1.5rem;
+        padding-top: 0.75rem;
+        margin-right: 0.3rem;
+        margin-left: 0.5rem;
+    }
+
     .search {
         font-size: 2rem;
         margin: 1.5rem 2rem;
@@ -65,12 +73,12 @@
 
         .open {
             width: 100%;
-            transition: 200ms;
+            transition: 300ms;
         }
         .closed {
             width: 0;
-            transition: 200ms;
             @include small-screen {width: 100%;}
+            transition: 300ms;
             overflow: hidden ;
         }
 
@@ -79,6 +87,7 @@
             .searchbar {
                 width: 100%;
                 input {
+                    font-size: 1rem;
                     background: transparent;
                     outline: none;
                     border: none;
