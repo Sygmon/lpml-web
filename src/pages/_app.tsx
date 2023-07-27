@@ -1,23 +1,16 @@
 import "../scss/App.scss";
 import "../index.scss";
 import Menu from "../components/Bar.js";
-
-
-function SafeHydrate({ children }) {
-  return (
-    <div suppressHydrationWarning>
-      {typeof window === 'undefined' ? null : children}
-    </div>
-  )
-}
+import Footer from "../components/Footer.js";
 
 export default function MyApp({ Component, pageProps }) {
     return (
-        <SafeHydrate>
-            <div className="App">
+        <div className="App">
+            <div className="main">
                 <Menu />
                 <Component {...pageProps} />
+                <Footer />
             </div>
-        </SafeHydrate>
+        </div>
     )
 }

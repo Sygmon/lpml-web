@@ -1,35 +1,35 @@
-import Head from 'next/head';
-import { GetStaticProps } from "next";
-import Link from "next/link";
+import React, { useRef } from "react";
 import { getArticles } from "../../lib/articles";
-import styles from "../../scss/news.module.scss";
+import NewsGrid from "../../components/NewsGrid";
+import { GetStaticProps } from "next";
+import Head from 'next/head'
 
-export default function NewsPage({ articles }) {
+export default function App({ articles }){
+    const scroll = useRef(null);
+
     return (
-        <div className={styles.main}>
-            <h1 className={styles.title}>
-                All news and events
-            </h1>
-            <div className={styles.grid}>
-                {articles.map(article => (
-                    <Link href={article.url}>
-                        <a className={styles.article} href={article.url}>
-                            {article.cover && <img className={styles.cover} src={article.cover} />}
-                            <h1 className={styles.title}>{article.title}</h1>
-                            <span className={styles.description}>{article.description && (article.description.length > 200 ? article.description.substring(0, 197) + "..." : article.description)}</span>
-                        </a>
-                    </Link>
-                ))}
-            </div>
+        <>
             <Head>
-                <title>LPML - News</title>
+                <title>Lviv Physics and Maths Lyceum</title>
             </Head>
-        </div>
-    );
+            <NewsGrid articles={articles} scrollRef={scroll} />
+        </>
+    )
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const articles = getArticles("blog").sort((a, b) => a.date < b.date ? -1 : 1).map(article => ({url: `/news/${article.id}`, title: article.title, description: article.description, date: article.date, cover: article.cover}));
+    let articles = [];
+    const articlesRaw = getArticles("blog").sort((a, b) => a.date < b.date ? -1 : 1);
+    for(var i = 0;i<articlesRaw.length;i++) {
+        articles.push(
+            {
+                title: articlesRaw[i] ? articlesRaw[i].title : null,
+                href: `/news/${articlesRaw[i] && articlesRaw[i].id}`,
+                cover: (articlesRaw[i] && articlesRaw[i].cover != undefined) ? articlesRaw[i].cover : `https://picsum.photos/${400 + Math.floor(Math.random() * 100) + 1 }`
+            }
+        );
+    };
+
   return {
     props: {
         articles: articles,

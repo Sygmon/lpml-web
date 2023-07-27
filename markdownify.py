@@ -1,23 +1,74 @@
 #!/bin/python3.10
-"""
-Turn a html file from lpml-website into a md
-"""
+"""Turn a html file from lpml-website into a md."""
 import os
+import re
 
-import click
+import click  # type: ignore
 import requests
 
-next_files = set()
-markdownified = set()
+next_files: set = set()
+markdownified: set = set()
+
+TRANSLATE_LINKS = {
+    "про-ліцей": "about",
+    "якість-освіти": "education",
+    "для-випускників": "for-grads",
+    "для-ліцеїстів": "for-students",
+    "публічна-інформація": "public-info",
+    "вступ-до-ліцею": "for-entrants",
+    "для-батьків": "for-parents",
+    "колектив": "staff",
+    "новини": "blog",
+    "матеріали": "materials",
+}
+SEPARATORS = ("/", ".html", "[", "]", "(", ")", '"', "'", ".md")
+
+INFO_DIRECTORIES = (
+    "about",
+    "education",
+    "for-grads",
+    "for-students",
+    "public-info",
+    "for-entrants",
+    "for-parents",
+    "staff",
+    "materials",
+)
+
+
+def translate(text: str) -> str:
+    """Translate a text from lpml-website to lpml-website-md.
+
+    Args:
+        text (str): The text to translate
+
+    Returns:
+        str: The translated text
+    """
+    for translation in TRANSLATE_LINKS.items():
+        for separator_start in SEPARATORS:
+            for separator_end in SEPARATORS:
+                text = text.replace(
+                    f"{separator_start}{translation[0]}{separator_end}",
+                    f"{separator_start}{translation[1]}{separator_end}",
+                )
+
+            if text.startswith(translation[0] + separator_start):
+                text = translation[1] + text[len(translation[0]) :]
+            if text.endswith(separator_start + translation[0]):
+                text = text[: -len(translation[0])] + translation[1]
+    return text
 
 
 @click.command()
 @click.argument("path")
-def run(path: str):
-    """
-    Turn html from lpml-website into md
+def run(path: str) -> None:
+    """Turn html from lpml-website into md.
 
     Syntax: `./markdownify.py <Path to the file>`
+
+    Args:
+        path (str): The path to the file to be markdownified
     """
     markdownify(path)
     print(f"{next_files=}")
@@ -25,19 +76,18 @@ def run(path: str):
     # Markdownify all the downloaded pages too
     while next_files:
         file = next_files.pop()
+        file = translate(file)
+        print("MARKDOWNIFYING", file)
         if file not in markdownified:
             markdownify(file)
             markdownified.add(file)
 
 
-def markdownify(path: str):
-    """
-    Turn html from lpml-website into md
+def markdownify(path: str) -> None:
+    """Turn html from lpml-website into md.
 
-    Parameters
-    ----------
-    path : str
-        The path to the file to be markdownified
+    Args:
+        path (str): The path to the file to be markdownified
     """
     # Open the file in read mode
     with open(path, mode="r", encoding="utf-8") as file:
@@ -48,6 +98,7 @@ def markdownify(path: str):
         except UnicodeDecodeError:
             with open("fails.log", "a", encoding="utf-8") as fails:
                 fails.write(f"{path}\n")
+            return
 
         # Create a class with the given html, that will convert it to markdown
         markdown = Markdownified(content, path)
@@ -61,17 +112,13 @@ def markdownify(path: str):
 
 
 def get_content(file: str) -> str:
-    """
-    Get the content between <div class="content"> and <div id="footer">
+    """Get the content between <div class="content"> and <div id="footer">.
 
-    Parameters
-    ----------
-    file : str
+    Args:
+        file (str): The html file
 
-    Returns
-    -------
-    str
-        The content between <div id="content"> and <div id="footer">
+    Returns:
+        str: The content between <div id="content"> and <div id="footer">
     """
     # Find the location of content div
     location = file.find('<div id="content">')
@@ -86,17 +133,12 @@ def get_content(file: str) -> str:
     return file[content_start:content_end]  # Return the html inbetween
 
 
-def write_to_file(markdown: str, path: str):
-    """
-    Write the markdownified text to a file
+def write_to_file(markdown: str, path: str) -> None:
+    """Write the markdownified text to a file.
 
-    Parameters
-    ----------
-    markdown : str
-        The markdownified text
-
-    path : str
-        The path to the file
+    Args:
+        markdown (str): The markdownified text
+        path (str): The path to the file
     """
     # Make the save path the same as the original file, but with .md
     path = path.replace(".html", ".md")
@@ -107,14 +149,13 @@ def write_to_file(markdown: str, path: str):
 
 
 class Markdownified:
-    """
-    Class that takes html and converts it to markdown
-    """
+    """Class that takes html and converts it to markdown."""
 
-    def __init__(self, content: str, path: str):
+    def __init__(self, content: str, path: str) -> None:
         self.content = content
         self.path = path
         self.change_links_to_local()
+        self.replace_img_in_a()
         self.replace_a()
         self.replace_img()
         for i in range(1, 7):  # replace h1, h2... h6
@@ -129,8 +170,8 @@ class Markdownified:
             "i": "*",
             "em": "*",
             "div": "",
-            "p": "",
-            "br": "\n",
+            "p": "\n\n",
+            "br": "\n\n",
             "ul": "",
             "span": "",
             "small": "",
@@ -138,11 +179,11 @@ class Markdownified:
             "li": ("- ", False),
             "ol": "",
         }
-        for i in tags_to_replace.items():
-            if isinstance(i[1], tuple):
-                self.replace_general(i[0], i[1][0], i[1][1])
-            else:
-                self.replace_general(i[0], i[1])
+        for j in tags_to_replace.items():
+            if isinstance(j[1], tuple):
+                self.replace_general(j[0], j[1][0], j[1][1])
+            elif isinstance(j[1], str):
+                self.replace_general(j[0], j[1])
 
         # a dictionary of strings to replace(not only tags)
         to_replace = {
@@ -150,80 +191,73 @@ class Markdownified:
             "[Повернутися на головну](/)": "",
             "](/новини": "](/news",
         }
-        for i in to_replace.items():
-            self.content = self.content.replace(i[0], i[1])
+        for j in to_replace.items():
+            self.content = self.content.replace(j[0], j[1])
 
         self.remove_whitespaces()
 
         self.replace_tables()
 
+        self.add_blank_lines_images()
+        self.add_blank_lines_tables()
+
+        self.remove_whitespaces()
+
         # If there are # or - after which newlines, remove newlines
-        for i in ("#", "-"):
-            self.content = self.content.replace(f"{i}\n", f"{i} ")
+        for symbol in ("#", "-"):
+            self.content = self.content.replace(f"{symbol}\n", f"{symbol} ")
 
-    def replace(self, what: str, to_what: str, start: int, end: int):
-        """
-        Replace a string in self.content
+        # Replace links to the translated ones(for some of info links)
+        self.content = translate(self.content)
 
-        Parameters
-        ----------
-        what : str
-            The string to be replaced
+        for info_dir in INFO_DIRECTORIES:
+            self.content = self.content.replace(
+                f"](/{info_dir}/", f"](/info/{info_dir}/"
+            )
 
-        to_what : str
-            The string to replace with
+    def replace(self, what: str, to_what: str, start: int, end: int) -> None:
+        """Replace a string in self.content.
 
-        start : int
-            The start of the string to be replaced
-
-        end : int
-            The end of the string to be replaced
+        Args:
+            what (str): The string to be replaced
+            to_what (str): The string to replace with
+            start (int): The start of the string to be replaced
+            end (int): The end of the string to be replaced
         """
         print(f"Replacing {what!r} with {to_what!r} on {start} : {end}")
         self.content = self.content[:start] + to_what + self.content[end:]
 
-    def download(self, link: str, directory: str, name: str):
+    def download(self, link: str, directory: str, name: str) -> None:
+        """Download a link(a page or some media).
+
+        Args:
+            link(str): From where to download
+            directory(str): Where to save
+            name(str): The name of the file
         """
-        Download a link(a page or some media)
-
-        Parameters
-        ----------
-        link: str
-            From where to download
-
-        directory: str
-            Where to save
-
-        name: str
-            The name of the file
-        """
-        formatted_link = requests.utils.unquote(link)
-        print(f"Downloading {formatted_link} to {directory}/{name}")
+        if not directory.endswith("/"):
+            directory += "/"
+        formatted_link = requests.utils.unquote(link)  # type: ignore
+        name, directory = translate(name), translate(directory)
+        print(f"Downloading {formatted_link} to {directory}{name}")
         name = self.shorten_name(name)
 
-        if os.path.exists(f"{directory}/{name}"):
+        if os.path.exists(f"{directory}{name}"):
             print(f"File {name} already exists")
             return
-        with open(f"{directory}/{name}", "wb") as file:
-            link = requests.get(link, allow_redirects=True)
-            file.write(link.content)
+        with open(f"{directory}{name}", "wb") as file:
+            download_link = requests.get(link, allow_redirects=True)
+            file.write(download_link.content)
 
     def download_file(self, link: str, file_name: str) -> str:
-        """
-        Download a file
+        """Download a file.
 
-        Parameters
-        ----------
-        link: str
-            From where to download
+        Args:
+            link(str): From where to download
+            file_name(str): The name of the file
 
-        file_name: str
-            The name of the file
-
-        Returns
-        -------
-        str
-            The path to the directory where the file was saved
+        Returns:
+            str: The path to the directory where the file was saved
         """
         # Remove everything after ?
         if "?" in file_name:
@@ -240,78 +274,86 @@ class Markdownified:
             "webp",
         ]:
             directory = self.images_dir
+            file_name = self.remove_size_of_img_in_name(file_name)
         else:
             directory = self.files_dir
+
+        if not directory.endswith("/"):
+            directory += "/"
+
+        if directory.startswith("/images/info/.html"):
+            directory = "/images/info/"
+        elif directory.startswith("/files/info/.html"):
+            directory = "/files/info/"
+        elif directory.startswith("/images/info/"):
+            directory = f"/images/info{directory[12:]}"
+        elif directory.startswith("/files/info/"):
+            directory = f"/files/info{directory[11:]}"
 
         local_dir = f"public{directory}"
         self.create_directory(local_dir)
 
         self.download(link, local_dir, file_name)
-        return f"{directory}/{file_name}"
+        return f"{directory}{file_name}"
 
     def shorten_name(self, name: str) -> str:
-        """
-        Shorten the name of the file
+        """Shorten the name of the file.
 
-        Parameters
-        ----------
-        name : str
-            The name of the file
+        Args:
+            name (str): The name of the file
 
-        Returns
-        -------
-        str
-            The shortened name
+        Returns:
+            str: The shortened name
         """
-        SHORTEN_TO = 60
-        if len(name) > SHORTEN_TO:
+        shortened_name = name
+        shorten_to = 60
+        if len(name) > shorten_to:
             shortened_name = name
             if "-" in name:
-                shortened_name = (
-                    name[: name[:SHORTEN_TO].rfind("-")] + name[name.rfind(".") :]
-                )
-            if len(shortened_name) < SHORTEN_TO // 2 or "-" not in name:
-                shortened_name = name[:SHORTEN_TO] + name[name.rfind(".") :]
+                extension = name[name.rfind(".") :]
+                shortened_no_extension = name[: name[:shorten_to].rfind("-")]
+                shortened_name = shortened_no_extension + extension
+            if len(shortened_name) < shorten_to // 2 or "-" not in name:
+                shortened_name = name[:shorten_to] + name[name.rfind(".") :]
             print(f"Shortened {name} to {shortened_name}")
-            name = shortened_name
-        return name
+        return shortened_name
 
-    def create_directory(self, path: str):
-        """
-        Create a directory, if it doesn't exist
+    def create_directory(self, path: str) -> None:
+        """Create a directory, if it doesn't exist.
 
-        Parameters
-        ----------
-        path : str
-            The path to the directory
+        Args:
+            path (str): The path to the directory
         """
         if not os.path.exists(path):
             print(f"Creating directory {path}")
             os.makedirs(path)
 
     def get_media_directories(self, path: str) -> tuple:
-        """
-        Get the directories for media
+        """Get the directories for media.
 
-        Parameters
-        ----------
-        path : str
-            The path to the file
+        Args:
+            path (str): The path to the file
 
-        Returns
-        -------
-        tuple
-            The directories for media
+        Returns:
+            tuple: The directories for media
         """
         # Get the directory of the file
-        images_dir = "/images/" + os.path.basename(os.path.splitext(self.path)[0])
-        files_dir = "/files/" + os.path.basename(os.path.splitext(self.path)[0])
+        print("PATH", path)
+        path = path[path.find("/") : path.rfind("/") + 1] + os.path.basename(
+            os.path.splitext(path)[0]
+        )
+        print("PATH", path)
+        images_dir = "/images" + path
+        files_dir = "/files" + path
+        print("IMAGES DIR", images_dir)
+        print("FILES DIR", files_dir)
         return images_dir, files_dir
 
-    def change_links_to_local(self):
-        """
-        Change all links to files and articles on lpml.com.ua
-        to links to local files, that are to be downloaded
+    def change_links_to_local(self) -> None:
+        """Change all links to files and articles.
+
+        Change all links to files and articles on lpml.com.ua to links to local files,
+        that are to be downloaded.
         """
         # Directories paths for images and files
         self.images_dir, self.files_dir = self.get_media_directories(self.path)
@@ -333,6 +375,8 @@ class Markdownified:
 
             link = "https://lpml.com.ua" + self.content[link_start:link_end]
             file_name = os.path.basename(link)
+            if "#" in file_name:
+                file_name = file_name[: file_name.find("#")]
 
             # Replace the link with a local one
             self.replace(
@@ -344,14 +388,12 @@ class Markdownified:
 
         print("-- Changed links to local --")
 
-    def replace_hn(self, number: int):
-        """
-        Replace all <hn> tags(<h1>, <h2> ...) with appropriate number of #
+    def replace_hn(self, number: int) -> None:
+        """Replace all <hn> tags(<h1>, <h2> ...) with appropriate number of #.
 
-        Parameters
-        ----------
-        number : int
-            The number of the tag, for example, for <h1> it's 1, for <h2> it's 2
+        Args:
+            number (int): The number of the tag, for example, for <h1> it's 1,
+                for <h2> it's 2
         """
         closing_h = f"</h{number}>"  # closing tags </h1>, </h2>...
         print("Removing", self.content.count(closing_h), closing_h)
@@ -373,6 +415,18 @@ class Markdownified:
                 open_location_start,
                 open_location_end + 1,
             )
+            # if there's no blank line after the header, add it
+            next_line = self.content.find("\n", open_location_end)
+            if self.content.find("\n", next_line + 1) != next_line + 1:
+                self.content = (
+                    self.content[: next_line + 1] + "\n" + self.content[next_line + 1 :]
+                )
+            # if there's no blank line before the header, add it
+            previous_line = self.content.rfind("\n", 0, open_location_start)
+            if self.content.rfind("\n", 0, previous_line - 1) != previous_line - 1:
+                self.content = (
+                    self.content[:previous_line] + "\n" + self.content[previous_line:]
+                )
 
         # cycle through occurrences of <hn>
         for _ in range(self.content.count(f"<h{number}>")):
@@ -386,11 +440,23 @@ class Markdownified:
                 open_location_start,
                 open_location_end + 1,
             )
+            # if there's no blank line after the header, add it
+            next_line = self.content.find("\n", open_location_end)
+            if self.content.find("\n", next_line + 1) != next_line + 1:
+                self.content = (
+                    self.content[: next_line + 1] + "\n" + self.content[next_line + 1 :]
+                )
+            # if there's no blank line before the header, add it
+            previous_line = self.content.rfind("\n", 0, open_location_start)
+            if self.content.rfind("\n", 0, previous_line - 1) != previous_line - 1:
+                self.content = (
+                    self.content[:previous_line] + "\n" + self.content[previous_line:]
+                )
 
         print("-- Replaced all <h{number}> tags with appropriate number of #'s --")
 
-    def replace_a(self):
-        """Replace all links <a href=...>name</a> to markdown [name](link)"""
+    def replace_a(self) -> None:
+        """Replace all links <a href=...>name</a> to markdown [name](link)."""
         # cycle through all link occurrences
         for _ in range(self.content.count("<a ")):
             # get the starting point
@@ -409,8 +475,18 @@ class Markdownified:
             # get the starting point of the closing tag
             close_location = self.content.find("</a>", open_location_end)
 
+            # remove all newlines between the opening and closing tags
+            self.content = (
+                self.content[:open_location_end]
+                + self.content[open_location_end:close_location].replace("\n", "")
+                + self.content[close_location:]
+            )
+
             # get the actual link
             link = self.content[link_location_start:link_location_end]
+
+            # recalculate the closing tag location
+            close_location = self.content.find("</a>", open_location_end)
 
             self.replace(
                 self.content[open_location_start : close_location + 4],
@@ -433,23 +509,33 @@ class Markdownified:
             # Get the name of the file and
             # Change all percent sign symbols(like %20) to normal symbols
             split_link = link[19:].split("/")
-            file_name = requests.utils.unquote(split_link[-1])
+            file_name = requests.utils.unquote(split_link[-1])  # type: ignore
+            if "#" in file_name:
+                file_name = file_name[: file_name.find("#")]
             if "." in file_name and not file_name.endswith(".html"):
                 self.download_file(link, file_name)
                 continue
-            if "#" in file_name:
-                file_name = file_name[: file_name.find("#")]
             if len(split_link) >= 3:
-                directory = "html_files/" + requests.utils.unquote(split_link[-2])
+                directory = "html_files/" + requests.utils.unquote(  # type: ignore
+                    split_link[-2]
+                )
             else:
-                directory = "html_files/index"
+                directory = "html_files/info"
 
-            self.create_directory(directory)
+            directory += "/"
+            directory = translate(directory)
+
+            for info_dir in INFO_DIRECTORIES:
+                directory = directory.replace(
+                    f"html_files/{info_dir}", f"html_files/info/{info_dir}"
+                )
 
             if not file_name.endswith(".html"):
                 file_name += ".html"
 
-            next_files.add(f"{directory}/{self.shorten_name(file_name)}")
+            self.create_directory(directory)
+
+            next_files.add(f"{directory}{self.shorten_name(file_name)}")
             if file_name in os.listdir(directory):
                 print("File", file_name, "already exists, not downloading")
                 continue
@@ -459,8 +545,8 @@ class Markdownified:
 
         print("-- Replaced all links <a href=...>name</a> to markdown [name](link) --")
 
-    def replace_img(self):
-        """Replace all images <img src=...> to markdown ![](link)"""
+    def replace_img(self) -> None:
+        """Replace all images <img src=...> to markdown ![](link)."""
         # cycle through all link occurrences
         for _ in range(self.content.count("<img ")):
             # get the starting point
@@ -499,17 +585,14 @@ class Markdownified:
 
     def replace_general(
         self, from_markdownify: str, to_markdownify: str, replace_end: bool = True
-    ):
-        """
-        Replace a tag with a given pattern
+    ) -> None:
+        """Replace a tag with a given pattern.
 
-        Parameters
-        ----------
-        from_markdownify : str
-            The tag to replace
-
-        to_markdownify : str
-            The pattern to replace with
+        Args:
+            from_markdownify (str): The tag to replace
+            to_markdownify (str): The pattern to replace with
+            replace_end (bool, optional): Whether to replace the closing tag.
+                Defaults to True.
         """
         if replace_end:
             to_replace = to_markdownify
@@ -528,6 +611,9 @@ class Markdownified:
             open_location_start = self.content.find("<" + from_markdownify + ">")
             # get the  end point
             open_location_end = self.content.find(">", open_location_start)
+            # Also replace spaces after the tag opening
+            while self.content[open_location_end + 1] == " ":
+                open_location_end += 1
             self.replace(
                 self.content[open_location_start : open_location_end + 1],
                 to_markdownify,
@@ -535,12 +621,18 @@ class Markdownified:
                 open_location_end + 1,
             )
 
-        # cycle through all occurrences of <tag>
+        # cycle through all occurrences of <tag ...>
         for _ in range(self.content.count("<" + from_markdownify + " ")):
             # get the starting point
             open_location_start = self.content.find("<" + from_markdownify + " ")
             # get the  end point
             open_location_end = self.content.find(">", open_location_start)
+            # Also replace spaces after the tag opening
+            content_length = len(self.content)
+            while self.content[open_location_end + 1] == " ":
+                open_location_end += 1
+                if open_location_end == content_length - 1:
+                    break
             self.replace(
                 self.content[open_location_start : open_location_end + 1],
                 to_markdownify,
@@ -550,10 +642,8 @@ class Markdownified:
 
         print("-- Replaced all", from_markdownify, "with", to_markdownify, " --")
 
-    def replace_tables(self):
-        """
-        Replace all tables <table>...</table> to markdown
-        """
+    def replace_tables(self) -> None:
+        """Replace all tables <table>...</table> to markdown."""
         # cycle through all occurrences of <table>
         for _ in range(self.content.count("<table")):
             # get the starting point
@@ -570,9 +660,10 @@ class Markdownified:
             rows = table.split("</tr>")
 
             # get the table headers
-            headers = rows[0].split("</th>")
-            headers = [header.split("</td>") for header in headers]
-            headers = [header for sublist in headers for header in sublist]
+            headers_unflattened = [
+                header.split("</td>") for header in rows[0].split("</th>")
+            ]
+            headers = [header for sublist in headers_unflattened for header in sublist]
             # If a header has colspan, make an empty header on the right
             i = 0
             while i < len(headers):
@@ -591,11 +682,16 @@ class Markdownified:
                 headers = headers[:-1]
 
             # get the table data
-            data = [row.split("</td>") for row in rows[1:]]
+            data_unsplit = [row.split("</td>") for row in rows[1:]]
             # also split by </th>
-            data = [[cell.split("</th>") for cell in row] for row in data]
+            data_unflattened = [
+                [cell.split("</th>") for cell in row] for row in data_unsplit
+            ]
             # flatten the 3-level list into 2-level
-            data = [[cell for sublist in row for cell in sublist] for row in data]
+            data = [
+                [cell for sublist in row for cell in sublist]
+                for row in data_unflattened
+            ]
             # Remove newlines from data
             data = [[cell.replace("\n", "") for cell in row] for row in data]
             # If a cell has colspan, make an empty cell on the right
@@ -622,7 +718,9 @@ class Markdownified:
                         # Add empty cells
                         for k in range(1, skip):
                             data[i + k].insert(j, "")
-            data = [[cell[cell.find(">") + 1 :] for cell in row] for row in data]
+            data = [
+                [cell[cell.find(">") + 1 :] for cell in row] for row in data
+            ]  # noqa
             # If the last row is empty, remove it
             if data[-1] == [""]:
                 data.pop()
@@ -687,16 +785,72 @@ class Markdownified:
         self.remove_whitespaces()
         print("-- Replaced all tables with markdown tables --")
 
-    def remove_whitespaces(self):
-        """Remove whitespaces from the lines"""
+    def add_blank_lines_images(self) -> None:
+        """Add blank lines before and after images."""
+        # add blank lines before and after images
+        self.content = re.sub(r"!\[.*\]\(.*images.*\)", "\n\n\\g<0>\n\n", self.content)
+
+    def add_blank_lines_tables(self) -> None:
+        """Add blank lines before and after tables."""
+        # as tables are multiline, go line by line until a table is found
+        # Add blank line before, go until the table ends. Add blank line after.
+        lines = self.content.splitlines()
+        in_table = False
+        for i, line in enumerate(lines):
+            if not (line.startswith("|") and line.endswith("|")):
+                if in_table:
+                    lines[i] = line + "\n"
+                    in_table = False
+                continue
+            if not in_table:
+                lines[i] = "\n" + line
+                in_table = True
+        self.content = "\n".join(lines)
+
+    def remove_whitespaces(self) -> None:
+        """Remove whitespaces from the lines."""
         # strip the lines
         for line in self.content.splitlines():
             self.content = self.content.replace(line, line.strip(), 1)
-        self.content = self.content.replace("\n\n", "\n")
+        while "\n\n\n" in self.content:
+            self.content = self.content.replace("\n\n\n", "\n\n")
         if self.content.startswith("\n"):
             self.content = self.content[1:]
 
         print("-- Removed whitespaces --")
+
+    def replace_img_in_a(self) -> None:
+        """When there is an image inside a link to this image, leave just the image."""
+        # Replace something like ..._500x250.jpg with ....jpg
+        self.content = self.remove_size_of_img_in_name(self.content)
+
+        # With alt=...
+        self.content = re.sub(
+            r"<a .*?href *= *([\"'])(.*?)\1.*?> *<img .*?src *= *([\"'])\2\3.*?( alt *= *\".*?\").*?>.*?<\/a>",
+            r'<img src="\2"\4>',
+            self.content,
+        )
+        # Without alt=...
+        self.content = re.sub(
+            r"<a .*?href *= *([\"'])(.*?)\1.*?> *<img .*?src *= *([\"'])\2\3.*?>.*?<\/a>",
+            r'<img src="\2">',
+            self.content,
+        )
+
+    def remove_size_of_img_in_name(self, text: str) -> str:
+        """Replace something like ..._500x250.jpg with ....jpg.
+
+        Args:
+            text (str): The text to replace in.
+
+        Returns:
+            str: The replaced text.
+        """
+        return re.sub(
+            r"([^\"']*)_\d+x\d+\.(jpg|png|gif|jpeg|bmp|svg|webp)",
+            r"\1.\2",
+            text,
+        )
 
 
 if __name__ == "__main__":

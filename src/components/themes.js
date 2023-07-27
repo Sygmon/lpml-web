@@ -6,11 +6,11 @@ const themes = [
         name: "default",
         icon: <FaBook />,
         style: {
-            background: "#E5E5E5",
-            foreground: "#415243",
+            background: "#FFFFFF",
+            foreground: "#000000",
             menu: "#93A38A",
             highlight: "#813405",
-            secondary: "#e5e9f0",
+            secondary: "#17480F",
         },
     },
     {

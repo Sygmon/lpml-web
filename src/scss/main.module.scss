@@ -1,118 +1,105 @@
 @import "./common.scss";
 
-.main {
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/mainpagebg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-
+.content {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    flex-wrap: wrap-reverse;
+    gap: 12rem;
+    @include small-screen{gap: 3rem;}
+    margin: 1rem;
 
-    .heading {
-        display: block;
-        padding: 0.25em;
-        border-radius: 0.125em;
-
-        font-family: Montserrat;
-        font-size: 44px;
-        font-weight: 800;
-        line-height: 54px;
-        letter-spacing: 0em;
-
-        color: var(--secondary);
-        background: var(--menu-bg);
-
-        margin-left: max(16.5rem, calc(1% + 1rem));
-        margin-right: min(16.5rem, calc(1% + 1rem));
-        @include small-screen {
-            margin-left: max(6.5rem, calc(1% + 1rem));
-            margin-right: min(6.5rem, calc(1% + 1rem));
-        }
-    }
-
-    .corner_nav {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        left: 0px;
-        margin: 1em;
-        margin-left: 17rem;
-
+    .info {
         display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-
-        @include small-screen {
-            flex-direction: column;
-            margin-left: 7rem;
-            align-items: flex-end;
-        }
-
-        .nav_button {
-            border: solid var(--foreground) 0.5em;
-            border-radius: 0.25em;
-            margin: 1em;
-
-            @include small-screen {
-                margin: 0;
-            }
-
-            background-color: var(--foreground);
-            width: min(16em, calc(100vw - 7rem));
-            height: fit-content;
-            transition: 300ms all;
-
-            .nav_button_text {
-                display: block;
-                padding: 1em;
-                border-radius: 0.25em;
-                color: var(--secondary);
-                background-color: var(--menu-bg);
-                font-family: Montserrat;
-                font-weight: 800;
-                font-size: 1rem;
-            }
-        }
-
-        .nav_button:hover {
-            cursor: pointer;
-            transform: scale(1.2);
-
-            @include small-screen {
-                transform: none;
-            }
-        }
-    }
-
-    .logo {
-        position: absolute;
-        bottom: 4rem;
-        right: 1rem;
-        width: 18rem;
-
-        img {
-            width: 100%;
-        }
-    }
-
-    .scrolldown {
-        position: absolute;
-        bottom: 1rem;
-        left: 0;
-        right: 0;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
-        
-        .scrolldown_text {
-            font-size: 16rem;
-            color: var(--menu-bg);
+        align-items: center;
+        flex: 1 1 16rem;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 48rem;
+
+            .logo {
+                margin-bottom: 2rem;
+                @include small-screen {display: none;}
+            }
+            .text {
+                text-align: start;
+                font-family: Kharkiv Tone;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5rem;
+                letter-spacing: 0.12em;
+                text-align: left;
+                
+            }
+            .separator {
+                width: 50%;
+                height: 0.25rem;
+                background-color: var(--foreground);
+                margin: 2rem 0;
+            }
+        }
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 48rem;
+        gap: 1rem;
+        max-width: 100%;
+        @include small-screen {
+            margin-top: 2rem;
+        }
+
+        .title {
+            font-family: Kharkiv Tone;
+            font-size: 3.5rem;
+            @include small-screen {font-size: 2rem;}
+            font-weight: 400;
+            line-height: 3.5rem;
+            @include small-screen {line-height: 2rem;}
+            letter-spacing: 0.04em;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .image {
+            background: url("/mainpagebg.png"), var(--background);
+            width: 100%;
+            aspect-ratio: 859/460;
+            background-size: contain;
+            display: flex;
+            position: relative;
+
+            .overlay {
+                display: block;
+                background: linear-gradient(259.51deg, #57F5FF 7.79%, #63D051 35.99%, #FFF384 70.71%, #FFC684 100%);
+                opacity: 0.2;
+                width: 100%;
+                height: 100%;
+            }
+
+            .button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--background);
+                font-size: 1.5rem;
+
+                position: absolute;
+                width: 4rem;
+                height: 4rem;
+                transform: translate(-50%, -50%);
+                left: 60%;
+                background: linear-gradient(259.51deg, rgba(87, 245, 255, 0.67) 7.79%, rgba(99, 208, 81, 0.52) 35.99%, rgba(255, 243, 132, 0.46) 70.71%, rgba(255, 198, 132, 0.19) 100%);
+                border: 1px solid var(--background);
+                backdrop-filter: blur(1rem);
+                border-radius: 0.75rem;
+            }
         }
     }
 }

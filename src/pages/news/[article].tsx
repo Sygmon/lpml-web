@@ -27,7 +27,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const id = params.article as string;
   const articles = getArticles("blog");
-  const article = articles.filter(article => article.id === id && article.id != undefined)[0];
+  const article = articles.filter(article => article.id === id)[0];
   return {
     props: {
         id: article.id,

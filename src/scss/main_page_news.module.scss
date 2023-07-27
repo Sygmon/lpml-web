@@ -2,42 +2,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800;900&display=swap");
 
 .news {
-    position: relative;
-    height: 100vh;
+    width: auto;
     display: flex;
     flex-direction: column;
-
-    margin-left: 16.5em;
-    @include small-screen {
-        margin-left: 6.5em;
-    }
-
-    padding: 0 16rem;
-    @media only screen and (max-width: 1600px) {
-        padding: 0 6rem;
-    }
-    @media only screen and (max-width: 1200px) {
-        padding: 0 2rem;
-    }
-    @include small-screen {
-        padding: 0 1rem;
-    }
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0 1rem;
+    padding-bottom: 4rem;
 
     .title {
-        text-align: start;
-
-        font-family: 'Montserrat';
-        font-style: normal;
+        font-family: Kharkiv Tone;
+        font-size: 3.5rem;
         font-weight: 400;
-        font-size: 4em;
-        line-height: 85px;
+        line-height: 3.5rem;
+        letter-spacing: 0.04em;
+        text-align: left;
 
         color: var(--foreground);
-    }
-
-    .padder {
-        // TODO: figure out how to make padding work
-        // this isn't really supposed to be a permanent solution
-        height: 4rem;
     }
 }
