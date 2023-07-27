@@ -39,6 +39,11 @@ export default function Topbar() {
         setSearchOpen(false);
         checkbox.current.checked = false;
     }
+    const toggleSearch = () => {
+        // If screen size < 1000px, do nothing
+        if (window.innerWidth < 1000) return;
+        setSearchOpen(!searchOpen);
+    }
     return (
         <>
             <input className={styles.drawer} id="drawer" type="checkbox" ref={checkbox} />
@@ -50,7 +55,7 @@ export default function Topbar() {
                     </a>
                 </Link>
                 <span className={`${styles.search} ${searchOpen ? styles.open :  styles.closed}`}>
-                    <RiSearch2Line onClick={() => setSearchOpen(true)} className={styles.searchbutton}/>
+                    <RiSearch2Line onClick={() => toggleSearch()} className={styles.searchbutton}/>
                     <div className={searchOpen ? styles.open :  styles.closed}>
                         <SearchBar hide={hide} />
                     </div>
