@@ -83,18 +83,31 @@ export default function Topbar() {
                         <SearchBar hide={hide} />
                     </div>
                 </span>
-                <MenuItem hide={hide} href="/info/about">
-                    ліцей
-                </MenuItem>
-                <MenuItem hide={hide} href="/info/for-entrants">
-                    вступ
-                </MenuItem>
-                <MenuItem hide={hide} href="/info/for-students">
-                    для ліцеїстів
-                </MenuItem>
                 <MenuItem hide={hide} href="/info/public-info">
                     публічно
                 </MenuItem>
+                <MenuDropdown title="ліцей">
+                    <MenuItem hide={hide} href="/info/about">
+                        про ліцей
+                    </MenuItem>
+                    <MenuItem hide={hide} href="/info/education">
+                        якість
+                    </MenuItem>
+                    <MenuItem hide={hide} href="/info/staff">
+                        колектив
+                    </MenuItem>
+                </MenuDropdown>
+                <MenuDropdown title="для...">
+                    <MenuItem hide={hide} href="/info/for-parents">
+                        батьків
+                    </MenuItem>
+                    <MenuItem hide={hide} href="/info/for-students">
+                        ліцеїстів
+                    </MenuItem>
+                    <MenuItem hide={hide} href="/info/for-grads">
+                        випускників
+                    </MenuItem>
+                </MenuDropdown>
             </div>
         </>
     )

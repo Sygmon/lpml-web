@@ -28,6 +28,7 @@
         overflow: visible;
     }
     .drawer:checked + * .dropdownbutton {
+        margin-top: 1rem;
         height: 2rem !important;
     }
     .drawer:checked + * {
@@ -170,6 +171,7 @@
     .dropdown {
         .dropdownbutton {
             background: transparent;
+            color: var(--foreground);
             border: none;
             outline: none;
             font-family: Kharkiv Tone;
@@ -196,15 +198,25 @@
             background-color: var(--background);
             min-width: 10rem;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
+            padding-bottom: 1.2rem;
+            margin-left: 1rem;
+
+            @include small-screen {
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+            }
 
             .navlink {
-                padding: 0.5rem 1rem;
-                font-size: 1rem;
+                font-size: 1.1rem;
+                padding-top: 1.2rem;
                 font-weight: 400;
-                line-height: 1rem;
+                line-height: 1.1rem;
                 letter-spacing: 0.04em;
                 text-align: left;
+
+                @include small-screen {
+                    padding-top: 0.5rem;
+                }
             }
         }
     }
