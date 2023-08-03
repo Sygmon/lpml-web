@@ -1,6 +1,5 @@
 @import "./common.scss";
 
-
 .drawer {
     display: none;
 }
@@ -13,34 +12,48 @@
     .drawerlabel {
         display: block;
     }
-    .navlink, .name, .search {
+    .navlink,
+    .name,
+    .search,
+    .dropdownbutton {
         height: 0 !important;
         transition: 200ms;
         overflow: hidden;
     }
-}
-.drawer:checked + * .navlink {
-    height: 2rem !important;
-}
-.drawer:checked + * .search {
-    height: 3rem !important;
-    overflow: visible;
-}
-.drawer:checked + * {
-    height: unset;
+    .drawer:checked + * .navlink {
+        height: 2rem !important;
+    }
+    .drawer:checked + * .search {
+        height: 3rem !important;
+        overflow: visible;
+    }
+    .drawer:checked + * .dropdownbutton {
+        height: 2rem !important;
+    }
+    .drawer:checked + * {
+        height: unset;
+    }
 }
 
 .titlebar {
     display: flex;
     flex-direction: row;
-    @include small-screen {flex-direction: column;}
+    @include small-screen {
+        flex-direction: column;
+    }
     align-items: center;
-    @include small-screen {align-items: flex-start;}
+    @include small-screen {
+        align-items: flex-start;
+    }
     justify-content: flex-start;
     padding: 2.5rem 1rem;
-    @include small-screen {padding: 0;}
+    @include small-screen {
+        padding: 0;
+    }
     height: 6rem;
-    @include small-screen {height: 3rem;}
+    @include small-screen {
+        height: 3rem;
+    }
 
     .name {
         font-family: Kharkiv Tone;
@@ -63,7 +76,9 @@
         font-size: 2rem;
         margin: 1.5rem 2rem;
         margin-left: auto;
-        @include small-screen {margin-left: 0;}
+        @include small-screen {
+            margin-left: 0;
+        }
         align-self: flex-start;
         height: 3rem;
 
@@ -72,7 +87,9 @@
         align-items: flex-start;
 
         .open {
-            @include small-screen {width: 15rem;}
+            @include small-screen {
+                width: 15rem;
+            }
             @media (min-width: 1000px) and (max-width: 1100px) {
                 width: 10rem;
             }
@@ -83,9 +100,11 @@
         }
         .closed {
             width: 0;
-            @include small-screen {width: 100%;}
+            @include small-screen {
+                width: 100%;
+            }
             transition: 300ms;
-            overflow: hidden ;
+            overflow: hidden;
         }
 
         .searchcontainer {
@@ -146,5 +165,51 @@
         letter-spacing: 0.04em;
         text-align: left;
         padding: 0 1.5rem;
+    }
+
+    .dropdown {
+        .dropdownbutton {
+            background: transparent;
+            border: none;
+            outline: none;
+            font-family: Kharkiv Tone;
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.5rem;
+            letter-spacing: 0.04em;
+            text-align: left;
+            padding: 0 1.5rem;
+            cursor: pointer;
+
+            .dropdownicon {
+                height: 1rem;
+                width: 1rem;
+                margin-left: 0.25rem;
+                margin-top: 0.5rem;
+            }
+        }
+
+        .dropdowncontent {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            background-color: var(--background);
+            min-width: 10rem;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+
+            .navlink {
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1rem;
+                letter-spacing: 0.04em;
+                text-align: left;
+            }
+        }
+    }
+
+    .dropdown:hover .dropdowncontent {
+        display: flex;
     }
 }

@@ -20,13 +20,36 @@ function MenuItem({ hide, href, children }) {
     );
 }
 
+function MenuDropdown({ title, children }) {
+    const [open, setOpen] = useState(false);
+    return (
+        <div className={styles.dropdown}>
+            <button className={styles.dropdownbutton} onClick={() => setOpen(!open)}>
+                {title}
+                <svg
+                    className={`${open ? styles.open : styles.closed} ${styles.dropdownicon}`}
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z"
+                        fill="currentColor"
+                    />
+                </svg>
+            </button>
+            <div className={`${styles.dropdowncontent} ${open ? styles.open : styles.closed}`}>
+                {children}
+            </div>
+        </div>
+    );
+}
+
 function DrawerButton() {
     return (
         <label htmlFor="drawer" className={styles.drawerlabel}>
-            <FaBars className={`${styles.icon} ${styles.menubutton}`}/>
+            <FaBars className={`${styles.icon} ${styles.menubutton}`} />
         </label>
 
-	)
+    )
 }
 
 export { SearchBar, MenuItem, DrawerButton };
@@ -48,15 +71,15 @@ export default function Topbar() {
         <>
             <input className={styles.drawer} id="drawer" type="checkbox" ref={checkbox} />
             <div className={styles.titlebar}>
-                <DrawerButton/>
+                <DrawerButton />
                 <Link href="/">
                     <a href="/" className={styles.name} onClick={hide}>
                         ЛФМЛ
                     </a>
                 </Link>
-                <span className={`${styles.search} ${searchOpen ? styles.open :  styles.closed}`}>
-                    <RiSearch2Line onClick={() => toggleSearch()} className={styles.searchbutton}/>
-                    <div className={searchOpen ? styles.open :  styles.closed}>
+                <span className={`${styles.search} ${searchOpen ? styles.open : styles.closed}`}>
+                    <RiSearch2Line onClick={() => toggleSearch()} className={styles.searchbutton} />
+                    <div className={searchOpen ? styles.open : styles.closed}>
                         <SearchBar hide={hide} />
                     </div>
                 </span>
