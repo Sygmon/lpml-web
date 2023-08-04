@@ -6,6 +6,11 @@
     align-items: flex-start;
     justify-content: flex-start;
 
+    * {
+        margin: unset;
+        padding: unset;
+    }
+
     .cover {
         width: 24rem;
         height: 24rem;
@@ -36,6 +41,7 @@
         line-height: 1.5rem;
         letter-spacing: 0.04em;
         text-align: left;
+        max-width: 60rem;
     }
 }
 

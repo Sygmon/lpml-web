@@ -54,12 +54,13 @@ export function getArticles(category) {
                 }
             }
             const descriptionEnd = paragraph.length;
-            if (descriptionEnd <= 100) {
+            const maxLength = 200;
+            if (descriptionEnd <= maxLength) {
                 article.description = paragraph.substring(0, descriptionEnd);
             } else {
-                const lastSpace = paragraph.substring(0, 100).lastIndexOf(" ");
+                const lastSpace = paragraph.substring(0, maxLength).lastIndexOf(" ");
                 if (lastSpace == -1) {
-                    article.description = paragraph.substring(0, 100);
+                    article.description = paragraph.substring(0, maxLength);
                 } else {
                     article.description = paragraph.substring(0, lastSpace);
                 }
