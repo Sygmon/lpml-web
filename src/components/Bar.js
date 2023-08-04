@@ -1,14 +1,10 @@
 import * as React from "react";
 import { useRef, useState } from "react";
-import {
-    FaBars,
-} from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import styles from "../scss/Sidebar.module.scss";
 import Link from "next/link";
 import SearchBar from "./Search";
-import {
-    RiSearch2Line,
-} from "react-icons/ri";
+import { RiSearch2Line } from "react-icons/ri";
 
 function MenuItem({ hide, href, children }) {
     return (
@@ -24,10 +20,15 @@ function MenuDropdown({ title, children }) {
     const [open, setOpen] = useState(false);
     return (
         <div className={styles.dropdown}>
-            <button className={styles.dropdownbutton} onClick={() => setOpen(!open)}>
+            <button
+                className={styles.dropdownbutton}
+                onClick={() => setOpen(!open)}
+            >
                 {title}
                 <svg
-                    className={`${open ? styles.open : styles.closed} ${styles.dropdownicon}`}
+                    className={`${open ? styles.open : styles.closed} ${
+                        styles.dropdownicon
+                    }`}
                     viewBox="0 0 24 24"
                 >
                     <path
@@ -36,7 +37,11 @@ function MenuDropdown({ title, children }) {
                     />
                 </svg>
             </button>
-            <div className={`${styles.dropdowncontent} ${open ? styles.open : styles.closed}`}>
+            <div
+                className={`${styles.dropdowncontent} ${
+                    open ? styles.open : styles.closed
+                }`}
+            >
                 {children}
             </div>
         </div>
@@ -48,8 +53,7 @@ function DrawerButton() {
         <label htmlFor="drawer" className={styles.drawerlabel}>
             <FaBars className={`${styles.icon} ${styles.menubutton}`} />
         </label>
-
-    )
+    );
 }
 
 export { SearchBar, MenuItem, DrawerButton };
@@ -61,15 +65,20 @@ export default function Topbar() {
     const hide = () => {
         setSearchOpen(false);
         checkbox.current.checked = false;
-    }
+    };
     const toggleSearch = () => {
         // If screen size < 1000px, do nothing
         if (window.innerWidth < 1000) return;
         setSearchOpen(!searchOpen);
-    }
+    };
     return (
         <>
-            <input className={styles.drawer} id="drawer" type="checkbox" ref={checkbox} />
+            <input
+                className={styles.drawer}
+                id="drawer"
+                type="checkbox"
+                ref={checkbox}
+            />
             <div className={styles.titlebar}>
                 <DrawerButton />
                 <Link href="/">
@@ -77,12 +86,22 @@ export default function Topbar() {
                         ЛФМЛ
                     </a>
                 </Link>
-                <span className={`${styles.search} ${searchOpen ? styles.open : styles.closed}`}>
-                    <RiSearch2Line onClick={() => toggleSearch()} className={styles.searchbutton} />
+                <span
+                    className={`${styles.search} ${
+                        searchOpen ? styles.open : styles.closed
+                    }`}
+                >
+                    <RiSearch2Line
+                        onClick={() => toggleSearch()}
+                        className={styles.searchbutton}
+                    />
                     <div className={searchOpen ? styles.open : styles.closed}>
                         <SearchBar hide={hide} />
                     </div>
                 </span>
+                <MenuItem hide={hide} href="/info/news">
+                    новини
+                </MenuItem>
                 <MenuItem hide={hide} href="/info/public-info">
                     публічно
                 </MenuItem>
@@ -110,5 +129,5 @@ export default function Topbar() {
                 </MenuDropdown>
             </div>
         </>
-    )
+    );
 }
