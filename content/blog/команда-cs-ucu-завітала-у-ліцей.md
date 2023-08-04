@@ -1,3 +1,6 @@
+---
+date: 29.04.2015
+---
 # Команда CS@UCU завітала у ліцей
 
 <blockquote cite="https://www.facebook.com/csatucu/posts/1439663252994108">
