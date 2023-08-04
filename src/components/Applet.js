@@ -9,15 +9,11 @@ export function ArticleLink(props) {
                 href={props.href}
                 className={styles["link-container"]}
             >
-                <div
-                    className={styles.cover}
-                    style={{
-                        backgroundImage: `url(${props.img})`
-                    }}
-                />
                 <div className={styles.link}>
                         {props.title}
                 </div>
+                <div className={styles.description}>{props.description}</div>
+                <div className={styles.date}>{props.date}</div>
             </a>
         </Link>
     )
@@ -32,6 +28,7 @@ export default function Applet({ articles }) {
                     href={article.href}
                     title={article.title}
                     img={article.cover}
+                    date={article.date}
                 />
             ))}
         </div>

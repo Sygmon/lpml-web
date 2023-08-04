@@ -10,6 +10,8 @@ function Grid({ articles }) {
                     href={article.href}
                     title={article.title}
                     img={article.cover}
+                    date={article.date}
+                    description={article.description}
                 />
             ))}
         </div>
@@ -22,7 +24,7 @@ export default function NewsGrid({ articles, scrollRef }) {
             <h1 className={styles.title}>
                 Новини
             </h1>
-            <Grid link="tmp" articles={articles} />
+            <Grid articles={articles} />
         </div>
     );
 }

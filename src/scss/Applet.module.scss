@@ -1,5 +1,43 @@
 @import "./common.scss";
 
+.link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .cover {
+        width: 24rem;
+        height: 24rem;
+        background-size: cover;
+        border-radius: 1rem;
+        margin-bottom: 2rem;
+    }
+    .link {
+        font-family: Kharkiv Tone;
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+        letter-spacing: 0.04em;
+        text-align: left;
+    }
+    .date {
+        font-family: Kharkiv Tone;
+        font-size: 0.8rem;
+        font-weight: 400;
+        line-height: 1rem;
+        letter-spacing: 0.04em;
+        text-align: left;
+    }
+    .description {
+        font-family: Kharkiv Tone;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+        letter-spacing: 0.04em;
+        text-align: left;
+    }
+}
 
 .Applet {
     background-color: var(--background);
@@ -17,35 +55,12 @@
         display: none;
     }
 
-    .link-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-
-        .cover {
-            width: 24rem;
-            height: 24rem;
-            background-size: cover;
-            border-radius: 1rem;
-            margin-bottom: 2rem;
-        }
-        .link {
-            font-family: Kharkiv Tone;
-            font-size: 1.5rem;
-            font-weight: 400;
-            line-height: 1.5rem;
-            letter-spacing: 0.04em;
-            text-align: left;
-        }
-    }
-
     // We also need to only show the first 6 on small screens
     @include small-screen {
         .link-container {
             display: none;
         }
-        .link-container:nth-child(-n+6) {
+        .link-container:nth-child(-n + 6) {
             display: block;
         }
     }
@@ -70,7 +85,6 @@
     justify-content: flex-start;
 
     .markdown {
-
         margin-bottom: 3rem;
 
         a {
@@ -101,14 +115,13 @@
                         box-shadow: 0 0 0.5em 0.5em var(--background);
                         border-radius: 0.5rem;
                         margin: 0.5rem;
-            
+
                         transition: 200ms;
-            
+
                         &:hover {
                             transform: scale(1.02);
                         }
                     }
-                    
                 }
 
                 &.open {
