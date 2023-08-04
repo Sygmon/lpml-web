@@ -21,6 +21,7 @@
         overflow: hidden;
     }
     .drawer:checked + * .navlink {
+        margin-top: 0.25rem;
         height: 2rem !important;
     }
     .drawer:checked + * .search {
@@ -28,7 +29,7 @@
         overflow: visible;
     }
     .drawer:checked + * .dropdownbutton {
-        margin-top: 1rem;
+        margin-bottom: 0.25rem;
         height: 2rem !important;
     }
     .drawer:checked + * {
