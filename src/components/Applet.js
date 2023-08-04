@@ -7,6 +7,14 @@ export function ArticleLink(props) {
     return (
         <Link href={props.href}>
             <a href={props.href} className={styles["link-container"]}>
+                {props.img && (
+                    <div
+                        className={styles.cover}
+                        style={{
+                            backgroundImage: `url(${props.img})`
+                        }}
+                    />
+                )}
                 <ReactMarkdown className={styles.link}>
                     {props.title}
                 </ReactMarkdown>

@@ -99,7 +99,7 @@ export default function Topbar() {
                         <SearchBar hide={hide} />
                     </div>
                 </span>
-                <MenuItem hide={hide} href="/info/news">
+                <MenuItem hide={hide} href="/news">
                     новини
                 </MenuItem>
                 <MenuItem hide={hide} href="/info/public-info">

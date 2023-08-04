@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { getArticles } from "../../lib/articles";
-import NewsGrid from "../../components/NewsGrid";
+import NewsList from "../../components/NewsList";
 import { GetStaticProps } from "next";
 import Head from 'next/head'
 
@@ -12,7 +12,7 @@ export default function App({ articles }){
             <Head>
                 <title>Lviv Physics and Maths Lyceum</title>
             </Head>
-            <NewsGrid articles={articles} scrollRef={scroll} />
+            <NewsList articles={articles} scrollRef={scroll} />
         </>
     )
 }

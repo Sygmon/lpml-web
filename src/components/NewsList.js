@@ -1,7 +1,7 @@
 import { ArticleLink } from "./Applet.js";
 import styles from "../scss/news_page_news.module.scss";
 
-function Grid({ articles }) {
+function List({ articles }) {
     return (
         <div className={styles.news}>
             {articles.map((article, index) => (
@@ -9,7 +9,6 @@ function Grid({ articles }) {
                     key={`${article}${index}`}
                     href={article.href}
                     title={article.title}
-                    img={article.cover}
                     date={article.date}
                     description={article.description}
                 />
@@ -18,13 +17,13 @@ function Grid({ articles }) {
     );
 }
 
-export default function NewsGrid({ articles, scrollRef }) {
+export default function NewsList({ articles, scrollRef }) {
     return (
         <div className={styles.news_grid} id="news_grid_applet" ref={scrollRef}>
             <h1 className={styles.title}>
                 Новини
             </h1>
-            <Grid articles={articles} />
+            <List articles={articles} />
         </div>
     );
 }
