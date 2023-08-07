@@ -24,8 +24,8 @@ def get_news_dates() -> list[tuple[str, str]]:
     news_dates = []
     for n in news:
         href = n.a["href"]
-        name = href.replace("/новини/", "").replace("/", "")
-        name = shorten_name(name)
+        name = href.replace("/новини/", "").replace("/", "") + "/"
+        name = shorten_name(name)[:-1]
         date = n.text
         date = date.replace("\n", "").replace("\t", "").replace(n.a.text, "")
         if date.endswith(" -"):
@@ -43,7 +43,7 @@ def shorten_name(name: str) -> str:
         str: The shortened name
     """
     shortened_name = name
-    shorten_to = 60
+    shorten_to = 55
     if len(name) > shorten_to:
         shortened_name = name
         if "-" in name:
