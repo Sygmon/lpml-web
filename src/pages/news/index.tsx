@@ -38,6 +38,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
                 : null,
         });
     }
+    // Sort by dd.mm.yyyy
     articles.sort((a, b) => {
         // If null:
         if (!a.date) {
@@ -46,11 +47,28 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         if (!b.date) {
             return -1;
         }
+        // If not null:
         const aDate = a.date.split(".");
         const bDate = b.date.split(".");
-        const aDateObj = new Date(aDate[2], aDate[1], aDate[0]);
-        const bDateObj = new Date(bDate[2], bDate[1], bDate[0]);
-        return bDateObj - aDateObj;
+        if (aDate[2] < bDate[2]) {
+            return 1;
+        }
+        if (aDate[2] > bDate[2]) {
+            return -1;
+        }
+        if (aDate[1] < bDate[1]) {
+            return 1;
+        }
+        if (aDate[1] > bDate[1]) {
+            return -1;
+        }
+        if (aDate[0] < bDate[0]) {
+            return 1;
+        }
+        if (aDate[0] > bDate[0]) {
+            return -1;
+        }
+        return 0;
     });
 
     return {
