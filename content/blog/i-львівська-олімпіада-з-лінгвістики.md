@@ -26,3 +26,4 @@ date: 09.11.2015
 Детальніше - [http://cs.ucu.edu.ua/kalendar/i-lviv-linguistic-olympiad/](http://cs.ucu.edu.ua/kalendar/i-lviv-linguistic-olympiad/)
 
 [Читати усі новини](/news)
+date: 09.11.2015

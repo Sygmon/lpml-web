@@ -79,3 +79,4 @@ Networking: How to Make the Connections You Need by Ellis Chase.
 Автор: Анна Королюк, випускниця ліцею 2003
 
 [Читати усі новини](/news)
+date: 21.05.2015

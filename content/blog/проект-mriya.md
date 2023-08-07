@@ -20,3 +20,4 @@ date: 29.03.2023
 ![](/images/blog/проект-mriya/bannermrija.jpg)
 
 [Читати усі новини](/news)
+date: 29.03.2023

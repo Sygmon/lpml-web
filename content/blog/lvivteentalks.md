@@ -40,3 +40,4 @@ TED — платформа для ідей, які варті поширення
 ![](/images/blog/lvivteentalks/img_4260.jpg)![](/images/blog/lvivteentalks/img_4260.jpg)
 
 [Читати усі новини](/news)
+date: 12.12.2017

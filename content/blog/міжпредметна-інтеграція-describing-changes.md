@@ -20,3 +20,4 @@ date: 25.02.2018
 ![](/images/blog/міжпредметна-інтеграція-describing-changes/pids.jpg)
 
 [Читати усі новини](/news)
+date: 25.02.2018
