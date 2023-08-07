@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const articlesRaw = getArticles("blog").sort((a, b) =>
         a.date < b.date ? -1 : 1,
     );
-    for (var i = 0; i < 11; i++) {
+    for (var i = 0; i < articlesRaw.length; i++) {
         articles.push({
             title: articlesRaw[i] ? articlesRaw[i].title : null,
             href: `/news/${articlesRaw[i] && articlesRaw[i].id}`,
@@ -40,6 +40,20 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
                 : null,
         });
     }
+    articles.sort((a, b) => {
+        // If null:
+        if (!a.date) {
+            return 1;
+        }
+        if (!b.date) {
+            return -1;
+        }
+        const aDate = a.date.split(".");
+        const bDate = b.date.split(".");
+        const aDateObj = new Date(aDate[2], aDate[1], aDate[0]);
+        const bDateObj = new Date(bDate[2], bDate[1], bDate[0]);
+        return bDateObj - aDateObj;
+    });
 
     return {
         props: {
