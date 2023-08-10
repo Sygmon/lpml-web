@@ -102,8 +102,8 @@ export default function Topbar() {
                 <MenuItem hide={hide} href="/news">
                     новини
                 </MenuItem>
-                <MenuItem hide={hide} href="/info/public-info">
-                    публічно
+                <MenuItem hide={hide} href="/info/for-entrants">
+                    вступ
                 </MenuItem>
                 <MenuDropdown title="ліцей">
                     <MenuItem hide={hide} href="/info/about">
@@ -116,15 +116,18 @@ export default function Topbar() {
                         колектив
                     </MenuItem>
                 </MenuDropdown>
-                <MenuDropdown title="для...">
+                <MenuDropdown title="інформація">
+                    <MenuItem hide={hide} href="/info/public-info">
+                        публічно
+                    </MenuItem>
                     <MenuItem hide={hide} href="/info/for-parents">
-                        батьків
+                        батькам
                     </MenuItem>
                     <MenuItem hide={hide} href="/info/for-students">
-                        ліцеїстів
+                        ліцеїстам
                     </MenuItem>
                     <MenuItem hide={hide} href="/info/for-grads">
-                        випускників
+                        випускникам
                     </MenuItem>
                 </MenuDropdown>
             </div>
