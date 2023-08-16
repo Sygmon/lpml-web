@@ -17,7 +17,7 @@ function SearchBox({ query, refine }) {
   return (
     <input
       type="search"
-      label="Search"
+      aria-label="Search"
       value={query}
       onChange={(evt) => refine(evt.target.value)}
     />

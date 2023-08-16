@@ -39,14 +39,14 @@ export default function Footer() {
             <a
               href="http://www.facebook.com/groups/33427370676/"
               className={styles.social}
-              name="facebook"
+              aria-label="facebook"
             >
               <FaFacebook />
             </a>
           </Link>
         </div>
         <Link href="/">
-          <a href="/" className={styles.logo} name="logo">
+          <a href="/" className={styles.logo} aria-label="logo">
             <Logo width={295 / 2} height={131 / 2} viewBox="0 0 295 131" />
           </a>
         </Link>
