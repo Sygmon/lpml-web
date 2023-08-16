@@ -1,68 +1,88 @@
 @import "./common.scss";
 
-
 .footer {
-    margin-top: 2em;
-    margin-left: 1rem;
-    margin-right: 1rem;
+  margin-top: 2em;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  min-height: 21.25rem;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--menu-bg);
+  color: var(--secondary);
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 1em;
+  padding-top: 3rem;
+
+  @include small-screen {
+    padding-top: 1rem;
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  .column {
     display: flex;
-    min-height: 21.25rem;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    background-color: var(--menu-bg);
-    color: var(--secondary);
-    border-top-right-radius: 2rem;
-    border-top-left-radius: 2rem;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding-bottom: 1em;
+    justify-content: center;
 
-    .column {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: 3rem;
+    .label {
+      max-width: 29rem;
 
-        .label {
-            max-width: 29rem;
+      font-family: "Kharkiv Tone";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.5rem;
+      line-height: 1.7rem;
+      text-align: center;
 
-            font-family: 'Kharkiv Tone';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 1.5rem;
-            line-height: 1.7rem;
-            text-align: center;
-        }
-        .links {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            .link {
-                color: var(--secondary);
-                margin: 0.5rem;
-
-                font-family: 'Kharkiv Tone';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 1rem;
-                line-height: 1.5rem;
-            }
-        }
-        .socials {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-evenly;
-            font-size: 3rem;
-            width: 100%;
-            padding: 1rem;
-        }
-        .logo {
-            transform: scale(0.5);
-            path {
-                fill: var(--secondary);
-            }
-        }
+      @include small-screen {
+        font-size: 1rem;
+        line-height: 1.2rem;
+      }
     }
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+
+      @include small-screen {
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .link {
+        color: var(--secondary);
+
+        font-family: "Kharkiv Tone";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.5rem;
+
+        &:hover {
+          color: var(--foreground);
+          text-decoration: underline;
+        }
+      }
+    }
+    .socials {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      font-size: 3rem;
+      width: 100%;
+      padding: 1rem;
+    }
+    .logo {
+      path {
+        fill: var(--secondary);
+      }
+    }
+  }
 }
