@@ -1,14 +1,8 @@
 @import "./common.scss";
 
 .container {
-  margin-left: 17rem !important;
-  margin-right: 1rem;
   width: auto;
   height: 100vh;
-  position: relative;
-  @include small-screen {
-    margin-left: 4.5rem !important;
-  }
 
   display: flex;
   flex-direction: column;
@@ -28,6 +22,7 @@
     }
 
     .title {
+      font-family: "Roboto", sans-serif;
       border-right: 1px solid var(--menu-bg);
       margin-right: 1.5em;
       padding: 1em 1.5em 1em 0;
@@ -51,7 +46,6 @@
 
       .description {
         font-size: 1.5em;
-        font-weight: normal;
         line-height: inherit;
         margin: 0;
         padding: 0;
@@ -68,4 +62,3 @@
     }
   }
 }
-
