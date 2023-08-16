@@ -8,6 +8,9 @@
     font-size: 2rem;
     margin: 1rem;
 }
+.navlink-mobile {
+    display: none;
+}
 @include small-screen {
     .drawerlabel {
         display: block;
@@ -34,6 +37,9 @@
     }
     .drawer:checked + * {
         height: unset;
+    }
+    .drawer:checked + * .navlink-mobile {
+        display: block;
     }
 }
 
