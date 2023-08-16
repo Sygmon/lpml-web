@@ -6,7 +6,6 @@ import {
   Snippet,
 } from "react-instantsearch-hooks-web";
 import styles from "../scss/Sidebar.module.scss";
-1;
 import Link from "next/link";
 
 const searchClient = algoliasearch(
@@ -25,7 +24,7 @@ function SearchBox({ query, refine }) {
 }
 
 function Results({ active, hide, reset }) {
-  const hits = useHits()[0];
+  const { hits } = useHits();
 
   return active ? (
     <div className={styles.results}>
@@ -72,4 +71,3 @@ export default function Search({ hide }) {
     </InstantSearch>
   );
 }
-
