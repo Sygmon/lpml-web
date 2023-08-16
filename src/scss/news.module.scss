@@ -1,54 +1,93 @@
-@import "./common.scss";
+@import "common.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800;900&display=swap");
 
-.link-container {
+.news_grid {
+  width: 92%;
+  min-height: 40vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  padding-bottom: 4rem;
+  margin: 0 1rem;
 
-  &:hover {
+  &.shrink {
+    margin: 0 auto;
+  }
+
+  .title {
+    font-family: Kharkiv Tone;
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 3.5rem;
+    letter-spacing: 0.04em;
+    text-align: left;
+
+    color: var(--foreground);
+  }
+
+  .subtitle {
+    font-family: Kharkiv Tone;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 2.5rem;
+    letter-spacing: 0.04em;
+    text-align: left;
+    cursor: pointer;
+
+    color: var(--foreground);
+  }
+}
+
+.news {
+  background-color: var(--background);
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: auto;
+  gap: 2rem;
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .cover {
+      width: 24rem;
+      height: 24rem;
+      background-size: cover;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+    }
     .link {
-      text-decoration: underline;
-      color: var(--highlight);
+      font-family: Kharkiv Tone;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.5rem;
+      letter-spacing: 0.04em;
+      text-align: left;
     }
   }
 
-  * {
-    margin: unset;
-    padding: unset;
-  }
-
-  .cover {
-    width: 18rem;
-    height: 18rem;
-    background-size: cover;
-    border-radius: 1rem;
-    margin-bottom: 2rem;
-  }
-  .link {
-    font-family: Kharkiv Tone;
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 2rem;
-    letter-spacing: 0.04em;
-    text-align: left;
-  }
-  .date {
-    font-family: Kharkiv Tone;
-    font-size: 0.8rem;
-    font-weight: 400;
-    line-height: 1.5rem;
-    letter-spacing: 0.04em;
-    text-align: left;
-  }
-  .description {
-    font-family: Kharkiv Tone;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5rem;
-    letter-spacing: 0.04em;
-    text-align: left;
-    max-width: 60rem;
+  // We also need to only show the first 6 on small screens
+  @include small-screen {
+    .link-container {
+      display: none;
+    }
+    .link-container:nth-child(-n + 6) {
+      display: block;
+    }
   }
 }
 
@@ -172,5 +211,21 @@
         }
       }
     }
+  }
+}
+
+.more {
+  margin: 2rem;
+  font-family: Kharkiv Tone;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: normal;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+    text-decoration-thickness: 0.125rem;
+    color: var(--highlight);
   }
 }

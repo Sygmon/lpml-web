@@ -6,13 +6,6 @@
     --menu-bg: #4c566a;
     --highlight: #a3be8c;
     --secondary: #e5e9f0;
-    scroll-behavior: smooth;
-}
-// Old website green:
-// $highlight: #59b331;
-html, body {
-    background-color: var(--background);
-    margin: 0;
 }
 
 .App {
@@ -58,10 +51,6 @@ html, body {
 }
 
 @media only screen and (max-width: 1000px) {
-    body {
-        font-size: 10px;
-    }
-
     .Applet {
         .lorem {
             left: 2em;
