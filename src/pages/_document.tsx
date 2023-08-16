@@ -1,10 +1,11 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
   return (
     <Html>
       <Head>
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
       </Head>
       <body>
         <Main />
@@ -14,4 +15,3 @@ export default function Document() {
     </Html>
   );
 }
-
