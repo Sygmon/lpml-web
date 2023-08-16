@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import themes from "./themes.js";
+import themes from "./themes";
 import { FaBrush } from "react-icons/fa";
 import styles from "../scss/Themeswitcher.module.scss";
 

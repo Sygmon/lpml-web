@@ -1,7 +1,7 @@
 import "../scss/App.scss";
 import "../index.scss";
-import Menu from "../components/Bar.js";
-import Footer from "../components/Footer.js";
+import Menu from "../components/Bar";
+import Footer from "../components/Footer";
 
 export default function MyApp({ Component, pageProps }) {
   return (

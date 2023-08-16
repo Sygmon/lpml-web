@@ -1,6 +1,6 @@
-import { ArticleLink } from "./Applet.js";
+import { ArticleLink } from "./Applet";
 import styles from "../scss/news.module.scss";
-import Link from "next/link.js";
+import Link from "next/link";
 
 export function List({ articles }) {
   return (

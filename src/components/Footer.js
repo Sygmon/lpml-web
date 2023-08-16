@@ -1,5 +1,5 @@
 import styles from "../scss/Footer.module.scss";
-import Switcher from "./Themeswitcher.js";
+import Switcher from "./Themeswitcher";
 import { FaFacebook } from "react-icons/fa";
 import Logo from "./logo.svg";
 import Link from "next/link";
