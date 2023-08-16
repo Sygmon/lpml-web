@@ -9,8 +9,8 @@ export default function MyApp({ Component, pageProps }) {
       <div className="main">
         <Menu />
         <Component {...pageProps} />
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
