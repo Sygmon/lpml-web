@@ -18,12 +18,11 @@ export function List({ articles }) {
   );
 }
 
-export default function NewsList({ articles, scrollRef, dedicated = false }) {
+export default function NewsList({ articles, dedicated = false }) {
   return (
     <div
       className={`${styles.news_grid} ${dedicated ? styles.shrink : ""}`}
       id="news_grid_applet"
-      ref={scrollRef}
     >
       {dedicated ? (
         <h1 className={styles.title}>Новини</h1>

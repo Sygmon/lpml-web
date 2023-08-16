@@ -1,234 +1,234 @@
 @import "./common.scss";
 
 .drawer {
-    display: none;
+  display: none;
 }
 .drawerlabel {
-    display: none;
-    font-size: 2rem;
-    margin: 1rem;
+  display: none;
+  font-size: 2rem;
+  margin: 1rem;
 }
 .navlink-mobile {
-    display: none;
+  display: none;
 }
 @include small-screen {
-    .drawerlabel {
-        display: block;
-    }
-    .navlink,
-    .name,
-    .search,
-    .dropdownbutton {
-        height: 0 !important;
-        transition: 200ms;
-        overflow: hidden;
-    }
-    .drawer:checked + * .navlink {
-        margin-top: 0.25rem;
-        height: 2rem !important;
-    }
-    .drawer:checked + * .search {
-        height: 3rem !important;
-        overflow: visible;
-    }
-    .drawer:checked + * .dropdownbutton {
-        margin-bottom: 0.25rem;
-        height: 2rem !important;
-    }
-    .drawer:checked + * {
-        height: unset;
-    }
-    .drawer:checked + * .navlink-mobile {
-        display: block;
-    }
+  .drawerlabel {
+    display: block;
+  }
+  .navlink,
+  .name,
+  .search,
+  .dropdownbutton {
+    height: 0 !important;
+    transition: 200ms;
+    overflow: hidden;
+  }
+  .drawer:checked + * .navlink {
+    margin-top: 0.25rem;
+    height: 2rem !important;
+  }
+  .drawer:checked + * .search {
+    height: 3rem !important;
+    overflow: visible;
+  }
+  .drawer:checked + * .dropdownbutton {
+    margin-bottom: 0.25rem;
+    height: 2rem !important;
+  }
+  .drawer:checked + * {
+    height: unset;
+  }
+  .drawer:checked + * .navlink-mobile {
+    display: block;
+  }
 }
 
 .titlebar {
+  display: flex;
+  flex-direction: row;
+  @include small-screen {
+    flex-direction: column;
+  }
+  align-items: center;
+  @include small-screen {
+    align-items: flex-start;
+  }
+  justify-content: flex-start;
+  padding: 2.5rem 1rem;
+  @include small-screen {
+    padding: 0;
+  }
+  height: 6rem;
+  @include small-screen {
+    height: 3rem;
+  }
+
+  .name {
+    font-family: Kharkiv Tone;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+    letter-spacing: 0.04em;
+    margin-right: 2rem;
+  }
+
+  .searchbutton {
+    height: 1.5rem;
+    width: 1.5rem;
+    padding-top: 0.75rem;
+    margin-right: 0.3rem;
+    margin-left: 0.5rem;
+  }
+
+  .search {
+    font-size: 2rem;
+    margin: 1.5rem 2rem;
+    margin-left: auto;
+    @include small-screen {
+      margin-left: 0;
+    }
+    align-self: flex-start;
+    height: 3rem;
+
     display: flex;
     flex-direction: row;
-    @include small-screen {
-        flex-direction: column;
+    align-items: flex-start;
+
+    .open {
+      @include small-screen {
+        width: 15rem;
+      }
+      @media (min-width: 1000px) and (max-width: 1100px) {
+        width: 10rem;
+      }
+      @media (min-width: 1100px) {
+        width: 20rem;
+      }
+      transition: 300ms;
     }
-    align-items: center;
-    @include small-screen {
-        align-items: flex-start;
-    }
-    justify-content: flex-start;
-    padding: 2.5rem 1rem;
-    @include small-screen {
-        padding: 0;
-    }
-    height: 6rem;
-    @include small-screen {
-        height: 3rem;
+    .closed {
+      width: 0;
+      @include small-screen {
+        width: 100%;
+      }
+      transition: 300ms;
+      overflow: hidden;
     }
 
-    .name {
-        font-family: Kharkiv Tone;
-        font-size: 2.5rem;
-        font-weight: 400;
-        line-height: 2.5rem;
-        letter-spacing: 0.04em;
-        margin-right: 2rem;
-    }
+    .searchcontainer {
+      width: 100%;
+      .searchbar {
+        width: 100%;
+        input {
+          font-size: 1rem;
+          background: transparent;
+          outline: none;
+          border: none;
+          border-bottom: solid var(--menu-bg) 0.25rem;
+          color: var(--foreground);
+          width: 100%;
 
-    .searchbutton {
-        height: 1.5rem;
-        width: 1.5rem;
-        padding-top: 0.75rem;
-        margin-right: 0.3rem;
-        margin-left: 0.5rem;
-    }
-
-    .search {
-        font-size: 2rem;
-        margin: 1.5rem 2rem;
-        margin-left: auto;
-        @include small-screen {
-            margin-left: 0;
+          &:focus {
+            border: none;
+            border-bottom: solid var(--highlight) 0.25rem;
+          }
         }
-        align-self: flex-start;
-        height: 3rem;
+      }
 
+      .results {
+        overflow: scroll;
+        max-height: 75vh;
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
 
-        .open {
-            @include small-screen {
-                width: 15rem;
-            }
-            @media (min-width: 1000px) and (max-width: 1100px) {
-                width: 10rem;
-            }
-            @media (min-width: 1100px) {
-                width: 20rem;
-            }
-            transition: 300ms;
+        .result {
+          background: var(--background);
+          border: solid var(--menu-bg) 1px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+          z-index: 1;
+
+          .title {
+            color: var(--secondary);
+            font-size: 1.5rem;
+          }
+
+          .content {
+            font-size: 1rem;
+          }
         }
-        .closed {
-            width: 0;
-            @include small-screen {
-                width: 100%;
-            }
-            transition: 300ms;
-            overflow: hidden;
-        }
+      }
+    }
+  }
 
-        .searchcontainer {
-            width: 100%;
-            .searchbar {
-                width: 100%;
-                input {
-                    font-size: 1rem;
-                    background: transparent;
-                    outline: none;
-                    border: none;
-                    border-bottom: solid var(--menu-bg) 0.25rem;
-                    color: var(--foreground);
-                    width: 100%;
+  .navlink {
+    font-family: Kharkiv Tone;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    letter-spacing: 0.04em;
+    text-align: left;
+    padding: 0 1.5rem;
+  }
 
-                    &:focus {
-                        border: none;
-                        border-bottom: solid var(--highlight) 0.25rem;
-                    }
-                }
-            }
+  .dropdown {
+    .dropdownbutton {
+      background: transparent;
+      color: var(--foreground);
+      border: none;
+      outline: none;
+      font-family: Kharkiv Tone;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.5rem;
+      letter-spacing: 0.04em;
+      text-align: left;
+      padding: 0 1.5rem;
+      cursor: pointer;
 
-            .results {
-                overflow: scroll;
-                max-height: 75vh;
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-                justify-content: flex-start;
-
-                .result {
-                    background: var(--background);
-                    border: solid var(--menu-bg) 1px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    text-align: left;
-                    z-index: 1;
-
-                    .title {
-                        color: var(--secondary);
-                        font-size: 1.5rem;
-                    }
-
-                    .content {
-                        font-size: 1rem;
-                    }
-                }
-            }
-        }
+      .dropdownicon {
+        height: 1rem;
+        width: 1rem;
+        margin-left: 0.25rem;
+        margin-top: 0.5rem;
+      }
     }
 
-    .navlink {
-        font-family: Kharkiv Tone;
-        font-size: 1.5rem;
+    .dropdowncontent {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      background-color: var(--background);
+      min-width: 10rem;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      padding-bottom: 1.2rem;
+      margin-left: 1rem;
+
+      @include small-screen {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+
+      .navlink {
+        font-size: 1.1rem;
+        padding-top: 1.2rem;
         font-weight: 400;
-        line-height: 1.5rem;
+        line-height: 1.1rem;
         letter-spacing: 0.04em;
         text-align: left;
-        padding: 0 1.5rem;
-    }
 
-    .dropdown {
-        .dropdownbutton {
-            background: transparent;
-            color: var(--foreground);
-            border: none;
-            outline: none;
-            font-family: Kharkiv Tone;
-            font-size: 1.5rem;
-            font-weight: 400;
-            line-height: 1.5rem;
-            letter-spacing: 0.04em;
-            text-align: left;
-            padding: 0 1.5rem;
-            cursor: pointer;
-
-            .dropdownicon {
-                height: 1rem;
-                width: 1rem;
-                margin-left: 0.25rem;
-                margin-top: 0.5rem;
-            }
+        @include small-screen {
+          padding-top: 0.5rem;
         }
-
-        .dropdowncontent {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            background-color: var(--background);
-            min-width: 10rem;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            padding-bottom: 1.2rem;
-            margin-left: 1rem;
-
-            @include small-screen {
-                padding-top: 0.5rem;
-                padding-bottom: 0.5rem;
-            }
-
-            .navlink {
-                font-size: 1.1rem;
-                padding-top: 1.2rem;
-                font-weight: 400;
-                line-height: 1.1rem;
-                letter-spacing: 0.04em;
-                text-align: left;
-
-                @include small-screen {
-                    padding-top: 0.5rem;
-                }
-            }
-        }
+      }
     }
+  }
 
-    .dropdown:hover .dropdowncontent {
-        display: flex;
-    }
+  .dropdown:hover .dropdowncontent {
+    display: flex;
+  }
 }

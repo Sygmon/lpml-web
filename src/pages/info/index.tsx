@@ -1,3 +1,4 @@
 export default function InfoPage() {
-    return null;
+  return null;
 }
+

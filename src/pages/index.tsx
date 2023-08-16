@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { getArticles } from "../lib/articles";
 import MainPage from "../components/MainPage";
 import { GetStaticProps } from "next";
@@ -6,20 +6,18 @@ import Head from "next/head";
 import NewsList from "../components/NewsList";
 
 export default function App({ articles }) {
-  const scroll = useRef(null);
-
   return (
     <>
       <Head>
         <title>Lviv Physics and Maths Lyceum</title>
       </Head>
-      <MainPage scrollRef={scroll} />
-      <NewsList articles={articles} scrollRef={scroll} />
+      <MainPage />
+      <NewsList articles={articles} />
     </>
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async () => {
   let articles = [];
   const articlesRaw = getArticles("blog").sort((a, b) =>
     a.date < b.date ? -1 : 1

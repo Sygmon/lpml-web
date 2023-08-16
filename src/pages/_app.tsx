@@ -4,13 +4,13 @@ import Menu from "../components/Bar.js";
 import Footer from "../components/Footer.js";
 
 export default function MyApp({ Component, pageProps }) {
-    return (
-        <div className="App">
-            <div className="main">
-                <Menu />
-                <Component {...pageProps} />
-                <Footer />
-            </div>
-        </div>
-    )
+  return (
+    <div className="App">
+      <div className="main">
+        <Menu />
+        <Component {...pageProps} />
+        <Footer />
+      </div>
+    </div>
+  );
 }
