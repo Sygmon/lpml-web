@@ -6,6 +6,10 @@ export default function Document() {
     <Html lang="uk">
       <Head>
         <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
+        <meta
+          name="keywords"
+          content="львівський фізико математичний ліцей хіміко біологічний школа інтернат інформатика фізика математика хімія біологія"
+        />
       </Head>
       <body>
         <Main />

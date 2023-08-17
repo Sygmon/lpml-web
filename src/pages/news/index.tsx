@@ -8,7 +8,15 @@ export default function App({ articles }) {
   return (
     <>
       <Head>
-        <title>Львівський фізико-математичний ліцей</title>
+        <title>ЛФМЛ - Новини</title>
+        <meta
+          name="description"
+          content={
+            `Новини ЛФМЛ: ${articles
+              .map((article) => article.title)
+              .join(", ")}`.slice(0, 152) + "..."
+          }
+        />
       </Head>
       <NewsList articles={articles} dedicated />
     </>

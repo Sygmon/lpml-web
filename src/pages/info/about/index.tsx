@@ -4,14 +4,21 @@ import Article from "../../../components/Article";
 import ArticleMenu from "../../../components/ArticleMenu";
 import Head from "next/head";
 
-export default function ArticlePage({ id, content, title, articles }) {
+export default function ArticlePage({
+  id,
+  content,
+  title,
+  articles,
+  description,
+}) {
   return (
     <>
       <Article id={id} content={content}>
         <ArticleMenu articles={articles} path="about" />
       </Article>
       <Head>
-        <title>LPML - {title}</title>
+        <title>ЛФМЛ - {title}</title>
+        <meta name="description" content={description || content} />
       </Head>
     </>
   );
@@ -26,6 +33,7 @@ export const getStaticProps: GetStaticProps = async () => {
       id: article.id,
       content: article.content,
       title: article.title,
+      description: article.description,
       articles: eq_articles.map((article) => ({
         id: article.id,
         title: article.title,

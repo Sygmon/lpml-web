@@ -8,7 +8,8 @@ export default function ArticlePage({ id, content, title }) {
     <>
       <Article id={id} content={content} />
       <Head>
-        <title>LPML - {title}</title>
+        <title>ЛФМЛ - {title}</title>
+        <meta name="description" content={content} />
       </Head>
     </>
   );

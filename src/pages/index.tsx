@@ -10,6 +10,10 @@ export default function App({ articles }) {
     <>
       <Head>
         <title>Львівський фізико-математичний ліцей</title>
+        <meta
+          name="description"
+          content="Офіційний сайт Львівського фізико-математичного ліцею-інтернату при Львівському національному університеті імені Івана Франка"
+        />
       </Head>
       <MainPage />
       <NewsList articles={articles} />

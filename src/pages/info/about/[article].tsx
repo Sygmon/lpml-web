@@ -3,12 +3,13 @@ import { getArticles } from "../../../lib/articles";
 import Article from "../../../components/Article";
 import Head from "next/head";
 
-export default function ArticlePage({ id, content, title }) {
+export default function ArticlePage({ id, content, title, description }) {
   return (
     <>
       <Article id={id} content={content} />
       <Head>
-        <title>LPML - For Graduates - {title}</title>
+        <title>ЛФМЛ - Про Ліцей - {title}</title>
+        <meta name="description" content={description || content} />
       </Head>
     </>
   );
@@ -34,6 +35,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       id: article.id,
       content: article.content,
       title: article.title,
+      description: article.description,
     },
   };
 };
