@@ -6,7 +6,11 @@ import ReactMarkdown from "react-markdown";
 export function ArticleLink(props) {
   return (
     <Link href={props.href}>
-      <a href={props.href} className={styles["link-container"]}>
+      <a
+        href={props.href}
+        className={styles["link-container"]}
+        aria-label={props.title}
+      >
         <ReactMarkdown className={styles.link}>{props.title}</ReactMarkdown>
         <ReactMarkdown className={styles.description}>
           {props.description}

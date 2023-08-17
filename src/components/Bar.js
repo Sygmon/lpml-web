@@ -78,6 +78,7 @@ export default function Topbar() {
     <>
       <input
         className={styles.drawer}
+        aria-label="Toggle menu"
         id="drawer"
         type="checkbox"
         ref={checkbox}
