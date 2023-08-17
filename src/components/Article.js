@@ -3,7 +3,6 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import styles from "../scss/Applet.module.scss";
 import rehypeRaw from "rehype-raw";
-import Image from "next/image";
 
 function MdImage(props) {
   const [open, setOpen] = useState(false);
@@ -17,19 +16,18 @@ function MdImage(props) {
         className={`${styles.image} ${styles.closed}`}
         onClick={() => setOpen(!open)}
       >
-        <Image
-          src={imgSource}
-          alt={props.alt}
-          loading="lazy"
-          width={512}
-          height={256}
-        />
+        <img src={imgSource} alt={props.alt} loading="lazy" />
         {open && (
           <div
             className={`${styles.image} ${styles.open}`}
             onClick={() => setOpen(!open)}
           >
-            <Image src={props.src} alt={props.alt} layout="fill" />
+            <img
+              src={props.src}
+              alt={props.alt}
+              layout="fill"
+              objectFit="contain"
+            />
           </div>
         )}
       </div>
