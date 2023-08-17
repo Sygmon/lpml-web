@@ -6,33 +6,35 @@ media_folder: public/images
 public_folder: public
 
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'content/blog'
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
     create: true
-    slug: 'index'
-    media_folder: ''
-    public_folder: ''
-    path: '{{title}}'
+    slug: "index"
+    media_folder: ""
+    public_folder: ""
+    path: "{{title}}"
     editor:
       preview: true
     fields:
-      - label: 'Title'
-        name: 'title'
-        widget: 'string'
-      - label: 'Publish Date'
-        name: 'date'
-        widget: 'datetime'
-      - label: 'Description'
-        name: 'description'
-        widget: 'string'
-      - label: 'Body'
-        name: 'body'
-        widget: 'markdown'
-      - label: 'Cover'
-        name: 'cover'
-        widget: 'image'
-        optional: 'true'
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+      - label: "Description"
+        name: "description"
+        widget: "string"
+        optional: "true"
+        pattern: ["^.{20,150}$", "Must have between 20 and 150 characters"]
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+      - label: "Cover"
+        name: "cover"
+        widget: "image"
+        optional: "true"
       - label: "Manual File"
         name: "File"
         widget: "file"
@@ -40,26 +42,28 @@ collections:
         media_library:
           config:
             multiple: true
-  - name: 'info'
-    label: 'Info'
-    folder: 'content/info'
+  - name: "info"
+    label: "Info"
+    folder: "content/info"
     create: true
-    slug: 'index'
-    media_folder: ''
-    public_folder: ''
-    path: '{{title}}'
+    slug: "index"
+    media_folder: ""
+    public_folder: ""
+    path: "{{title}}"
     editor:
       preview: true
     fields:
-      - label: 'Title'
-        name: 'title'
-        widget: 'string'
-      - label: 'Description'
-        name: 'description'
-        widget: 'string'
-      - label: 'Body'
-        name: 'body'
-        widget: 'markdown'
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Description"
+        name: "description"
+        widget: "string"
+        optional: "true"
+        pattern: ["^.{20,150}$", "Must have between 20 and 150 characters"]
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
       - label: "Manual File"
         name: "File"
         widget: "file"
@@ -67,26 +71,28 @@ collections:
         media_library:
           config:
             multiple: true
-  - name: 'education quality'
-    label: 'Education quality'
-    folder: 'content/info/education'
+  - name: "education quality"
+    label: "Education quality"
+    folder: "content/info/education"
     create: true
-    slug: 'index'
-    media_folder: ''
-    public_folder: ''
-    path: '{{title}}'
+    slug: "index"
+    media_folder: ""
+    public_folder: ""
+    path: "{{title}}"
     editor:
       preview: true
     fields:
-      - label: 'Title'
-        name: 'title'
-        widget: 'string'
-      - label: 'Description'
-        name: 'description'
-        widget: 'string'
-      - label: 'Body'
-        name: 'body'
-        widget: 'markdown'
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Description"
+        name: "description"
+        widget: "string"
+        optional: "true"
+        pattern: ["^.{20,150}$", "Must have between 20 and 150 characters"]
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
       - label: "Manual File"
         name: "File"
         widget: "file"
@@ -94,26 +100,28 @@ collections:
         media_library:
           config:
             multiple: true
-  - name: 'for graduates'
-    label: 'For graduates'
-    folder: 'content/info/for-grads'
+  - name: "for graduates"
+    label: "For graduates"
+    folder: "content/info/for-grads"
     create: true
-    slug: 'index'
-    media_folder: ''
-    public_folder: ''
-    path: '{{title}}'
+    slug: "index"
+    media_folder: ""
+    public_folder: ""
+    path: "{{title}}"
     editor:
       preview: true
     fields:
-      - label: 'Title'
-        name: 'title'
-        widget: 'string'
-      - label: 'Description'
-        name: 'description'
-        widget: 'string'
-      - label: 'Body'
-        name: 'body'
-        widget: 'markdown'
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Description"
+        name: "description"
+        widget: "string"
+        optional: "true"
+        pattern: ["^.{20,150}$", "Must have between 20 and 150 characters"]
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
       - label: "Manual File"
         name: "File"
         widget: "file"
@@ -121,26 +129,28 @@ collections:
         media_library:
           config:
             multiple: true
-  - name: 'public info'
-    label: 'Public information'
-    folder: 'content/info/public-info'
+  - name: "public info"
+    label: "Public information"
+    folder: "content/info/public-info"
     create: true
-    slug: 'index'
-    media_folder: ''
-    public_folder: ''
-    path: '{{title}}'
+    slug: "index"
+    media_folder: ""
+    public_folder: ""
+    path: "{{title}}"
     editor:
       preview: true
     fields:
-      - label: 'Title'
-        name: 'title'
-        widget: 'string'
-      - label: 'Description'
-        name: 'description'
-        widget: 'string'
-      - label: 'Body'
-        name: 'body'
-        widget: 'markdown'
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Description"
+        name: "description"
+        widget: "string"
+        optional: "true"
+        pattern: ["^.{20,150}$", "Must have between 20 and 150 characters"]
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
       - label: "Manual File"
         name: "File"
         widget: "file"
