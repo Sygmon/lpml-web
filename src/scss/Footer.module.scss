@@ -36,17 +36,18 @@
     .links {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: flex-start;
-      gap: 1rem;
+      flex-wrap: wrap;
 
       @include small-screen {
-        align-items: center;
-        gap: 0.5rem;
+        flex-direction: row;
       }
 
       .link {
         color: var(--secondary);
         font-size: 1rem;
+        padding: 1rem;
 
         &:hover {
           color: var(--foreground);
