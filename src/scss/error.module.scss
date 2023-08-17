@@ -39,10 +39,10 @@
     }
 
     .text {
-      text-align: left;
-      line-height: 5em;
-      height: 5em;
-      vertical-align: middle;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
 
       .description {
         font-size: 1.5em;
