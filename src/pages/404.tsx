@@ -6,7 +6,7 @@ export default function App({}) {
   return (
     <>
       <Head>
-        <title>404 - Lviv Physics and Maths Lyceum</title>
+        <title>404 - Львівський фізико-математичний ліцей</title>
       </Head>
       <div className={styles.container}>
         <div className={styles.error}>
@@ -19,4 +19,3 @@ export default function App({}) {
     </>
   );
 }
-

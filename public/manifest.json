@@ -1,5 +1,5 @@
 {
-  "short_name": "Lviv Physics and Maths Licaum",
+  "short_name": "Львівський фізико-математичний ліцей",
   "name": "lpml-web",
   "icons": [
     {
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#d8dee9",
-  "background_color": "#2e3440"
+  "theme_color": "#2e3440",
+  "background_color": "#d8dee9"
 }

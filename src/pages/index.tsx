@@ -9,7 +9,7 @@ export default function App({ articles }) {
   return (
     <>
       <Head>
-        <title>Lviv Physics and Maths Lyceum</title>
+        <title>Львівський фізико-математичний ліцей</title>
       </Head>
       <MainPage />
       <NewsList articles={articles} />
