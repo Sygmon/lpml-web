@@ -20,12 +20,13 @@
   .search,
   .dropdownbutton {
     height: 0 !important;
+    padding: 0 !important;
     transition: 200ms;
     overflow: hidden;
   }
   .drawer:checked + * .navlink {
-    margin-top: 0.25rem;
-    height: 2rem !important;
+    height: unset !important;
+    padding: 1rem !important;
   }
   .drawer:checked + * .search {
     height: 3rem !important;
@@ -33,7 +34,8 @@
   }
   .drawer:checked + * .dropdownbutton {
     margin-bottom: 0.25rem;
-    height: 2rem !important;
+    height: unset !important;
+    padding: 1rem !important;
   }
   .drawer:checked + * {
     height: unset;
@@ -172,7 +174,7 @@
     line-height: 1.5rem;
     letter-spacing: 0.04em;
     text-align: left;
-    padding: 0 1.5rem;
+    padding: 1.5rem;
   }
 
   .dropdown {
@@ -187,7 +189,7 @@
       line-height: 1.5rem;
       letter-spacing: 0.04em;
       text-align: left;
-      padding: 0 1.5rem;
+      padding: 1.5rem;
       cursor: pointer;
 
       .dropdownicon {
@@ -200,30 +202,17 @@
 
     .dropdowncontent {
       display: none;
+      z-index: 1;
       flex-direction: column;
       position: absolute;
       background-color: var(--background);
       min-width: 10rem;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      padding-bottom: 1.2rem;
       margin-left: 1rem;
 
-      @include small-screen {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-      }
-
-      .navlink {
-        font-size: 1.1rem;
-        padding-top: 1.2rem;
-        font-weight: 400;
-        line-height: 1.1rem;
-        letter-spacing: 0.04em;
-        text-align: left;
-
-        @include small-screen {
-          padding-top: 0.5rem;
-        }
+      .navlink:hover {
+        filter: brightness(0.8);
+        background: var(--background);
       }
     }
   }
