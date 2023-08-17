@@ -37,6 +37,7 @@ export function getArticles(category) {
       let paragraph = paragraphs[i];
       if (paragraph.startsWith("#")) {
         article.title = paragraph.replace(/^#+/, "").trim();
+        article.title = article.title.replace(/\[([^\]]+)\]\([^)]+\)/, "$1");
         i++;
         paragraph = paragraphs[i];
       }
