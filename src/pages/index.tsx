@@ -77,7 +77,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      articles: articles,
+      articles: articles.slice(0, 5),
     },
   };
 };
