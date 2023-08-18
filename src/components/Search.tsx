@@ -13,7 +13,13 @@ const searchClient = algoliasearch(
   "fc7cebb96b7664d69d8e2c3f1b3e3574"
 );
 
-function SearchBox({ query, refine }) {
+function SearchBox({
+  query,
+  refine,
+}: {
+  query: string;
+  refine: (query: string) => void;
+}) {
   return (
     <input
       type="search"
@@ -74,7 +80,7 @@ function SearchBar({ hide }: { hide: () => void }) {
   );
 }
 
-export default function Search({ hide }) {
+export default function Search({ hide }: { hide: () => void }) {
   return (
     <InstantSearch
       searchClient={searchClient}

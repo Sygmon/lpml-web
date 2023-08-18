@@ -1,12 +1,14 @@
 import { z } from "zod";
 
-export type ArticleCard = {
-  title: string;
-  description: string;
-  href: string;
-  date?: string;
-  cover?: string;
-};
+export const articleCardSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  href: z.string(),
+  date: z.string().optional().or(z.null()),
+  cover: z.string().optional().or(z.null()),
+});
+
+export type ArticleCard = z.infer<typeof articleCardSchema>;
 
 export type Article = {
   id: string;

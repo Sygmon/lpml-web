@@ -77,11 +77,12 @@ export function DrawerButton() {
 }
 
 export default function Topbar() {
-  const checkbox = useRef(null);
+  const checkbox = useRef<HTMLInputElement>(null);
   const [searchOpen, setSearchOpen] = useState(false);
 
   const hide = () => {
     setSearchOpen(false);
+    if (checkbox.current === null) return;
     checkbox.current.checked = false;
   };
   const toggleSearch = () => {

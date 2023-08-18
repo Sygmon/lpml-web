@@ -4,7 +4,7 @@ export default ArticlePage;
 
 export const getStaticProps = staticPropsFor(
   "info",
-  null,
+  undefined,
   "education",
   "education",
   "info/education"

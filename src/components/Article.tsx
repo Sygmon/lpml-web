@@ -12,7 +12,7 @@ import { ReactMarkdownProps } from "react-markdown/lib/complex-types";
 
 function MdImage({ src, alt }: { src?: string; alt?: string }) {
   const [open, setOpen] = useState(false);
-  const imgSource = src.startsWith("http")
+  const imgSource = src?.startsWith("http")
     ? src
     : `https://raw.githubusercontent.com/Sygmon/lpml-web/redesign/public${src}`;
 

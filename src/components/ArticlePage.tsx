@@ -36,8 +36,8 @@ export default function ArticlePage({
         {articles && (
           <ArticleMenu
             articles={articles}
-            path={menupath}
-            active={samelevel ? id : null}
+            path={menupath || undefined}
+            active={samelevel ? id : undefined}
           />
         )}
       </Article>
@@ -66,7 +66,7 @@ export const staticPropsFor =
       (article) => article.id === (articleId || params?.article)
     )[0];
 
-    const menuArticles = menuCategory && getArticles(menuCategory);
+    const menuArticles = menuCategory ? getArticles(menuCategory) : null;
     return {
       props: {
         id: article.id,
@@ -86,11 +86,11 @@ export const staticPropsFor =
   };
 
 export const staticPathsFor =
-  (categoryId: string, url: string): GetStaticPaths =>
+  (categoryId: string, url: string, excluded?: string[]): GetStaticPaths =>
   async () => {
-    const paths = getArticles(categoryId).map(
-      (article) => `${url}/${article.id}`
-    );
+    const paths = getArticles(categoryId)
+      .filter((article) => !excluded || !excluded.includes(article.id))
+      .map((article) => `${url}/${article.id}`);
 
     return {
       paths,

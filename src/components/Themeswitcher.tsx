@@ -21,7 +21,7 @@ export default function Switcher() {
     };
 
     for (let [name, value] of Object.entries(current.style)) {
-      root?.style.setProperty(`--${vars[name]}`, value);
+      root?.style.setProperty(`--${vars[name as keyof typeof vars]}`, value);
     }
   };
 

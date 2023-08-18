@@ -13,7 +13,7 @@ export const getStaticPaths = staticPathsFor(
 export const getStaticProps = staticPropsFor(
   "info/education",
   "Якість Освіти",
-  null,
-  null,
+  undefined,
+  undefined,
   "info/education"
 );
