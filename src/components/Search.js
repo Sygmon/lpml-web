@@ -4,7 +4,7 @@ import {
   useSearchBox,
   useHits,
   Snippet,
-} from "react-instantsearch-hooks-web";
+} from "react-instantsearch";
 import styles from "../scss/Sidebar.module.scss";
 import Link from "next/link";
 
