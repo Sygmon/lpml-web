@@ -78,6 +78,7 @@ export function DrawerButton() {
 
 export default function Topbar() {
   const checkbox = useRef<HTMLInputElement>(null);
+  const searchbox = useRef<HTMLInputElement>(null);
   const [searchOpen, setSearchOpen] = useState(false);
 
   const hide = () => {
@@ -86,6 +87,7 @@ export default function Topbar() {
     checkbox.current.checked = false;
   };
   const toggleSearch = () => {
+    searchbox.current?.focus();
     // If screen size < 1000px, do nothing
     if (window.innerWidth < 1000) return;
     setSearchOpen(!searchOpen);
@@ -116,7 +118,7 @@ export default function Topbar() {
             className={styles.searchbutton}
           />
           <div className={searchOpen ? styles.open : styles.closed}>
-            <SearchBar hide={hide} />
+            <SearchBar hide={hide} inputRef={searchbox} />
           </div>
         </span>
         <MenuItem hide={hide} href="/" mobile>

@@ -16,9 +16,11 @@ const searchClient = algoliasearch(
 function SearchBox({
   query,
   refine,
+  inputRef,
 }: {
   query: string;
   refine: (query: string) => void;
+  inputRef?: React.Ref<HTMLInputElement>;
 }) {
   return (
     <input
@@ -26,6 +28,7 @@ function SearchBox({
       aria-label="Search"
       value={query}
       onChange={(evt) => refine(evt.target.value)}
+      ref={inputRef}
     />
   );
 }
@@ -67,26 +70,38 @@ function Results({
   ) : null;
 }
 
-function SearchBar({ hide }: { hide: () => void }) {
+function SearchBar({
+  hide,
+  inputRef,
+}: {
+  hide: () => void;
+  inputRef?: React.Ref<HTMLInputElement>;
+}) {
   const { query, refine, clear } = useSearchBox();
 
   return (
     <div className={styles.searchcontainer}>
       <div className={styles.searchbar}>
-        <SearchBox query={query} refine={refine} />
+        <SearchBox query={query} refine={refine} inputRef={inputRef} />
       </div>
       <Results active={Boolean(query)} hide={hide} reset={clear} />
     </div>
   );
 }
 
-export default function Search({ hide }: { hide: () => void }) {
+export default function Search({
+  hide,
+  inputRef,
+}: {
+  hide: () => void;
+  inputRef?: React.Ref<HTMLInputElement>;
+}) {
   return (
     <InstantSearch
       searchClient={searchClient}
       indexName="netlify_f81c862b-0802-4633-bdf8-5fec7e7aaf73_main_all"
     >
-      <SearchBar hide={hide} />
+      <SearchBar hide={hide} inputRef={inputRef} />
     </InstantSearch>
   );
 }
