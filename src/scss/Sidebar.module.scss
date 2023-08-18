@@ -167,7 +167,8 @@
     }
   }
 
-  .navlink {
+  .navlink,
+  .dropdownbutton {
     font-family: "Roboto", sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
@@ -175,6 +176,8 @@
     letter-spacing: 0.04em;
     text-align: left;
     padding: 1.5rem;
+    font-variant: small-caps;
+    cursor: pointer;
   }
 
   .dropdown {
@@ -183,14 +186,6 @@
       color: var(--foreground);
       border: none;
       outline: none;
-      font-family: "Roboto", sans-serif;
-      font-size: 1.5rem;
-      font-weight: 400;
-      line-height: 1.5rem;
-      letter-spacing: 0.04em;
-      text-align: left;
-      padding: 1.5rem;
-      cursor: pointer;
 
       .dropdownicon {
         height: 1rem;
