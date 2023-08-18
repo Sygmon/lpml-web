@@ -6,7 +6,17 @@ import Link from "next/link";
 import SearchBar from "./Search";
 import { RiSearch2Line } from "react-icons/ri";
 
-function MenuItem({ hide, href, children, mobile = false }) {
+export function MenuItem({
+  hide,
+  href,
+  children,
+  mobile = false,
+}: {
+  hide: () => void;
+  href: string;
+  children: React.ReactNode;
+  mobile?: boolean;
+}) {
   return (
     <Link href={href}>
       <a
@@ -22,8 +32,15 @@ function MenuItem({ hide, href, children, mobile = false }) {
   );
 }
 
-function MenuDropdown({ title, children }) {
+function MenuDropdown({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
   const [open, setOpen] = useState(false);
+
   return (
     <div className={styles.dropdown}>
       <button className={styles.dropdownbutton} onClick={() => setOpen(!open)}>
@@ -51,15 +68,13 @@ function MenuDropdown({ title, children }) {
   );
 }
 
-function DrawerButton() {
+export function DrawerButton() {
   return (
     <label htmlFor="drawer" className={styles.drawerlabel}>
       <FaBars className={`${styles.icon} ${styles.menubutton}`} />
     </label>
   );
 }
-
-export { SearchBar, MenuItem, DrawerButton };
 
 export default function Topbar() {
   const checkbox = useRef(null);

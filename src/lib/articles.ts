@@ -3,8 +3,71 @@ import fs from "fs";
 import yaml from "js-yaml";
 import matter from "gray-matter";
 const base = path.join(process.cwd(), "content");
+import { Article, ArticleMetadata, articleMetadataSchema } from "./article";
 
-export function getArticles(category) {
+function inferMetadata(
+  content: string,
+  maxLength: number = 200
+): { title: string | undefined; description: string | undefined } {
+  let description: string | undefined;
+  let title: string | undefined;
+
+  let i = 0;
+  const paragraphs = content.split("\n");
+  let paragraph = paragraphs[i];
+  if (paragraph.startsWith("#")) {
+    title = paragraph.replace(/^#+/, "").trim();
+    title = title.replace(/\[([^\]]+)\]\([^)]+\)/, "$1");
+    i++;
+    paragraph = paragraphs[i];
+  }
+  while (
+    paragraph == "" ||
+    paragraph.startsWith("#") ||
+    paragraph.startsWith("![")
+  ) {
+    i++;
+    paragraph = paragraphs[i];
+    if (paragraph == undefined) {
+      paragraph = "";
+      break;
+    }
+  }
+  const descriptionEnd = paragraph.length;
+  if (descriptionEnd <= maxLength) {
+    description = paragraph.substring(0, descriptionEnd);
+  } else {
+    const lastSpace = paragraph.substring(0, maxLength).lastIndexOf(" ");
+    if (lastSpace == -1) {
+      description = paragraph.substring(0, maxLength);
+    } else {
+      description = paragraph.substring(0, lastSpace);
+    }
+  }
+  description += "...";
+
+  return { title, description };
+}
+
+function parseArticle(
+  filename: string,
+  category: string,
+  content: string,
+  frontmatter: ArticleMetadata
+): Article {
+  const inferred = inferMetadata(content);
+  return {
+    id: filename.replace(/\.md$/, ""),
+    title: frontmatter.title || inferred.title || filename.replace(/\.md$/, ""),
+    description: frontmatter.description || inferred.description || content,
+    category,
+    content: content,
+    date: frontmatter.date,
+    cover: frontmatter.cover,
+  };
+}
+
+export function getArticles(category: string): Article[] {
   const category_dir = path.join(base, category);
   const articles = fs
     .readdirSync(category_dir, { withFileTypes: true })
@@ -19,59 +82,13 @@ export function getArticles(category) {
           yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
         },
       });
-      const article = parsed.data as {
-        title: string;
-        description: string;
-        category: string;
-        date: string;
-        cover: string;
-        content: string;
-        id: string;
-      };
-      article.id = file.replace(/\.md$/, "");
-      article.content = parsed.content;
-      article.category = category;
 
-      let i = 0;
-      const paragraphs = parsed.content.split("\n");
-      let paragraph = paragraphs[i];
-      if (paragraph.startsWith("#")) {
-        article.title = paragraph.replace(/^#+/, "").trim();
-        article.title = article.title.replace(/\[([^\]]+)\]\([^)]+\)/, "$1");
-        i++;
-        paragraph = paragraphs[i];
-      }
-      while (
-        paragraph == "" ||
-        paragraph.startsWith("#") ||
-        paragraph.startsWith("![")
-      ) {
-        i++;
-        paragraph = paragraphs[i];
-        if (paragraph == undefined) {
-          paragraph = "";
-          break;
-        }
-      }
-      const descriptionEnd = paragraph.length;
-      const maxLength = 200;
-      if (descriptionEnd <= maxLength) {
-        article.description = paragraph.substring(0, descriptionEnd);
-      } else {
-        const lastSpace = paragraph.substring(0, maxLength).lastIndexOf(" ");
-        if (lastSpace == -1) {
-          article.description = paragraph.substring(0, maxLength);
-        } else {
-          article.description = paragraph.substring(0, lastSpace);
-        }
-      }
-      article.description += "...";
-
-      if (!article.title) {
-        article.title = file.replace(/\.md$/, "");
-      }
-
-      return article;
+      return parseArticle(
+        file,
+        category,
+        parsed.content,
+        articleMetadataSchema.parse(parsed.data)
+      );
     });
   return articles.filter((article) => article != undefined);
 }

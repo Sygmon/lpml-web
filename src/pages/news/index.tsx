@@ -1,10 +1,15 @@
 import React from "react";
 import { getArticles } from "../../lib/articles";
+import { Article, ArticleCard } from "../../lib/article";
 import NewsList from "../../components/NewsList";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 
-export default function App({ articles }) {
+export default function App({
+  articles,
+}: {
+  articles: (Article & { href: string })[];
+}) {
   return (
     <>
       <Head>
@@ -24,26 +29,14 @@ export default function App({ articles }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  let articles = [];
-  const articlesRaw = getArticles("blog").sort((a, b) =>
-    a.date < b.date ? -1 : 1
-  );
-  for (var i = 0; i < articlesRaw.length; i++) {
-    articles.push({
-      title: articlesRaw[i] ? articlesRaw[i].title : null,
-      href: `/news/${articlesRaw[i] && articlesRaw[i].id}`,
-      cover:
-        articlesRaw[i] && articlesRaw[i].cover != undefined
-          ? articlesRaw[i].cover
-          : `https://picsum.photos/${
-              400 + Math.floor(Math.random() * 100) + 1
-            }`,
-      date: articlesRaw[i].date ? articlesRaw[i].date : null,
-      description: articlesRaw[i].description
-        ? articlesRaw[i].description
-        : null,
-    });
-  }
+  const articles: ArticleCard[] = getArticles("blog").map((article) => ({
+    title: article.title,
+    href: `/news/${article.id}`,
+    cover: article.cover || null,
+    date: article.date || null,
+    description: article.description || null,
+  }));
+
   // Sort by dd.mm.yyyy
   articles.sort((a, b) => {
     // If null:

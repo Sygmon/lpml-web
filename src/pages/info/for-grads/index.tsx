@@ -1,29 +1,5 @@
-import { GetStaticProps } from "next";
-import { getArticles } from "../../../lib/articles";
-import Article from "../../../components/Article";
-import Head from "next/head";
+import ArticlePage, { staticPropsFor } from "../../../components/ArticlePage";
 
-export default function ArticlePage({ id, content, title, description }) {
-  return (
-    <>
-      <Article id={id} content={content} />
-      <Head>
-        <title>ЛФМЛ - {title}</title>
-        <meta name="description" content={description || content} />
-      </Head>
-    </>
-  );
-}
+export default ArticlePage;
 
-export const getStaticProps: GetStaticProps = async () => {
-  const articles = getArticles("info");
-  const article = articles.filter((article) => article.id === "for-grads")[0];
-  return {
-    props: {
-      id: article.id,
-      content: article.content,
-      title: article.title,
-      description: article.description,
-    },
-  };
-};
+export const getStaticProps = staticPropsFor("info", null, "for-grads");

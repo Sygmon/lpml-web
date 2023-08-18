@@ -6,7 +6,7 @@ import styles from "../scss/Themeswitcher.module.scss";
 export default function Switcher() {
   const [gtheme, setTheme] = useState(0);
 
-  const selectTheme = (theme) => {
+  const selectTheme = (theme: number) => {
     setTheme(theme);
     localStorage.setItem("theme", JSON.stringify(theme));
 
@@ -27,7 +27,8 @@ export default function Switcher() {
 
   useEffect(() => {
     const previous = localStorage.getItem("theme");
-    selectTheme(previous ? JSON.parse(previous) : 0);
+    const theme_id = previous && (JSON.parse(previous) as unknown);
+    selectTheme(typeof theme_id === "number" ? theme_id : 0);
   }, []);
 
   return (

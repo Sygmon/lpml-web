@@ -13,7 +13,10 @@ export default function ArticleMenu({
   return (
     <div className={styles.articleMenu}>
       {articles.map((article) => (
-        <Link href={path ? `${path}/${article.id}` : article.id}>
+        <Link
+          key={article.id}
+          href={path ? `${path}/${article.id}` : article.id}
+        >
           <a
             href={path ? `${path}/${article.id}` : article.id}
             className={

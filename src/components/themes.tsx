@@ -1,7 +1,19 @@
 import * as React from "react";
 import { FaSun, FaMoon, FaBook } from "react-icons/fa";
 
-const themes = [
+export interface Theme {
+  name: string;
+  icon: JSX.Element;
+  style: {
+    background: string;
+    foreground: string;
+    menu: string;
+    highlight: string;
+    secondary: string;
+  };
+}
+
+const themes: Theme[] = [
   {
     name: "default",
     icon: <FaBook />,

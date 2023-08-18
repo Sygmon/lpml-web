@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, {
+  DetailedHTMLProps,
+  PropsWithChildren,
+  TableHTMLAttributes,
+  useState,
+} from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import styles from "../scss/Applet.module.scss";
 import rehypeRaw from "rehype-raw";
+import { ReactMarkdownProps } from "react-markdown/lib/complex-types";
 
-function MdImage(props) {
+function MdImage({ src, alt }: { src?: string; alt?: string }) {
   const [open, setOpen] = useState(false);
-  const imgSource = props.src.startsWith("http")
-    ? props.src
-    : `https://raw.githubusercontent.com/Sygmon/lpml-web/redesign/public${props.src}`;
+  const imgSource = src.startsWith("http")
+    ? src
+    : `https://raw.githubusercontent.com/Sygmon/lpml-web/redesign/public${src}`;
 
   return (
     <div className={styles["image-container"]}>
@@ -16,18 +22,13 @@ function MdImage(props) {
         className={`${styles.image} ${styles.closed}`}
         onClick={() => setOpen(!open)}
       >
-        <img src={imgSource} alt={props.alt} loading="lazy" />
+        <img src={imgSource} alt={alt} loading="lazy" />
         {open && (
           <div
             className={`${styles.image} ${styles.open}`}
             onClick={() => setOpen(!open)}
           >
-            <img
-              src={props.src}
-              alt={props.alt}
-              layout="fill"
-              objectFit="contain"
-            />
+            <img src={src} alt={alt} />
           </div>
         )}
       </div>
@@ -35,18 +36,37 @@ function MdImage(props) {
   );
 }
 
-function Table(props) {
+function Table(
+  props: PropsWithChildren<
+    Omit<
+      DetailedHTMLProps<
+        TableHTMLAttributes<HTMLTableElement>,
+        HTMLTableElement
+      >,
+      "ref"
+    > &
+      ReactMarkdownProps
+  >
+) {
   return (
     <div className={styles["table-container"]}>
-      <table {...props}>{props.children}</table>
+      <table {...props} />
     </div>
   );
 }
 
-export default function Article(props) {
+export default function Article({
+  children,
+  content,
+  id,
+}: {
+  children?: React.ReactNode;
+  content: string;
+  id: string;
+}) {
   return (
     <div className={styles.container}>
-      {props.children}
+      {children}
       <div className={styles.markdown}>
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
@@ -55,7 +75,7 @@ export default function Article(props) {
             table: Table,
           }}
           rehypePlugins={[rehypeRaw]}
-          children={props.content}
+          children={content}
         />
       </div>
     </div>

@@ -24,32 +24,44 @@ function SearchBox({ query, refine }) {
   );
 }
 
-function Results({ active, hide, reset }) {
+function Results({
+  active,
+  hide,
+  reset,
+}: {
+  active: boolean;
+  hide: () => void;
+  reset: () => void;
+}) {
   const { hits } = useHits();
 
   return active ? (
     <div className={styles.results}>
-      {hits.map((result) => (
-        <Link href={result.url} key={result.url}>
-          <div
-            className={styles.result}
-            onClick={() => {
-              hide();
-              reset && reset();
-            }}
-          >
-            <div className={styles.title}>{result.title}</div>
-            <div className={styles.content}>
-              <Snippet attribute="content" hit={result} />
-            </div>
-          </div>
-        </Link>
-      ))}
+      {hits.map(
+        (result) =>
+          result?.url &&
+          typeof result?.url === "string" && (
+            <Link href={result?.url} key={result?.url}>
+              <div
+                className={styles.result}
+                onClick={() => {
+                  hide();
+                  reset && reset();
+                }}
+              >
+                <div className={styles.title}>{result.title}</div>
+                <div className={styles.content}>
+                  <Snippet attribute="content" hit={result} />
+                </div>
+              </div>
+            </Link>
+          )
+      )}
     </div>
   ) : null;
 }
 
-function SearchBar({ hide }) {
+function SearchBar({ hide }: { hide: () => void }) {
   const { query, refine, clear } = useSearchBox();
 
   return (
@@ -57,7 +69,7 @@ function SearchBar({ hide }) {
       <div className={styles.searchbar}>
         <SearchBox query={query} refine={refine} />
       </div>
-      <Results active={query} hide={hide} reset={clear} />
+      <Results active={Boolean(query)} hide={hide} reset={clear} />
     </div>
   );
 }

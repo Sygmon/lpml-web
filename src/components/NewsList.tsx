@@ -1,8 +1,9 @@
 import { ArticleLink } from "./Applet";
 import styles from "../scss/news.module.scss";
 import Link from "next/link";
+import { ArticleCard } from "../lib/article";
 
-export function List({ articles }) {
+export function List({ articles }: { articles: ArticleCard[] }) {
   return (
     <div className={styles.news}>
       {articles.map((article, index) => (
@@ -18,7 +19,13 @@ export function List({ articles }) {
   );
 }
 
-export default function NewsList({ articles, dedicated = false }) {
+export default function NewsList({
+  articles,
+  dedicated = false,
+}: {
+  articles: ArticleCard[];
+  dedicated?: boolean;
+}) {
   return (
     <div
       className={`${styles.news_grid} ${dedicated ? styles.shrink : ""}`}

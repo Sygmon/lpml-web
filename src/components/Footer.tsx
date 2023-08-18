@@ -4,7 +4,13 @@ import { FaFacebook } from "react-icons/fa";
 import Logo from "./logo.svg";
 import Link from "next/link";
 
-function FooterLink({ href, children }) {
+function FooterLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
   return (
     <Link href={href}>
       <a href={href} className={styles.link}>
