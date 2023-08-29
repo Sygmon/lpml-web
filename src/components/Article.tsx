@@ -17,8 +17,8 @@ function MdImage({ src, alt }: { src?: string; alt?: string }) {
     : `https://raw.githubusercontent.com/Sygmon/lpml-web/redesign/public${src}`;
 
   return (
-    <div className={styles["image-container"]}>
-      <div
+    <span className={styles["image-container"]}>
+      <span
         className={`${styles.image} ${styles.closed}`}
         onClick={() => setOpen(!open)}
       >
@@ -31,8 +31,8 @@ function MdImage({ src, alt }: { src?: string; alt?: string }) {
             <img src={src} alt={alt} />
           </div>
         )}
-      </div>
-    </div>
+      </span>
+    </span>
   );
 }
 
