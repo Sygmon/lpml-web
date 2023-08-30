@@ -60,7 +60,7 @@ function Results({
               >
                 <div className={styles.title}>{result.title}</div>
                 <div className={styles.content}>
-                  <Snippet attribute="content" hit={result} />
+                  <Snippet attribute="description" hit={result} />
                 </div>
               </div>
             </Link>
