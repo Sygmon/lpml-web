@@ -9,6 +9,7 @@ import remarkGfm from "remark-gfm";
 import styles from "../scss/Applet.module.scss";
 import rehypeRaw from "rehype-raw";
 import { ReactMarkdownProps } from "react-markdown/lib/complex-types";
+import Image from "next/image";
 
 function MdImage({ src, alt }: { src?: string; alt?: string }) {
   const [open, setOpen] = useState(false);
@@ -19,7 +20,15 @@ function MdImage({ src, alt }: { src?: string; alt?: string }) {
         className={`${styles.image} ${styles.closed}`}
         onClick={() => setOpen(!open)}
       >
-        <img src={src} alt={alt} loading="lazy" />
+        {src && (
+          <Image
+            src={src}
+            alt={alt}
+            width={500}
+            height={500}
+            objectFit="contain"
+          />
+        )}
         {open && (
           <div
             className={`${styles.image} ${styles.open}`}
