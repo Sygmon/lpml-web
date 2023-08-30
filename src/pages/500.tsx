@@ -9,6 +9,7 @@ export default function App({}) {
       <Head>
         <title>500 - Львівський фізико-математичний ліцей</title>
         <meta name="description" content="500 - Помилка сервера" />
+        <meta name="robots" content="noindex" />
       </Head>
       <div className={styles.container}>
         <div className={styles.error}>
