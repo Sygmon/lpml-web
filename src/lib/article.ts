@@ -18,6 +18,7 @@ export type Article = {
   content: string;
   date?: string;
   cover?: string;
+  ogTitle?: string;
 };
 
 export const articleMetadataSchema = z.object({
@@ -26,6 +27,7 @@ export const articleMetadataSchema = z.object({
   category: z.string().optional(),
   date: z.string().optional(),
   cover: z.string().optional(),
+  ogTitle: z.string().optional(),
 });
 
 export type ArticleMetadata = z.infer<typeof articleMetadataSchema>;

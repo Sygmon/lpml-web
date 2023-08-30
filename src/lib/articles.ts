@@ -43,6 +43,7 @@ function parseArticle(
     content: content,
     date: frontmatter.date,
     cover: frontmatter.cover,
+    ogTitle: frontmatter.title,
   };
 }
 

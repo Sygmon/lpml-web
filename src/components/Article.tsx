@@ -59,15 +59,18 @@ export default function Article({
   children,
   content,
   id,
+  title,
 }: {
   children?: React.ReactNode;
   content: string;
   id: string;
+  title?: string;
 }) {
   return (
     <div className={styles.container}>
       {children}
       <div className={styles.markdown}>
+        {title && <h1>{title}</h1>}
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{

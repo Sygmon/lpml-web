@@ -10,6 +10,7 @@ export type ArticlePageProps = {
   title: string;
   description: string;
   category: string | null;
+  ogTitle: string | null;
   articles:
     | {
         id: string;
@@ -26,13 +27,14 @@ export default function ArticlePage({
   title,
   description,
   category,
+  ogTitle,
   articles,
   menupath,
   samelevel,
 }: ArticlePageProps) {
   return (
     <>
-      <Article id={id} content={content}>
+      <Article id={id} content={content} title={ogTitle || undefined}>
         {articles && (
           <ArticleMenu
             articles={articles}
@@ -74,6 +76,7 @@ export const staticPropsFor =
         title: article.title,
         description: article.description,
         category: categoryName || null,
+        ogTitle: article.ogTitle || null,
         articles:
           menuArticles?.map((article) => ({
             id: article.id,
