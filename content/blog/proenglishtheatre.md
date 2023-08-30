@@ -1,8 +1,7 @@
 ---
 date: 12.12.2017
+title: ProEnglishTheatre
 ---
-# ProEnglishTheatre
-
 ProEnglishTheatre
 
 1 грудня 2017р. учні ЛФМЛ мали унікальну нагоду зустрітися з акторами театру
@@ -55,11 +54,6 @@ Stories» на основі 6-ти новел О.Генрі та «7 Stories» -
 
 Світлана Матис, вчитель англійської мови ЛФМЛ, методист НМЦО м. Львова
 
-![](/images/blog/proenglishtheatre/24177074_1454519668000146_3957389106246821170_n.jpg)
-
-![](/images/blog/proenglishtheatre/24174508_1454935624625217_7776621327459763735_n.jpg)
-
-![](/images/blog/proenglishtheatre/24474646_142696596502325_1537905324_o.jpg)
-
-[Читати усі новини](/news)
-date: 12.12.2017
+![](/files/proenglishtheatre-24177074_1454519668000146_3957389106246821170_n.jpg)
+![](/files/proenglishtheatre-24474646_142696596502325_1537905324_o.jpg)
+![](/files/proenglishtheatre-24174508_1454935624625217_7776621327459763735_n.jpg)

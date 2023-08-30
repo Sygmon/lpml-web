@@ -1,23 +1,27 @@
-# Вступ до ліцею у 2023 році
-
+---
+title: "\u0412\u0441\u0442\u0443\u043F \u0434\u043E \u043B\u0456\u0446\u0435\u044E\
+  \ \u0443 2023 \u0440\u043E\u0446\u0456"
+---
 Львівський фізико-математичний ліцей здійснює набір учнів на конкурсній основі та за результатами вступних випробувань у відповідності до Статуту ЛФМЛ у такі класи:
 
-- 8 клас фізико-математичний (після 7-го класу);
-- 9 клас фізико-математичний (після 8-го класу);
-- 9 клас хіміко-біологічний (після 8-го класу).
+* 8 клас фізико-математичний (після 7-го класу);
+* 9 клас фізико-математичний (після 8-го класу);
+* 9 клас хіміко-біологічний (після 8-го класу).
 
-[Правила конкурсного приймання ЛФМЛ 2023](/files/info/for-entrants/правила-конкурсного-приймання-лфмл-2023.pdf)
+[Правила конкурсного приймання ЛФМЛ 2023](/files/вступ-до-ліцею-правила-конкурсного-приймання-лфмл-2023.pdf "Правила конкурсного приймання ЛФМЛ 2023.pdf")
 
-Прийом заяв здійснюється**в електронній формі до 5 червня 2023**
+Прийом заяв здійснюється
+**в електронній формі до 5 червня 2023**
 
 [**Заповнити форму**](https://forms.gle/nQFqFWZQmQb5JMgZA)
 
-Орієнтовні дати вступних іспитів: **<u>15, 16 червня 2023 </u>**
+Орієнтовні дати вступних іспитів:
+**15, 16 червня 2023**
 
 Вступні випробування проводяться у письмовій формі з двох предметів:
 
-- у фізико-математичні класи – фізика та математика,
-- у хіміко-біологічний клас – хімія та біологія;
+* у фізико-математичні класи – фізика та математика,
+* у хіміко-біологічний клас – хімія та біологія;
 
 **Терміни вступних іспитів визначаються приймальною комісією залежно від воєнної ситуації і повідомляються на сайті ліцею не пізніше ніж за тиждень до їх проведення.**
 
@@ -25,16 +29,16 @@
 
 Приймальна комісія, залежно від конкурсної ситуації, встановлює рівень мінімальної кількості балів, за яким вступник зараховується на навчання.
 
-За рішенням приймальної комісії переможці ІІІ етапу Всеукраїнських учнівських олімпіад з математики, фізики, хімії, біології зараховуються без вступних іспитів.
+За рішенням приймальної комісії переможці ІІІ етапу Всеукраїнських учнівських олімпіад з  математики, фізики, хімії, біології зараховуються без вступних іспитів.
 
 **Перелік документів для учнів, які будуть рекомендовані для зарахування до ліцею (після проведення вступних випробувань):**
 
-- особова справа учня;
-- медичні довідки Форма № 086-1/о і Форма № 063-о;
-- ідентифікаційний код;
-- 2 фотографії розміру 3*4 (для учнівського квитка).
+* особова справа учня;
+* медичні довідки Форма № 086-1/о і Форма № 063-о;
+* ідентифікаційний код;
+* 2 фотографії розміру 3\*4 (для учнівського квитка).
 
-Контакти:
+##   Контакти:
 
 Адреса ліцею:79054, м. Львів-54, вул. Караджича, 29
 
@@ -42,55 +46,54 @@
 
 e-mail: lpml@lpml.com.ua
 
-[](/files/info/for-entrants/matematik_8_05.doc) Зразки вступних завдань попередніх років:
+Зразки вступних завдань попередніх років:
 
-|  Роки   |                                             Математика                                              |                                                                                                     |                                                     Фізика                                                      |                                                                                                                 |                                           Хімія                                            |                                                                                                 Біологія                                                                                                  |
-| ------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2005 р. |                       [у 8 клас](/files/info/for-entrants/matematik_8_05.doc)                       |                       [у 9 клас](/files/info/for-entrants/matematik_9_05.doc)                       |                               [у 8 клас](/files/info/for-entrants/fizik_8_05.doc)                               |                               [у 9 клас](/files/info/for-entrants/fizik_9_05.doc)                               |                    [у 9 клас](/files/info/for-entrants/himik_9_05.doc)                     |                                                                           [у 9 клас](/files/info/for-entrants/biolog_9_02.doc)                                                                            |
-| 2006 р. |                       [у 8 клас](/files/info/for-entrants/matematik_8_06.doc)                       |                       [у 9 клас](/files/info/for-entrants/matematik_9_06.doc)                       |                               [у 8 клас](/files/info/for-entrants/fizik_8_06.doc)                               |                               [у 9 клас](/files/info/for-entrants/fizik_9_06.doc)                               |                    [у 9 клас](/files/info/for-entrants/himik_9_06.doc)                     |                                                                           [у 9 клас](/files/info/for-entrants/biolog_9_06.doc)                                                                            |
-| 2007 р. |                       [у 8 клас](/files/info/for-entrants/matematik_8_07.doc)                       |                       [у 9 клас](/files/info/for-entrants/matematik_9_07.doc)                       |                               [у 8 клас](/files/info/for-entrants/fizik_8_07.doc)                               |                               [у 9 клас](/files/info/for-entrants/fizik_9_07.doc)                               |                    [у 9 клас](/files/info/for-entrants/himik_9_07.doc)                     |                                                                           [у 9 клас](/files/info/for-entrants/biolog_9_07.doc)                                                                            |
-| 2008 р. |                       [у 8 клас](/files/info/for-entrants/matematik_8_08.doc)                       |                       [у 9 клас](/files/info/for-entrants/matematik_9_08.doc)                       |                                                        —                                                        |                                                        —                                                        |                                             —                                              |                                                                                                     —                                                                                                     |
-| 2010 р. |                       [у 8 клас](/files/info/for-entrants/matematik_8_10.doc)                       |                       [у 9 клас](/files/info/for-entrants/matematik_9_10.doc)                       |                                                        —                                                        |                                                        —                                                        |                                             —                                              |                                                                                                     —                                                                                                     |
-| 2011 р. |                       [у 8 клас](/files/info/for-entrants/matematik_8_11.doc)                       |                       [у 9 клас](/files/info/for-entrants/matematik_9_11.doc)                       |                               [у 8 клас](/files/info/for-entrants/fizik_8_11.doc)                               |                               [у 9 клас](/files/info/for-entrants/fizik_9_11.doc)                               |                    [у 9 клас](/files/info/for-entrants/himik_9_11.doc)                     |                                                                            [у 9 клас](/files/info/for-entrants/biolog_11.doc)                                                                             |
-| 2012 р. |                         [у 8 і 9 клас](/files/info/for-entrants/mat_12.doc)                         |                                                                                                     |                               [у 8 клас](/files/info/for-entrants/fizik_8_12.doc)                               |                               [у 9 клас](/files/info/for-entrants/fizik_9_12.doc)                               |                     [у 9 клас](/files/info/for-entrants/himik_12.doc)                      |                                                                            [у 9 клас](/files/info/for-entrants/biolog_12.doc)                                                                             |
-| 2013 р. |                                                                                                     |                                                                                                     |                                                                                                                |                                                                                                                |                    [у 9 клас](/files/info/for-entrants/Хімія-2013.doc)                     |                                                                                                                                                                                                          |
-| 2014 р. |                       [у 9 клас](/images/info/for-entrants/vstup_9_2014.jpg)                       |                                                                                                     |                                                                                                                |                                                                                                                |                        [](/files/info/for-entrants/Хімія-2013.doc)                        |                                                                            [у 9 клас](/files/info/for-entrants/biol_2014.doc)                                                                            |
-| 2015 р. |                        [у 8 клас](/images/info/for-entrants/mat_8_2015.jpg)                        |                        [у 9 клас](/images/info/for-entrants/mat_9_2015.jpg)                        |    [у 8 клас 1](/images/info/for-entrants/phiz1_8_2015.jpg), [2](/images/info/for-entrants/phiz2_8_2015.jpg)    |    [у 9 клас 1](/images/info/for-entrants/phiz1_9_2015.jpg), [2](/images/info/for-entrants/phiz2_9_2015.jpg)    |                     [у 9 клас](/images/info/for-entrants/chim2015.jpg)                     |                                                                            [у 9 клас](/files/info/for-entrants/biol_2015.doc)                                                                            |
-| 2016 р. |                       [у 8 клас](/images/info/for-entrants/mat_8kl_2016.jpg)                       |                       [у 9 клас ](/images/info/for-entrants/mat_9kl_2016.jpg)                       | [у 8 клас 1](/images/info/for-entrants/phiz_1_8kl_2016.jpg), [2](/images/info/for-entrants/phiz_2_8kl_2016.jpg) | [у 9 клас 1](/images/info/for-entrants/phiz_1_9kl_2016.jpg), [2](/images/info/for-entrants/phiz_2_9kl_2016.jpg) |                      [у 9 клас](/files/info/for-entrants/хімія.docx)                       |                                                                            [у 9 клас](/files/info/for-entrants/biol_2016.doc)                                                                             |
-| 2017 р. |                         [у 8 клас](/images/info/for-entrants/mat_8_2017.jpg)                        | [у 9 клас ](/images/info/for-entrants/mat_9_2017.jpg)[](/images/info/for-entrants/mat_9kl_2016.jpg) |     [у 8 клас](/files/info/for-entrants/phiz_8_2017.docx)[](/images/info/for-entrants/phiz_1_8kl_2016.jpg)      |     [у 9 клас ](/files/info/for-entrants/phiz_9_2017.docx)[](/images/info/for-entrants/phiz_1_9kl_2016.jpg)     | [у 9 клас](/images/info/for-entrants/chim_2017.jpg)[](/files/info/for-entrants/хімія.docx) | [9 питання](/files/info/for-entrants/biol_2017_zavd.docx)[](/files/info/for-entrants/biol_2016.doc)[9 малюнки](/files/info/for-entrants/biol_2017_images.docx)[](/images/info/for-entrants/chim_2017.jpg) |
-| 2018 р. |                        [у 8 клас](/images/info/for-entrants/mat_8_2018.jpg)                         |                        [у 9 клас](/images/info/for-entrants/mat_9_2018.jpg)                         |                              [у 8 клас](/files/info/for-entrants/phiz_8_2018.rar)                               |                              [у 9 клас](/files/info/for-entrants/phiz_9_2018.rar)                               |                    [у 9 клас](/images/info/for-entrants/chim_2018.jpg)                     |                                                                             [у 9 клас](/files/info/for-entrants/biol2018.rar)                                                                             |
-| 2019 р. |                         [у 8 клас](/files/info/for-entrants/mat8_2019.pdf)                          |                         [у 9 клас](/files/info/for-entrants/mat9_2019.pdf)                          |                               [у 8 клас](/files/info/for-entrants/phiz8_2019.pdf)                               |                               [у 9 клас](/files/info/for-entrants/phiz9_2019.pdf)                               |                     [у 9 клас](/files/info/for-entrants/chem2019.pdf)                      |                                                                             [у 9 клас](/files/info/for-entrants/biol2019.pdf)                                                                             |
-| 2020 р. |                     [у 8 клас](/files/info/for-entrants/математика-8-2020.pdf)                      |                     [у 9 клас](/files/info/for-entrants/математика-9-2020.pdf)                      |                              [у 8 клас](/images/info/for-entrants/phiz_8_2020.jpg)                              |                              [у 9 клас](/images/info/for-entrants/phiz_9_2020.jpg)                              |                    [у 9 клас](/images/info/for-entrants/chim_2020.jpg)                     |                                                                          [у 9 клас](/files/info/for-entrants/біологія-2020.pdf)                                                                           |
-| 2021 р. |                         [у 8 клас](/files/info/for-entrants/mat_8_2021.pdf)                         |                         [у 9 клас](/files/info/for-entrants/mat_9_2021.pdf)                         |                              [у 8 клас](/images/info/for-entrants/phiz_8_2021.jpg)                              |                              [у 9 клас](/images/info/for-entrants/phiz_9_2021.jpg)                              |                    [у 9 клас](/images/info/for-entrants/chem_2021.jpg)                     |                                                                            [у 9 клас](/files/info/for-entrants/biol_2021.pdf)                                                                             |
-| 2022 р. |                        [у 8 клас](/files/info/for-entrants/math_8_2022.pdf)                         |                        [у 9 клас](/files/info/for-entrants/math_9_2022.pdf)                         |                    [у 8 клас](/files/info/for-entrants/фізика-2022-завдання-і-розвязки.pdf)                     |                            [у 9 клас](/files/info/for-entrants/фізика-9кл-2022.pdf)                             |                     [у 9 клас](/files/info/for-entrants/chem2022.pdf)                      |                                                                            [у 9 клас](/files/info/for-entrants/bilo_2022.pdf)                                                                             |
-| 2023 р. |                         [у 8 клас](/files/info/for-entrants/8__mat2023.pdf)                         |                         [у 9 клас](/files/info/for-entrants/9_mat2023.pdf)                          |                              [у 8 клас](/images/info/for-entrants/phiz_8_2023.jpg)                              |                              [у 9 клас](/images/info/for-entrants/phiz_9_2023.jpg)                              |                    [у 9 клас](/files/info/for-entrants/chem-2023.docx)                     |                                                                            [у 9 клас](/files/info/for-entrants/biol-2023.docx)                                                                            |
-| 2024 р. |  [типові завдання](/files/info/for-entrants/типові-завдання-з-математики-для-вступників-в-лфмл.pdf) |                                                                                                     |                                                                                                                 |                                                                                                                 |                                                                                            |                                                                                                                                                                                                           |
+|   Роки   |   Математика   |  |   Фізика   |  |   Хімія   |   Біологія   |
+| --- | --- | --- | --- | --- | --- | --- |
+|   2005 р.   | [у 8 клас](/files/вступ-до-ліцею-matematik_8_05.doc) | [у 9 клас](/files/вступ-до-ліцею-matematik_9_05.doc) | [у 8 клас](/files/вступ-до-ліцею-fizik_8_05.doc) | [у 9 клас](/files/вступ-до-ліцею-fizik_9_05.doc) | [у 9 клас](/files/вступ-до-ліцею-himik_9_05.doc) | [у 9 клас](/files/вступ-до-ліцею-biolog_9_02.doc) |
+|   2006 р.   | [у 8 клас](/files/вступ-до-ліцею-matematik_8_06.doc) | [у 9 клас](/files/вступ-до-ліцею-matematik_9_06.doc) | [у 8 клас](/files/вступ-до-ліцею-fizik_8_06.doc) | [у 9 клас](/files/вступ-до-ліцею-fizik_9_06.doc) | [у 9 клас](/files/вступ-до-ліцею-himik_9_06.doc) | [у 9 клас](/files/вступ-до-ліцею-biolog_9_06.doc) |
+|   2007 р.   | [у 8 клас](/files/вступ-до-ліцею-matematik_8_07.doc) | [у 9 клас](/files/вступ-до-ліцею-matematik_9_07.doc) | [у 8 клас](/files/вступ-до-ліцею-fizik_8_07.doc) | [у 9 клас](/files/вступ-до-ліцею-fizik_9_07.doc) | [у 9 клас](/files/вступ-до-ліцею-himik_9_07.doc) | [у 9 клас](/files/вступ-до-ліцею-biolog_9_07.doc) |
+|   2008 р.   | [у 8 клас](/files/вступ-до-ліцею-matematik_8_08.doc) | [у 9 клас](/files/вступ-до-ліцею-matematik_9_08.doc) | — | — | — | — |
+|   2010 р.   | [у 8 клас](/files/вступ-до-ліцею-matematik_8_10.doc) | [у 9 клас](/files/вступ-до-ліцею-matematik_9_10.doc) | — | — | — | — |
+|   2011 р.   | [у 8 клас](/files/вступ-до-ліцею-matematik_8_11.doc) | [у 9 клас](/files/вступ-до-ліцею-matematik_9_11.doc) | [у 8 клас](/files/вступ-до-ліцею-fizik_8_11.doc) | [у 9 клас](/files/вступ-до-ліцею-fizik_9_11.doc) | [у 9 клас](/files/вступ-до-ліцею-himik_9_11.doc) | [у 9 клас](/files/вступ-до-ліцею-biolog_11.doc) |
+|   2012 р.   | [у 8 і 9 клас](/files/вступ-до-ліцею-mat_12.doc) |  | [у 8 клас](/files/вступ-до-ліцею-fizik_8_12.doc) | [у 9 клас](/files/вступ-до-ліцею-fizik_9_12.doc) | [у 9 клас](/files/вступ-до-ліцею-himik_12.doc) | [у 9 клас](/files/вступ-до-ліцею-biolog_12.doc) |
+|   2013 р.   |  |  |  |  | [у 9 клас](/files/вступ-до-ліцею-Хімія-2013.doc) |  |
+|   2014 р.   | [у 9 клас](/files/вступ-до-ліцею-vstup_9_2014.jpg) |  |  |  |  | [у 9 клас](/files/вступ-до-ліцею-biol_2014.doc) |
+|   2015 р.   | [у 8 клас](/files/вступ-до-ліцею-mat_8_2015.jpg) | [у 9 клас](/files/вступ-до-ліцею-mat_9_2015.jpg) | [у 8 клас 1](/files/вступ-до-ліцею-phiz1_8_2015.jpg)   ,  [2](/files/вступ-до-ліцею-phiz2_8_2015.jpg) | [у 9 клас 1](/files/вступ-до-ліцею-phiz1_9_2015.jpg)   ,  [2](/files/вступ-до-ліцею-phiz2_9_2015.jpg) | [у 9 клас](/files/вступ-до-ліцею-chim2015.jpg) | [у 9 клас](/files/вступ-до-ліцею-biol_2015.doc) |
+|   2016 р.   | [у 8 клас](/files/вступ-до-ліцею-mat_8kl_2016.jpg) | [у 9 клас](/files/вступ-до-ліцею-mat_9kl_2016.jpg) | [у 8 клас 1](/files/вступ-до-ліцею-phiz_1_8kl_2016.jpg)   ,  [2](/files/вступ-до-ліцею-phiz_2_8kl_2016.jpg) | [у 9 клас 1](/files/вступ-до-ліцею-phiz_1_9kl_2016.jpg)   ,  [2](/files/вступ-до-ліцею-phiz_2_9kl_2016.jpg) | [у 9 клас](/files/вступ-до-ліцею-хімія.docx) | [у 9 клас](/files/вступ-до-ліцею-biol_2016.doc) |
+|   2017 р.   | [у 8 клас](/files/вступ-до-ліцею-mat_8_2017.jpg) | [у 9 клас](/files/вступ-до-ліцею-mat_9_2017.jpg) | [у 8 клас](/files/вступ-до-ліцею-phiz_8_2017.docx) | [у 9 клас](/files/вступ-до-ліцею-phiz_9_2017.docx) | [у 9 клас](/files/вступ-до-ліцею-chim_2017.jpg) | [9 питання](/files/вступ-до-ліцею-biol_2017_zavd.docx)      [9 малюнки](/files/вступ-до-ліцею-biol_2017_images.docx) |
+|   2018 р.   | [у 8 клас](/files/вступ-до-ліцею-mat_8_2018.jpg "mat_8_2018.jpg") | [у 9 клас](/files/вступ-до-ліцею-mat_9_2018.jpg "mat_9_2018.jpg") | [у 8 клас](/files/вступ-до-ліцею-phiz_8_2018.rar "phiz_8_2018.rar") | [у 9 клас](/files/вступ-до-ліцею-phiz_9_2018.rar "Phiz_9_2018.rar") | [у 9 клас](/files/вступ-до-ліцею-chim_2018.jpg "chim_2018.jpg") | [у 9 клас](/files/вступ-до-ліцею-biol2018.rar "Biol2018.rar") |
+|   2019 р.   | [у 8 клас](/files/вступ-до-ліцею-mat8_2019.pdf "Mat8_2019.pdf") | [у 9 клас](/files/вступ-до-ліцею-mat9_2019.pdf "Mat9_2019.pdf") | [у 8 клас](/files/вступ-до-ліцею-phiz8_2019.pdf "Phiz8_2019.pdf") | [у 9 клас](/files/вступ-до-ліцею-phiz9_2019.pdf "Phiz9_2019.pdf") | [у 9 клас](/files/вступ-до-ліцею-chem2019.pdf "Chem2019.pdf") | [у 9 клас](/files/вступ-до-ліцею-biol2019.pdf "Biol2019.pdf") |
+|   2020 р.   | [у 8 клас](/files/вступ-до-ліцею-математика-8-2020.pdf "Математика 8 2020.pdf") | [у 9 клас](/files/вступ-до-ліцею-математика-9-2020.pdf "Математика 9 2020.pdf") | [у 8 клас](/files/вступ-до-ліцею-phiz_8_2020.jpg "phiz_8_2020.jpg") | [у 9 клас](/files/вступ-до-ліцею-phiz_9_2020.jpg "phiz_9_2020.jpg") | [у 9 клас](/files/вступ-до-ліцею-chim_2020.jpg "chim_2020.jpg") | [у 9 клас](/files/вступ-до-ліцею-біологія-2020.pdf "Біологія 2020.pdf") |
+|   2021 р.   | [у 8 клас](/files/вступ-до-ліцею-mat_8_2021.pdf "mat_8_2021.pdf") | [у 9 клас](/files/вступ-до-ліцею-mat_9_2021.pdf "mat_9_2021.pdf") | [у 8 клас](/files/вступ-до-ліцею-phiz_8_2021.jpg "phiz_8_2021.jpg") | [у 9 клас](/files/вступ-до-ліцею-phiz_9_2021.jpg "phiz_9_2021.jpg") | [у 9 клас](/files/вступ-до-ліцею-chem_2021.jpg "chem_2021.jpg") | [у 9 клас](/files/вступ-до-ліцею-biol_2021.pdf "biol_2021.pdf") |
+|   2022 р.   | [у 8 клас](/files/вступ-до-ліцею-math_8_2022.pdf "math_8_2022.pdf") | [у 9 клас](/files/вступ-до-ліцею-math_9_2022.pdf "math_9_2022.pdf") | [у 8 клас](/files/вступ-до-ліцею-фізика-2022-завдання-і-розвязки.pdf "Фізика 2022 (завдання і розв'язки).pdf") | [у 9 клас](/files/вступ-до-ліцею-фізика-9кл-2022.pdf "Фізика 9кл 2022.pdf") | [у 9 клас](/files/вступ-до-ліцею-chem2022.pdf "Chem2022.pdf") | [у 9 клас](/files/вступ-до-ліцею-bilo_2022.pdf "Bilo_2022.pdf") |
+|   2023 р.   | [у 8 клас](/files/вступ-до-ліцею-8__mat2023.pdf "8__mat2023.pdf") | [у 9 клас](/files/вступ-до-ліцею-9_mat2023.pdf "9_mat2023.pdf") | [у 8 клас](/files/вступ-до-ліцею-phiz_8_2023.jpg "phiz_8_2023.jpg") | [у 9 клас](/files/вступ-до-ліцею-phiz_9_2023.jpg "phiz_9_2023.jpg") | [у 9 клас](/files/вступ-до-ліцею-chem-2023.docx "Chem 2023.docx") | [у 9 клас](/files/вступ-до-ліцею-biol-2023.docx "Biol 2023.docx") |
+|   2024 р.   | [типові завдання](/files/вступ-до-ліцею-типові-завдання-з-математики-для-вступників-в-лфмл.pdf) |  |  |  |  |  |
 
- 
+Зразки завдань попередніх років для співбесіди:
 
- 
+|   Роки   |   Математика   |  |   Фізика   |  |
+| --- | --- | --- | --- | --- |
+|   2007 р.   | [у 8 клас](/files/вступ-до-ліцею-sp_mat_8_07.doc) | [у 9 клас](/files/вступ-до-ліцею-sp_mat_9_07.doc) | — | — |
+|   2008 р.   | [у 8 клас](/files/вступ-до-ліцею-sp_mat_8_08.doc) | [у 9 клас](/files/вступ-до-ліцею-sp_mat_9_08.doc) | — | — |
+|   2009 р.   | [у 8 клас](/files/вступ-до-ліцею-sp_mat_8_09.doc) | [у 9 клас](/files/вступ-до-ліцею-sp_mat_9_09.doc) | — | — |
+|   2010 р.   | — | — | [у 8 клас](/files/вступ-до-ліцею-sp_fiz_10.doc) | — |
+|   2011 р.   | [у 8 і 9 клас](/files/вступ-до-ліцею-sp_mat_11.doc) |  | — | — |
+|   2012 р.   | [у 8 і 9 клас](/files/вступ-до-ліцею-sp_mat_12.doc) |  | [у 8 клас](/files/вступ-до-ліцею-sp_fizik_8_12.doc) | [у 9 клас](/files/вступ-до-ліцею-sp_fizik_9_12.doc) |
+|   2013 р.   | [у 8 і 9 клас](/files/вступ-до-ліцею-Співбесіда-2013-р_матем.doc)   ,  [додатковий набір](/files/вступ-до-ліцею-Добір-_матем_серпень.doc) |  |  |  |
+|   2016 р.   | [у 8 і 9 клас](/files/вступ-до-ліцею-математика-співбесіда-2016.doc) |  |  |  |
 
- 
+Задачник задач з фізики за 7 клас можна завантажити
+[тут](/files/вступ-до-ліцею-фізика7_вступ.pdf "Фізика7 Вступ")
+.
 
-[](/files/info/for-entrants/sp_mat_8_07.doc) Зразки завдань попередніх років для співбесіди:
+Збірник задач для вступників до ЛФМЛ:
+[І частина](/files/вступ-до-ліцею-збірник-1-част-з-фізики-для-вступників-до-лфмл.pdf "Збірник 1 част з фізики для вступників до ЛФМЛ.pdf")
+,
+[ІІ частина](/files/вступ-до-ліцею-збірник-2-част-з-фізики-для-вступників-до-лфмл.pdf "Збірник 2 част з фізики для вступників до ЛФМЛ.pdf")
 
-|  Роки   |                                                                 Математика                                                                  |                                                      |                         Фізика                         |                                                        |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------ |
-| 2007 р. |                                            [у 8 клас](/files/info/for-entrants/sp_mat_8_07.doc)                                             | [у 9 клас](/files/info/for-entrants/sp_mat_9_07.doc) |                           —                            |                           —                            |
-| 2008 р. |                                            [у 8 клас](/files/info/for-entrants/sp_mat_8_08.doc)                                             | [у 9 клас](/files/info/for-entrants/sp_mat_9_08.doc) |                           —                            |                           —                            |
-| 2009 р. |                                            [у 8 клас](/files/info/for-entrants/sp_mat_8_09.doc)                                             | [у 9 клас](/files/info/for-entrants/sp_mat_9_09.doc) |                           —                            |                           —                            |
-| 2010 р. |                                                                      —                                                                      |                          —                           |   [у 8 клас](/files/info/for-entrants/sp_fiz_10.doc)   |                           —                            |
-| 2011 р. |                                           [у 8 і 9 клас](/files/info/for-entrants/sp_mat_11.doc)                                            |                                                      |                           —                            |                           —                            |
-| 2012 р. |                                           [у 8 і 9 клас](/files/info/for-entrants/sp_mat_12.doc)                                            |                                                      | [у 8 клас](/files/info/for-entrants/sp_fizik_8_12.doc) | [у 9 клас](/files/info/for-entrants/sp_fizik_9_12.doc) |
-| 2013 р. | [у 8 і 9 клас](/files/info/for-entrants/Співбесіда-2013-р_матем.doc), [додатковий набір](/files/info/for-entrants/Добір-_матем_серпень.doc) |                                                      |                                                        |                                                        |
-| 2016 р. |                                   [у 8 і 9 клас](/files/info/for-entrants/математика-співбесіда-2016.doc)                                   |                                                      |                                                        |                                                        |
-
- 
-
-Задачник задач з фізики за 7 клас можна завантажити [тут](/files/info/for-entrants/фізика7_вступ.pdf).
-
-Збірник задач для вступників до ЛФМЛ: [І частина](/files/info/for-entrants/збірник-1-част-з-фізики-для-вступників-до-лфмл.pdf), [ІІ частина](/files/info/for-entrants/збірник-2-част-з-фізики-для-вступників-до-лфмл.pdf)
-
-Задачник з фізики для підготовки до вступу учнів у 9 клас можна завантажити [тут](/files/info/for-entrants/gendenshteyn_l_e_gelfgat_i_m_kirik_l_a_zadachi_z_fiziki_8_kl.djvu).
+Задачник з фізики для підготовки до вступу учнів у 9 клас можна завантажити
+[тут](/files/вступ-до-ліцею-gendenshteyn_l_e_gelfgat_i_m_kirik_l_a_zadachi_z_fizik.djvu "gendenshteyn_l_e_gelfgat_i_m_kirik_l_a_zadachi_z_fiziki_8_kl.djvu")
+.
 
 ЗАПРОШУЄМО ДО ЛІЦЕЮ!

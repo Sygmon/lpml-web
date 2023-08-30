@@ -1,13 +1,16 @@
 ---
 date: 29.04.2015
+title: "\u041A\u043E\u043C\u0430\u043D\u0434\u0430 CS@UCU \u0437\u0430\u0432\u0456\
+  \u0442\u0430\u043B\u0430 \u0443 \u043B\u0456\u0446\u0435\u0439"
 ---
-# Команда CS@UCU завітала у ліцей
-
-<blockquote cite="https://www.facebook.com/csatucu/posts/1439663252994108">
-
-Сьогодні команда CS@UCU та натхненник програми і засновник SoftServe, Тарас Кицмей, завітали у ЛФМЛ - Львівський Фізико-...
-
-Posted by [Програма з комп'ютерних наук УКУ](https://www.facebook.com/csatucu) on [28 квітня 2015 р.](https://www.facebook.com/csatucu/posts/1439663252994108)</blockquote>
-
-[Читати усі новини](/news)
-date: 29.04.2015
+>
+>
+>  Сьогодні команда CS@UCU та натхненник програми і засновник SoftServe, Тарас Кицмей, завітали у ЛФМЛ - Львівський Фізико-...
+>
+>
+>
+>  Posted by
+>  [Програма з комп'ютерних наук УКУ](https://www.facebook.com/csatucu)
+>  on
+>  [28 квітня 2015 р.](https://www.facebook.com/csatucu/posts/1439663252994108)
+>
