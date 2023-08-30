@@ -2,6 +2,7 @@ import path from "path";
 import fs from "fs";
 import yaml from "js-yaml";
 import matter from "gray-matter";
+import markdownToTxt from "markdown-to-txt";
 const base = path.join(process.cwd(), "content");
 import { Article, ArticleMetadata, articleMetadataSchema } from "./article";
 
@@ -12,39 +13,17 @@ function inferMetadata(
   let description: string | undefined;
   let title: string | undefined;
 
-  let i = 0;
   const paragraphs = content.split("\n");
-  let paragraph = paragraphs[i];
-  if (paragraph.startsWith("#")) {
-    title = paragraph.replace(/^#+/, "").trim();
-    title = title.replace(/\[([^\]]+)\]\([^)]+\)/, "$1");
-    i++;
-    paragraph = paragraphs[i];
+
+  if (paragraphs[0].startsWith("#")) {
+    title = markdownToTxt(paragraphs.shift() || "");
   }
-  while (
-    paragraph == "" ||
-    paragraph.startsWith("#") ||
-    paragraph.startsWith("![")
-  ) {
-    i++;
-    paragraph = paragraphs[i];
-    if (paragraph == undefined) {
-      paragraph = "";
-      break;
-    }
-  }
-  const descriptionEnd = paragraph.length;
-  if (descriptionEnd <= maxLength) {
-    description = paragraph.substring(0, descriptionEnd);
-  } else {
-    const lastSpace = paragraph.substring(0, maxLength).lastIndexOf(" ");
-    if (lastSpace == -1) {
-      description = paragraph.substring(0, maxLength);
-    } else {
-      description = paragraph.substring(0, lastSpace);
-    }
-  }
-  description += "...";
+
+  // Join back again and then use markdownToTxt; then cut to maxLength
+  const joined = paragraphs.join("\n");
+  const txt = markdownToTxt(joined);
+  description =
+    txt.length > maxLength ? txt.slice(0, maxLength - 1) + "…" : txt;
 
   return { title, description };
 }
