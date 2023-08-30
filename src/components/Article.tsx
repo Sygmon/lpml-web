@@ -12,9 +12,6 @@ import { ReactMarkdownProps } from "react-markdown/lib/complex-types";
 
 function MdImage({ src, alt }: { src?: string; alt?: string }) {
   const [open, setOpen] = useState(false);
-  const imgSource = src?.startsWith("http")
-    ? src
-    : `https://raw.githubusercontent.com/Sygmon/lpml-web/redesign/public${src}`;
 
   return (
     <span className={styles["image-container"]}>
@@ -22,7 +19,7 @@ function MdImage({ src, alt }: { src?: string; alt?: string }) {
         className={`${styles.image} ${styles.closed}`}
         onClick={() => setOpen(!open)}
       >
-        <img src={imgSource} alt={alt} loading="lazy" />
+        <img src={src} alt={alt} loading="lazy" />
         {open && (
           <div
             className={`${styles.image} ${styles.open}`}
