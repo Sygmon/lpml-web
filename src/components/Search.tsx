@@ -46,25 +46,25 @@ function Results({
 
   return active ? (
     <div className={styles.results}>
-      {hits.map(
-        (result) =>
-          result?.url &&
-          typeof result?.url === "string" && (
-            <Link href={result?.url} key={result?.url}>
-              <div
-                className={styles.result}
-                onClick={() => {
-                  hide();
-                  reset && reset();
-                }}
-              >
-                <div className={styles.title}>{result.title}</div>
-                <div className={styles.content}>
-                  <Snippet attribute="description" hit={result} />
-                </div>
+      {hits.map((result) =>
+        result?.url && typeof result?.url === "string" ? (
+          <Link href={result?.url} key={result?.url}>
+            <div
+              className={styles.result}
+              onClick={() => {
+                hide();
+                reset && reset();
+              }}
+            >
+              {result?.title && typeof result?.title === "string" ? (
+                <div className={styles.title}>{result?.title}</div>
+              ) : null}
+              <div className={styles.content}>
+                <Snippet attribute="description" hit={result} />
               </div>
-            </Link>
-          )
+            </div>
+          </Link>
+        ) : null
       )}
     </div>
   ) : null;
