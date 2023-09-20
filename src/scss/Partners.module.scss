@@ -8,6 +8,10 @@
   overflow: hidden;
   gap: 1rem;
 
+  @include small-screen {
+    gap: 0;
+  }
+
   .title {
     font-family: "Roboto", sans-serif;
     font-size: 2.5rem;
@@ -44,7 +48,7 @@
   }
 
   @include small-screen {
-    margin: 1rem;
+    padding: 1rem;
     border: solid rgba(0, 0, 0, 0.1) 1px;
     border-radius: 1rem;
     background-color: rgba(0, 0, 0, 0.05);
