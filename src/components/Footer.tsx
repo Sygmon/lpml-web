@@ -40,7 +40,7 @@ export default function Footer() {
       </div>
       <div className={styles.column}>
         <div className={styles.label}>Ми у соцмережах</div>
-        <div className={styles.socials}>
+        <div className={styles.logos}>
           <Link href="http://www.facebook.com/groups/33427370676/">
             <a
               href="http://www.facebook.com/groups/33427370676/"
@@ -50,6 +50,24 @@ export default function Footer() {
               <FaFacebook />
             </a>
           </Link>
+        </div>
+        <Link href="/info/about/конкурси">
+          <div className={`${styles.label} ${styles.link}`}>Конкурси</div>
+        </Link>
+        <div className={styles.logos}>
+          <a href="http://kangaroo.com.ua">
+            <img src="/images/contests/kangaroo.png" alt="kangaroo" />
+          </a>
+          <a href="http://levenia.com.ua">
+            <img src="/images/contests/levenia.png" alt="levenia" />
+          </a>
+          <a href="http://bober.net.ua">
+            <img
+              src="/images/contests/bebras.png"
+              alt="bebras"
+              className={styles.outlined}
+            />
+          </a>
         </div>
         <Link href="/">
           <a href="/" className={styles.logo} aria-label="logo">
