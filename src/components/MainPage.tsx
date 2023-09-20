@@ -31,9 +31,6 @@ export default function MainPage() {
         </span>
         <div className={styles.image}>
           <span className={styles.overlay} />
-          <span className={styles.button}>
-            <FaPlay />
-          </span>
         </div>
       </div>
     </div>
