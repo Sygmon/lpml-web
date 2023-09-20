@@ -36,15 +36,17 @@ export function List({
         hasMore={hasMore}
         loader={<h4>Завантаження...</h4>}
       >
-        {articles.map((article, index) => (
-          <ArticleLink
-            key={`${article}${index}`}
-            href={article.href}
-            title={article.title}
-            date={article.date || undefined}
-            description={article.description}
-          />
-        ))}
+        <div className={styles.total}>
+          {articles.map((article, index) => (
+            <ArticleLink
+              key={`${article}${index}`}
+              href={article.href}
+              title={article.title}
+              date={article.date || undefined}
+              description={article.description}
+            />
+          ))}
+        </div>
       </InfiniteScroll>
     </div>
   );
