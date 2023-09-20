@@ -1,76 +1,73 @@
 @import "./common.scss";
 
-.content {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap-reverse;
-  gap: 12rem;
+.info {
+  display: grid;
+  grid-template:
+    "logo title"
+    "about cover";
+  margin: 2rem 1rem;
+  grid-template-columns: minmax(min-content, 1fr) 3fr;
+  grid-auto-flow: row;
+  gap: 4rem;
+
   @include small-screen {
-    gap: 3rem;
-  }
-  margin: 1rem;
-
-  .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1 1 16rem;
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      max-width: 48rem;
-
-      .logo {
-        margin-bottom: 2rem;
-        @include small-screen {
-          display: none;
-        }
-      }
-      .text {
-        text-align: start;
-        font-size: 1rem;
-        line-height: 1.25rem;
-        letter-spacing: 0.12em;
-        text-align: left;
-      }
-      .separator {
-        width: 50%;
-        height: 0.25rem;
-        background-color: var(--foreground);
-        margin: 2rem 0;
-      }
-    }
+    gap: 2rem;
+    grid-template:
+      "title"
+      "cover"
+      "about";
   }
 
-  .intro {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 48rem;
-    gap: 1rem;
-    max-width: 100%;
+  .logo {
+    grid-area: logo;
     @include small-screen {
-      margin-top: 2rem;
+      display: none;
     }
+  }
 
-    .title {
+  .about {
+    grid-area: about;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 48rem;
+
+    .text {
       font-family: "Roboto", sans-serif;
-      font-size: 3.5rem;
-      @include small-screen {
-        font-size: 2rem;
-      }
       font-weight: 400;
-      line-height: 3.5rem;
-      @include small-screen {
-        line-height: 2rem;
-      }
-      letter-spacing: 0.04em;
+      font-size: 1.5rem;
+      line-height: 1.4rem;
       text-align: left;
-      margin-bottom: 2rem;
     }
+    .separator {
+      width: 50%;
+      height: 0.25rem;
+      background-color: var(--foreground);
+      margin: 2rem 0;
+    }
+  }
+
+  .title {
+    grid-area: title;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 3.5rem;
+    @include small-screen {
+      font-size: 2rem;
+    }
+    font-weight: 400;
+    line-height: 3.5rem;
+    @include small-screen {
+      line-height: 2rem;
+    }
+    letter-spacing: 0.04em;
+    text-align: left;
+  }
+
+  .cover {
+    grid-area: cover;
 
     .image {
       cursor: pointer;
