@@ -5,6 +5,7 @@ import Head from "next/head";
 import NewsList from "../components/NewsList";
 import { getNews } from "../lib/news";
 import { ArticleCard } from "../lib/article";
+import Partners from "../components/Partners";
 
 export default function App({ articles }: { articles: ArticleCard[] }) {
   return (
@@ -17,6 +18,7 @@ export default function App({ articles }: { articles: ArticleCard[] }) {
         />
       </Head>
       <MainPage />
+      <Partners />
       <NewsList articles={articles} />
     </>
   );
