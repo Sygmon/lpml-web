@@ -1,7 +1,6 @@
 import * as React from "react";
 import styles from "../scss/Applet.module.scss";
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
 
 export function ArticleLink({
   href,
@@ -17,10 +16,8 @@ export function ArticleLink({
   return (
     <Link href={href}>
       <a href={href} className={styles["link-container"]} aria-label={title}>
-        <ReactMarkdown className={styles.link}>{title}</ReactMarkdown>
-        <ReactMarkdown className={styles.description}>
-          {description}
-        </ReactMarkdown>
+        <h2 className={styles.link}>{title}</h2>
+        <span className={styles.description}>{description}</span>
         <div className={styles.date}>{date}</div>
       </a>
     </Link>
