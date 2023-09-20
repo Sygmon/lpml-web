@@ -38,7 +38,7 @@
       font-family: "Roboto", sans-serif;
       font-weight: 400;
       font-size: 1.5rem;
-      line-height: 1.4rem;
+      line-height: 1.75rem;
       text-align: left;
     }
     .separator {
@@ -57,7 +57,7 @@
     @include small-screen {
       font-size: 2rem;
     }
-    font-weight: 400;
+    font-weight: 500;
     line-height: 3.5rem;
     @include small-screen {
       line-height: 2rem;
