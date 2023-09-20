@@ -38,7 +38,7 @@ function parseArticle(
   return {
     id: filename.replace(/\.md$/, ""),
     title: frontmatter.title || inferred.title || filename.replace(/\.md$/, ""),
-    description: frontmatter.description || inferred.description || content,
+    description: frontmatter.description || inferred.description || "",
     category,
     content: content,
     date: frontmatter.date,
