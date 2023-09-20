@@ -22,7 +22,10 @@ function Partner({
 export default function Partners() {
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Партнери</h2>
+      <input type="checkbox" id="partners" className={styles.checkbox} hidden />
+      <label htmlFor="partners" className={styles.title}>
+        Партнери
+      </label>
       <div className={styles.partners}>
         <Partner
           src="/images/partners/mon.png"

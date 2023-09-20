@@ -1,8 +1,11 @@
+@import "./common.scss";
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   padding: 1rem;
+  overflow: hidden;
 
   .title {
     font-family: "Roboto", sans-serif;
@@ -30,11 +33,69 @@
       margin: 1rem;
       box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
       background-color: #fff;
+      cursor: pointer;
 
       .image {
         width: 10rem;
         max-height: 10rem;
       }
+    }
+  }
+
+  @include small-screen {
+    margin: 1rem;
+    border: solid rgba(0, 0, 0, 0.1) 1px;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.05);
+
+    .title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+
+      &::after {
+        display: block;
+        content: "";
+
+        border: solid black;
+        border-width: 0 6px 6px 0;
+        padding: 6px;
+        transform: rotate(-45deg);
+        transition: 0.5s ease-in-out;
+
+        margin-top: 0.25rem;
+      }
+    }
+
+    .checkbox {
+      display: none;
+    }
+
+    .checkbox ~ .partners {
+      display: flex;
+      flex-direction: column;
+      height: 0;
+      min-height: 0;
+      max-height: 0;
+      overflow: hidden;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: 0.5s ease-in-out;
+    }
+
+    .checkbox:checked ~ .partners {
+      height: auto;
+      min-height: 32rem;
+      max-height: 512rem;
+      transform: scaleY(1);
+      transform-origin: top;
+    }
+
+    .checkbox:checked ~ .title::after {
+      transform: rotate(45deg);
+      margin-top: 0;
     }
   }
 }
