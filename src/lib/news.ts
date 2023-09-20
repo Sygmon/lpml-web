@@ -2,14 +2,43 @@ import { getArticles } from "./articles";
 import { z } from "zod";
 import { ArticleCard, articleCardSchema } from "./article";
 
-export function getNews(): ArticleCard[] {
-  const articles = getArticles("blog").map((article) => ({
-    title: article.title,
-    href: `/news/${article.id}`,
-    cover: article.cover || null,
-    date: article.date || null,
-    description: article.description,
-  }));
+export function getNews(
+  startDate?: number | null,
+  endDate?: number | null
+): ArticleCard[] {
+  const articles = getArticles("blog")
+    .map((article) => ({
+      title: article.title,
+      href: `/news/${article.id}`,
+      cover: article.cover || null,
+      date: article.date || null,
+      description: article.description,
+    }))
+    .filter((article) => {
+      if (startDate && article.date) {
+        const articleDate = article.date.split(".");
+        const articleTimestamp = new Date(
+          parseInt(articleDate[2]),
+          parseInt(articleDate[1]) - 1,
+          parseInt(articleDate[0])
+        ).getTime();
+        if (articleTimestamp < startDate) {
+          return false;
+        }
+      }
+      if (endDate && article.date) {
+        const articleDate = article.date.split(".");
+        const articleTimestamp = new Date(
+          parseInt(articleDate[2]),
+          parseInt(articleDate[1]) - 1,
+          parseInt(articleDate[0])
+        ).getTime();
+        if (articleTimestamp > endDate) {
+          return false;
+        }
+      }
+      return true;
+    });
 
   // Sort by dd.mm.yyyy
   articles.sort((a, b) => {
@@ -47,12 +76,16 @@ export function getNews(): ArticleCard[] {
   return articles;
 }
 
-export function getNewsPage(pageId: number): {
+export function getNewsPage(
+  pageId: number,
+  startDate?: number | null,
+  endDate?: number | null
+): {
   page: ArticleCard[];
   total: number;
   done: boolean;
 } {
-  const articles = getNews();
+  const articles = getNews(startDate, endDate);
   const page = articles.slice(pageId * 10, pageId * 10 + 10);
   return {
     page,
@@ -61,14 +94,21 @@ export function getNewsPage(pageId: number): {
   };
 }
 
-export async function fetchNewsPage(pageId: number): Promise<{
+export async function fetchNewsPage(
+  pageId: number,
+  startDate?: number | null,
+  endDate?: number | null
+): Promise<{
   page: ArticleCard[];
   total: number;
   done: boolean;
 }> {
-  const response = await fetch(`/api/news_list/${pageId}`).then((res) =>
-    res.json()
-  );
+  const response = await fetch(
+    `/api/news_list/${pageId}?${new URLSearchParams({
+      startDate: startDate ? startDate.toString() : "",
+      endDate: endDate ? endDate.toString() : "",
+    })}`
+  ).then((res) => res.json());
   return z
     .object({
       page: z.array(articleCardSchema),
