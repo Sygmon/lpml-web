@@ -1,6 +1,6 @@
+import Link from "next/link";
 import * as React from "react";
 import styles from "../scss/main.module.scss";
-import { FaPlay } from "react-icons/fa";
 import Logo from "./logo.svg";
 
 export default function MainPage() {
@@ -29,9 +29,11 @@ export default function MainPage() {
           <br />
           фізико-математичний ліцей
         </span>
-        <div className={styles.image}>
-          <span className={styles.overlay} />
-        </div>
+        <Link href="/info/about">
+          <div className={styles.image}>
+            <span className={styles.overlay} />
+          </div>
+        </Link>
       </div>
     </div>
   );
