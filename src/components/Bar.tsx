@@ -5,6 +5,7 @@ import styles from "../scss/Sidebar.module.scss";
 import Link from "next/link";
 import SearchBar from "./Search";
 import { RiSearch2Line } from "react-icons/ri";
+import { useRouter } from "next/router";
 
 export function MenuItem({
   hide,
@@ -80,6 +81,7 @@ export default function Topbar() {
   const checkbox = useRef<HTMLInputElement>(null);
   const searchbox = useRef<HTMLInputElement>(null);
   const [searchOpen, setSearchOpen] = useState(false);
+  const router = useRouter();
 
   const hide = () => {
     setSearchOpen(false);
@@ -103,11 +105,13 @@ export default function Topbar() {
       />
       <DrawerButton />
       <div className={styles.titlebar}>
-        <Link href="/">
-          <a href="/" className={styles.name} onClick={hide}>
-            ЛФМЛ
-          </a>
-        </Link>
+        {router.pathname === "/" ? null : (
+          <Link href="/">
+            <a href="/" className={styles.name} onClick={hide}>
+              ЛФМЛ
+            </a>
+          </Link>
+        )}
         <span
           className={`${styles.search} ${
             searchOpen ? styles.open : styles.closed
