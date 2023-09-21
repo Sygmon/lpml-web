@@ -16,7 +16,7 @@
 
   @include small-screen {
     padding-top: 1rem;
-    gap: 1rem;
+    gap: 2rem;
     flex-direction: column;
   }
 
@@ -25,6 +25,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
+
+    .group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
 
     .links {
       display: flex;
@@ -52,6 +61,7 @@
 
     .label {
       font-size: 1.5rem;
+      padding: 0;
 
       @include small-screen {
         font-size: 1rem;
@@ -65,7 +75,7 @@
       justify-content: space-evenly;
       font-size: 3rem;
       width: 100%;
-      padding: 1rem;
+      gap: 1rem;
 
       img {
         width: 3rem;
