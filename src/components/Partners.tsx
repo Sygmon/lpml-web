@@ -53,6 +53,11 @@ export default function Partners() {
           name="Освіта Львівщини"
         />
         <Partner
+          src="/images/partners/lnu.png"
+          href="https://lnu.edu.ua/"
+          name="Львівський національний університет імені Івана Франка"
+        />
+        <Partner
           src="/images/partners/sqe.png"
           href="https://sqe.gov.ua/"
           name="Державна служба якості освіти України"
