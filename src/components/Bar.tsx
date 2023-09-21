@@ -12,11 +12,13 @@ export function MenuItem({
   href,
   children,
   mobile = false,
+  first = false,
 }: {
   hide: () => void;
   href: string;
   children: React.ReactNode;
   mobile?: boolean;
+  first?: boolean;
 }) {
   return (
     <Link href={href}>
@@ -24,7 +26,7 @@ export function MenuItem({
         href={href}
         className={`${styles.navlink} ${
           mobile ? styles["navlink-mobile"] : ""
-        }`}
+        } ${first ? styles["navlink-first"] : ""}`}
         onClick={hide}
       >
         {children}
@@ -104,7 +106,13 @@ export default function Topbar() {
         ref={checkbox}
       />
       <DrawerButton />
-      <div className={styles.titlebar}>
+      <div
+        className={
+          router.pathname === "/"
+            ? `${styles.titlebar} ${styles.compact}`
+            : styles.titlebar
+        }
+      >
         {router.pathname === "/" ? null : (
           <Link href="/">
             <a href="/" className={styles.name} onClick={hide}>
@@ -128,7 +136,7 @@ export default function Topbar() {
         <MenuItem hide={hide} href="/" mobile>
           головна
         </MenuItem>
-        <MenuItem hide={hide} href="/news">
+        <MenuItem hide={hide} href="/news" first>
           новини
         </MenuItem>
         <MenuItem hide={hide} href="/info/for-entrants">

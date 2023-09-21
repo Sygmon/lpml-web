@@ -74,17 +74,21 @@
     }
     .closed {
       width: 0;
+      overflow: hidden;
+
       @include small-screen {
         width: 100%;
+        overflow: visible;
       }
-      transition: 300ms;
-      overflow: hidden;
     }
 
     .searchcontainer {
       width: 100%;
+      position: relative;
+
       .searchbar {
         width: 100%;
+
         input {
           font-size: 1rem;
           background: transparent;
@@ -105,10 +109,13 @@
         overflow-x: hidden;
         overflow-y: scroll;
         max-height: 75vh;
+        position: absolute;
+        top: 100%;
         display: flex;
         flex-direction: column;
         align-items: stretch;
         justify-content: flex-start;
+        z-index: 1;
 
         .result {
           background: var(--background);
@@ -117,7 +124,6 @@
           flex-direction: column;
           align-items: flex-start;
           text-align: left;
-          z-index: 1;
 
           .title {
             color: var(--secondary);
@@ -128,6 +134,32 @@
             font-size: 0.75rem;
           }
         }
+      }
+    }
+  }
+
+  &.compact {
+    .search {
+      width: 100%;
+      padding: 0 15% 0 2rem;
+
+      @include small-screen {
+        width: unset;
+        padding: 0;
+      }
+
+      .open,
+      .closed {
+        width: 100%;
+        overflow: visible;
+        transition: 0;
+      }
+    }
+    .navlink-first {
+      margin-left: auto;
+
+      @include small-screen {
+        margin-left: 0;
       }
     }
   }
@@ -151,6 +183,10 @@
       color: var(--foreground);
       border: none;
       outline: none;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
 
       .dropdownicon {
         height: 1rem;
