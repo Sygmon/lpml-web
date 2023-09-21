@@ -101,8 +101,8 @@ export default function Topbar() {
         type="checkbox"
         ref={checkbox}
       />
+      <DrawerButton />
       <div className={styles.titlebar}>
-        <DrawerButton />
         <Link href="/">
           <a href="/" className={styles.name} onClick={hide}>
             ЛФМЛ

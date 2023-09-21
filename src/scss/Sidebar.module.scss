@@ -11,39 +11,6 @@
 .navlink-mobile {
   display: none;
 }
-@include small-screen {
-  .drawerlabel {
-    display: block;
-  }
-  .navlink,
-  .name,
-  .search,
-  .dropdownbutton {
-    height: 0 !important;
-    padding: 0 !important;
-    transition: 200ms;
-    overflow: hidden;
-  }
-  .drawer:checked + * .navlink {
-    height: unset !important;
-    padding: 1rem !important;
-  }
-  .drawer:checked + * .search {
-    height: 3rem !important;
-    overflow: visible;
-  }
-  .drawer:checked + * .dropdownbutton {
-    margin-bottom: 0.25rem;
-    height: unset !important;
-    padding: 1rem !important;
-  }
-  .drawer:checked + * {
-    height: unset;
-  }
-  .drawer:checked + * .navlink-mobile {
-    display: block;
-  }
-}
 
 .titlebar {
   display: flex;
@@ -87,7 +54,7 @@
     margin: 1.5rem 2rem;
     margin-left: auto;
     @include small-screen {
-      margin-left: 0;
+      margin: 0;
     }
     align-self: flex-start;
     height: 3rem;
@@ -161,7 +128,7 @@
           }
 
           .content {
-            font-size: .75rem;
+            font-size: 0.75rem;
           }
         }
       }
@@ -215,5 +182,40 @@
 
   .dropdown:hover .dropdowncontent {
     display: flex;
+  }
+}
+
+@include small-screen {
+  .drawerlabel {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .name {
+    display: none;
+  }
+  .drawer ~ .titlebar {
+    height: 0;
+    min-height: 0;
+    max-height: 0;
+    padding: 1rem;
+    z-index: 10;
+
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 300ms;
+  }
+  .drawer:checked ~ .titlebar {
+    height: auto;
+    min-height: 6rem;
+    max-height: 128rem;
+    transform: scaleY(1);
+  }
+  .navlink,
+  .dropdownbutton {
+    padding: 0.5rem 1rem;
+  }
+  .navlink-mobile {
+    display: block;
   }
 }
